@@ -1,1586 +1,279 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { base } from '$app/paths';
-
-	const programs = [
-		{
-			number: '01',
-			title: 'Plan your path',
-			text: 'Clear, unbiased guidance to compare programs, scholarships, and countries with confidence.',
-			color: 'sage'
-		},
-		{
-			number: '02',
-			title: 'Prepare to go',
-			text: 'Practical support for applications, documents, visas, budgeting, and pre-departure.',
-			color: 'sand'
-		},
-		{
-			number: '03',
-			title: 'Belong & thrive',
-			text: 'Local mentors, peer circles, and resources for wellbeing, work, and life in a new place.',
-			color: 'coral'
-		}
-	];
-
-	const stories = [
-		{
-			quote:
-				'My mentor helped me turn a confusing process into a clear plan. I arrived feeling prepared—not alone.',
-			name: 'Nadia Rahman',
-			detail: 'Bangladesh → Canada',
-			image:
-				'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=85'
-		},
-		{
-			quote:
-				'Kawan connected me with students who understood exactly what I was going through.',
-			name: 'Mateo Silva',
-			detail: 'Brazil → Germany',
-			image:
-				'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=85'
-		},
-		{
-			quote:
-				'I found a scholarship I would never have discovered on my own. It changed what felt possible.',
-			name: 'Amara Okafor',
-			detail: 'Nigeria → United Kingdom',
-			image:
-				'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=85'
-		}
-	];
 
 	let menuOpen = false;
-	let storyIndex = 0;
-	let email = '';
-	let submitted = false;
-
-	function subscribe() {
-		if (email.trim()) {
-			submitted = true;
-			email = '';
-		}
-	}
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) entry.target.classList.add('visible');
-				}
-			},
+			(entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('visible')),
 			{ threshold: 0.12 }
 		);
-
 		document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 		return () => observer.disconnect();
 	});
 </script>
 
 <svelte:head>
-	<title>Kawan — Your journey. Our guidance.</title>
+	<title>KAWAN Seattle — Find your people. Feel at home.</title>
+	<meta name="description" content="KAWAN welcomes international students to Seattle with practical support, friendship, mentorship, and community." />
 </svelte:head>
 
 <header class="site-header">
-	<a class="brand" href="#top" aria-label="Kawan home">
-		<span class="brand-mark" aria-hidden="true">
-			<svg viewBox="0 0 44 44" fill="none">
-				<path d="M5 27.5c7-12 16-15 33-12-7.5 2.8-11 8-12.2 15.2C20 24.8 13.2 24.5 5 27.5Z" fill="currentColor" />
-				<path d="M10 32c8-5 15-5.8 24-3.2" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" />
-			</svg>
-		</span>
-		<span>Kawan</span>
+	<a class="brand" href="#top" aria-label="KAWAN Seattle home">
+		<span class="brand-mark" aria-hidden="true">K</span>
+		<span>KAWAN <small>SEATTLE</small></span>
 	</a>
-
-	<nav class:open={menuOpen} aria-label="Primary navigation">
-		<a href="#about" onclick={() => (menuOpen = false)}>About</a>
-		<a href="#programs" onclick={() => (menuOpen = false)}>How we help</a>
-		<a href="#stories" onclick={() => (menuOpen = false)}>Stories</a>
-		<a href="#resources" onclick={() => (menuOpen = false)}>Resources</a>
+	<nav class:open={menuOpen} aria-label="Main navigation">
+		<details class="nav-dropdown">
+			<summary>About us <span aria-hidden="true">⌄</span></summary>
+			<div class="dropdown-menu">
+				<a href="#about" onclick={() => (menuOpen = false)}>Our story</a>
+				<a href="#vision" onclick={() => (menuOpen = false)}>Our vision &amp; mission</a>
+			</div>
+		</details>
+		<a href="#support" onclick={() => (menuOpen = false)}>How we help</a>
+		<a href="#community" onclick={() => (menuOpen = false)}>Community</a>
 	</nav>
-
-	<a class="button small desktop-cta" href="#connect">Get guidance <span>↗</span></a>
-	<button
-		class="menu-button"
-		class:active={menuOpen}
-		aria-label="Toggle navigation"
-		aria-expanded={menuOpen}
-		onclick={() => (menuOpen = !menuOpen)}
-	>
+	<a class="button header-cta" href="mailto:hello@kawanseattle.org">Connect with us <span>↗</span></a>
+	<button class="menu" aria-label="Toggle menu" aria-expanded={menuOpen} onclick={() => (menuOpen = !menuOpen)}>
 		<span></span><span></span>
 	</button>
 </header>
 
 <main id="top">
 	<section class="hero">
-		<div class="hero-grid">
-			<div class="hero-copy reveal visible">
-				<p class="eyebrow"><span></span> Guidance without borders</p>
-				<h1>Your journey.<br /><em>Our guidance.</em></h1>
-				<p class="hero-lead">
-					Free, trusted support for international students—from the first big dream to feeling at
-					home in a new country.
-				</p>
-				<div class="hero-actions">
-					<a class="button" href="#connect">Start your journey <span>↗</span></a>
-					<a class="text-link" href="#about">Discover our mission <span>↓</span></a>
-				</div>
-				<div class="trust-row">
-					<div class="avatar-stack" aria-hidden="true">
-						<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=90&q=80" alt="" />
-						<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=90&q=80" alt="" />
-						<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=90&q=80" alt="" />
-					</div>
-					<p><strong>4,800+ students</strong><br />supported across 32 countries</p>
-				</div>
-			</div>
-
-			<div class="hero-visual reveal visible">
-				<div class="sun-shape"></div>
-				<div class="photo-frame">
-					<img
-						src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=88"
-						alt="International students laughing together on campus"
-					/>
-				</div>
-				<div class="route-card">
-					<div class="route-icon">
-						<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-							<path d="M3 11.5 21 4l-7.5 18-2.4-8.1L3 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-						</svg>
-					</div>
-					<div><span>Next stop</span><strong>Your future</strong></div>
-				</div>
-				<div class="destination-chip">32 countries <span>✦</span> one community</div>
-			</div>
-		</div>
-		<div class="scroll-note"><span></span> SCROLL TO EXPLORE</div>
-	</section>
-
-	<section class="mission" id="about">
-		<div class="section-wrap mission-grid">
-			<div class="section-heading reveal">
-				<p class="eyebrow light"><span></span> Why we exist</p>
-				<h2>Big dreams shouldn't come with <em>impossible questions.</em></h2>
-			</div>
-			<div class="mission-copy reveal">
-				<p>
-					Studying abroad can transform a life—but the path there is often confusing, expensive,
-					and lonely. We're here to change that.
-				</p>
-				<p>
-					Kawan is a nonprofit powered by people who have made the journey themselves. We
-					offer free, honest guidance so every student can move forward with clarity and courage.
-				</p>
-				<a class="inline-link" href="#programs">Read our story <span>↗</span></a>
-			</div>
-		</div>
-		<div class="impact-strip reveal">
-			<div><strong>4,800<span>+</span></strong><small>STUDENTS GUIDED</small></div>
-			<div><strong>32</strong><small>COUNTRIES REACHED</small></div>
-			<div><strong>380<span>+</span></strong><small>VOLUNTEER MENTORS</small></div>
-			<div><strong>91<span>%</span></strong><small>FEEL MORE CONFIDENT</small></div>
-		</div>
-	</section>
-
-	<section class="programs section-wrap" id="programs">
-		<div class="programs-header reveal">
-			<div>
-				<p class="eyebrow"><span></span> How we help</p>
-				<h2>Support for every<br /><em>step forward.</em></h2>
-			</div>
-			<p>
-				Wherever you are in your journey, you'll find practical tools, trusted answers, and people
-				who believe in you.
-			</p>
-		</div>
-
-		<div class="program-grid">
-			{#each programs as program, index}
-				<article class="program-card {program.color} reveal" style={`--delay: ${index * 90}ms`}>
-					<div class="card-top">
-						<span>{program.number}</span>
-						<div class="program-icon">
-							{#if index === 0}
-								<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-									<circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.8" />
-									<path d="m15 25 3-8 8-3-3 8-8 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-									<circle cx="20.5" cy="19.5" r="1.4" fill="currentColor" />
-								</svg>
-							{:else if index === 1}
-								<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-									<path d="M8 25.5h24M13 25.5v-11h14v11M10 30h20M17 14.5v-4h6v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-									<path d="M17 20h6" stroke="currentColor" stroke-width="1.8" />
-								</svg>
-							{:else}
-								<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-									<path d="M20 31s-11-5.8-11-13.3A6.7 6.7 0 0 1 20 12.5a6.7 6.7 0 0 1 11 5.2C31 25.2 20 31 20 31Z" stroke="currentColor" stroke-width="1.8" />
-									<path d="M15.5 20.5c1.3 1.2 2.8 1.8 4.5 1.8s3.2-.6 4.5-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-								</svg>
-							{/if}
-						</div>
-					</div>
-					<h3>{program.title}</h3>
-					<p>{program.text}</p>
-					<a href="#connect" aria-label={`Explore ${program.title}`}>Explore support <span>↗</span></a>
-				</article>
-			{/each}
-		</div>
-	</section>
-
-	<section class="mentor-band" id="connect">
-		<div class="mentor-image reveal">
-			<img
-				src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1100&q=86"
-				alt="A student and mentor working together"
-			/>
-			<div class="availability"><span></span> 24 mentors available this week</div>
-		</div>
-		<div class="mentor-copy reveal">
-			<p class="eyebrow light"><span></span> One-to-one support</p>
-			<h2>Meet someone who's <em>been where you are.</em></h2>
-			<p>
-				Our volunteer mentors were international students too. Get matched with someone who knows
-				your destination, speaks your language, and understands the questions on your mind.
-			</p>
-			<div class="mentor-points">
-				<span>✓ Always free</span><span>✓ Thoughtfully matched</span><span>✓ On your schedule</span>
-			</div>
-			<a class="button gold" href="mailto:hello@kawan.org">Find your mentor <span>↗</span></a>
-		</div>
-	</section>
-
-	<section class="stories section-wrap" id="stories">
-		<div class="stories-intro reveal">
-			<p class="eyebrow"><span></span> Student stories</p>
-			<h2>Journeys that<br /><em>inspire ours.</em></h2>
-			<div class="story-controls">
-				<button aria-label="Previous story" onclick={() => (storyIndex = (storyIndex + stories.length - 1) % stories.length)}>←</button>
-				<button aria-label="Next story" onclick={() => (storyIndex = (storyIndex + 1) % stories.length)}>→</button>
-			</div>
-		</div>
-		<div class="story-card reveal">
-			<div class="quote-mark">“</div>
-			<blockquote>{stories[storyIndex].quote}</blockquote>
-			<div class="student">
-				<img src={stories[storyIndex].image} alt={stories[storyIndex].name} />
-				<div><strong>{stories[storyIndex].name}</strong><span>{stories[storyIndex].detail}</span></div>
-			</div>
-			<div class="story-progress" aria-label={`Story ${storyIndex + 1} of ${stories.length}`}>
-				{#each stories as _, index}
-					<button class:active={index === storyIndex} onclick={() => (storyIndex = index)} aria-label={`Show story ${index + 1}`}></button>
-				{/each}
+		<div class="hero-copy reveal visible">
+			<p class="eyebrow"><span></span> Welcome to Seattle</p>
+			<h1>Welcome to <em>KAWAN.</em></h1>
+			<p class="lead"><em>Built by international students, for international students.</em></p>
+			<div class="actions">
+				<a class="button" href="mailto:hello@kawanseattle.org">Join the community <span>↗</span></a>
+				<a class="text-link" href="#support">See how we help <span>↓</span></a>
 			</div>
 		</div>
 	</section>
 
-	<section class="resources" id="resources">
-		<div class="section-wrap">
-			<div class="resource-heading reveal">
-				<div>
-					<p class="eyebrow"><span></span> Free resources</p>
-					<h2>Good guidance,<br /><em>within reach.</em></h2>
-				</div>
-				<a class="inline-link" href="#guide">View all resources <span>↗</span></a>
+	<section class="intro" id="about">
+		<div class="section-wrap intro-grid">
+			<div class="reveal">
+				<p class="eyebrow light"><span></span> Our name, our promise</p>
+				<h2>KAWAN means <em>friend.</em></h2>
 			</div>
-			<div class="resource-grid" id="guide">
-				<article class="feature-resource reveal">
-					<div class="feature-art">
-						<span class="art-stamp">2026<br />EDITION</span>
-						<div class="book">
-							<small>THE ESSENTIAL GUIDE</small>
-							<strong>Your First<br />90 Days<br />Abroad</strong>
-							<span>KAWAN</span>
-						</div>
-					</div>
-					<div class="resource-content">
-						<span class="tag">FEATURED GUIDE</span>
-						<h3>Your First 90 Days Abroad</h3>
-						<p>A practical guide to arriving, settling in, and building a life that feels like yours.</p>
-						<a href={`${base}/guides/first-90-days.txt`} download>Download free guide <span>↓</span></a>
-					</div>
-				</article>
-				<article class="mini-resource reveal">
-					<div class="mini-icon">⌁</div>
-					<span class="tag">CHECKLIST</span>
-					<h3>The application<br />master checklist</h3>
-					<a href="#connect">Open resource <span>↗</span></a>
-				</article>
-				<article class="mini-resource green reveal">
-					<div class="mini-icon">◌</div>
-					<span class="tag">TOOLKIT</span>
-					<h3>Scholarship search<br />starter kit</h3>
-					<a href="#connect">Open resource <span>↗</span></a>
-				</article>
+			<div class="intro-copy reveal">
+				<p>Moving to a new country is easier when you have people to go through it with.</p>
+				<p>We're international students who have been through the same journey, and we want to help you navigate yours.</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="cta-section">
-		<div class="cta-orbit one"></div>
-		<div class="cta-orbit two"></div>
-		<div class="cta-content reveal">
-			<p class="eyebrow centered"><span></span> Your next chapter starts here <span></span></p>
-			<h2>You don't have to figure<br />it out <em>alone.</em></h2>
-			<p>Tell us where you are in your journey. We'll help you find your next clear step.</p>
-			<div class="cta-actions">
-				<a class="button gold" href="mailto:hello@kawan.org">Get free guidance <span>↗</span></a>
-				<a href="mailto:volunteer@kawan.org">Become a volunteer <span>→</span></a>
+	<section class="vision section-wrap" id="vision">
+		<div class="vision-heading reveal">
+			<p class="eyebrow"><span></span> Our direction</p>
+			<h2>Why we’re here.</h2>
+		</div>
+		<div class="vision-grid">
+			<article class="reveal">
+				<small>OUR VISION</small>
+				<h3>International students equipped to thrive.</h3>
+				<p>We envision students growing with confidence during college and carrying that foundation into the years ahead.</p>
+			</article>
+			<article class="reveal">
+				<small>OUR MISSION</small>
+				<h3>Practical support. Meaningful connection.</h3>
+				<p>We help with everyday needs, academic and career resources, mentorship, and a community where students belong.</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="support section-wrap" id="support">
+		<div class="section-heading reveal">
+			<p class="eyebrow"><span></span> Here for the real stuff</p>
+			<h2>Support for life<br /><em>beyond the classroom.</em></h2>
+		</div>
+		<div class="support-grid">
+			<article class="support-card life reveal">
+				<div class="card-icon">⌂</div><span>01</span>
+				<h3>Settle into life</h3>
+				<p>Get help navigating housing, phones, banking, and everyday life in the U.S.</p>
+			</article>
+			<article class="support-card grow reveal">
+				<div class="card-icon">↗</div><span>02</span>
+				<h3>Grow with guidance</h3>
+				<p>Connect with mentorship, academic resources, and practical career preparation.</p>
+			</article>
+			<article class="support-card belong reveal">
+				<div class="card-icon">☺</div><span>03</span>
+				<h3>Build your circle</h3>
+				<p>Meet friends, join local events, and become part of a caring community.</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="community" id="community">
+		<div class="community-photo reveal">
+			<img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1300&q=85" alt="A diverse group of students enjoying time together" />
+			<div class="photo-note">Come as you are ✦</div>
+		</div>
+		<div class="community-copy reveal">
+			<p class="eyebrow light"><span></span> More than a network</p>
+			<h2>A place to<br /><em>belong.</em></h2>
+			<p>Studying abroad is about more than earning a degree. It’s about finding connection, discovering opportunities, and building a future with people beside you.</p>
+			<a class="button gold" href="mailto:hello@kawanseattle.org">Say hello <span>↗</span></a>
+		</div>
+	</section>
+
+	<section class="final-cta">
+		<div class="cta-inner reveal">
+			<p class="eyebrow centered"><span></span> Your Seattle chapter starts here <span></span></p>
+			<h2>New city. New chapter.<br /><em>New friends.</em></h2>
+			<p>Whether you just arrived or have been here a while, there’s a place for you at KAWAN.</p>
+			<div class="actions centered-actions">
+				<a class="button gold" href="mailto:hello@kawanseattle.org">Connect with KAWAN <span>↗</span></a>
 			</div>
 		</div>
 	</section>
 </main>
 
 <footer>
-	<div class="footer-main section-wrap">
-		<div class="footer-brand">
-			<a class="brand inverse" href="#top">
-				<span class="brand-mark" aria-hidden="true">
-					<svg viewBox="0 0 44 44" fill="none">
-						<path d="M5 27.5c7-12 16-15 33-12-7.5 2.8-11 8-12.2 15.2C20 24.8 13.2 24.5 5 27.5Z" fill="currentColor" />
-						<path d="M10 32c8-5 15-5.8 24-3.2" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" />
-					</svg>
-				</span>
-				<span>Kawan</span>
-			</a>
-			<p>Guidance without borders.<br />Opportunity without limits.</p>
-			<div class="socials"><a href="#top">in</a><a href="#top">ig</a><a href="#top">yt</a></div>
-		</div>
-		<div class="footer-links">
-			<div><strong>EXPLORE</strong><a href="#about">About us</a><a href="#programs">How we help</a><a href="#stories">Student stories</a><a href="#resources">Resources</a></div>
-			<div><strong>GET INVOLVED</strong><a href="mailto:volunteer@kawan.org">Volunteer</a><a href="#connect">Partner with us</a><a href="#connect">Donate</a><a href="#connect">Careers</a></div>
-		</div>
-		<div class="newsletter">
-			<strong>STAY IN THE LOOP</strong>
-			<p>Stories, resources, and practical tips—once a month.</p>
-			{#if submitted}
-				<div class="thanks">Thank you — you're on the list!</div>
-			{:else}
-				<form onsubmit={(event) => { event.preventDefault(); subscribe(); }}>
-					<label class="sr-only" for="email">Email address</label>
-					<input id="email" type="email" required placeholder="Your email address" bind:value={email} />
-					<button aria-label="Subscribe">→</button>
-				</form>
-			{/if}
-		</div>
+	<div class="section-wrap footer-row">
+		<a class="brand inverse" href="#top"><span class="brand-mark">K</span><span>KAWAN <small>SEATTLE</small></span></a>
+		<p>Friendship, support, and community<br />for international students.</p>
+		<div class="footer-links"><a href="#about">About</a><a href="#support">Support</a><a href="mailto:hello@kawanseattle.org">Contact</a></div>
 	</div>
-	<div class="footer-bottom section-wrap">
-		<span>© 2026 KAWAN. REGISTERED NONPROFIT.</span>
-		<div><a href="#top">PRIVACY</a><a href="#top">TERMS</a><a href="#top">ACCESSIBILITY</a></div>
-	</div>
+	<div class="section-wrap footer-bottom"><span>© 2026 KAWAN Seattle</span><span>Built with care in Seattle, WA</span></div>
 </footer>
 
 <style>
-	:global(.reveal) {
-		opacity: 0;
-		transform: translateY(24px);
-		transition: opacity 0.7s ease, transform 0.7s ease;
-		transition-delay: var(--delay, 0ms);
-	}
-
-	:global(.reveal.visible) {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	.site-header {
-		position: absolute;
-		z-index: 20;
-		top: 0;
-		left: 50%;
-		display: flex;
-		width: min(1280px, calc(100% - 64px));
-		height: 96px;
-		align-items: center;
-		justify-content: space-between;
-		transform: translateX(-50%);
-	}
-
-	.brand {
-		display: inline-flex;
-		align-items: center;
-		font-family: 'Manrope', sans-serif;
-		font-size: 21px;
-		font-weight: 800;
-		letter-spacing: -0.7px;
-	}
-
-	.brand > span:last-child > span {
-		color: var(--gold);
-	}
-
-	.brand-mark {
-		display: inline-flex;
-		width: 42px;
-		height: 42px;
-		margin-right: 9px;
-		color: var(--forest);
-	}
-
-	nav {
-		display: flex;
-		gap: 37px;
-		margin-left: 90px;
-	}
-
-	nav a {
-		position: relative;
-		color: #294a43;
-		font-size: 14px;
-		font-weight: 600;
-	}
-
-	nav a::after {
-		position: absolute;
-		right: 0;
-		bottom: -7px;
-		left: 0;
-		height: 2px;
-		background: var(--gold);
-		content: '';
-		transform: scaleX(0);
-		transition: transform 0.25s ease;
-	}
-
-	nav a:hover::after {
-		transform: scaleX(1);
-	}
-
-	.button {
-		display: inline-flex;
-		min-height: 52px;
-		align-items: center;
-		justify-content: center;
-		gap: 18px;
-		padding: 0 25px;
-		border-radius: 5px;
-		color: #fff;
-		background: var(--forest);
-		box-shadow: 0 10px 25px rgba(20, 95, 82, 0.18);
-		font-size: 14px;
-		font-weight: 700;
-		transition: transform 0.2s ease, background 0.2s ease;
-	}
-
-	.button:hover {
-		background: var(--forest-dark);
-		transform: translateY(-2px);
-	}
-
-	.button.small {
-		min-height: 44px;
-		padding: 0 19px;
-	}
-
-	.button.gold {
-		color: var(--ink);
-		background: var(--gold);
-		box-shadow: none;
-	}
-
-	.button.gold:hover {
-		background: #ffc979;
-	}
-
-	.menu-button {
-		display: none;
-		width: 44px;
-		height: 44px;
-		padding: 13px 10px;
-		border-radius: 50%;
-		background: var(--forest);
-	}
-
-	.menu-button span {
-		display: block;
-		width: 100%;
-		height: 2px;
-		margin: 5px 0;
-		background: white;
-		transition: transform 0.2s ease;
-	}
-
-	.hero {
-		position: relative;
-		min-height: 785px;
-		overflow: hidden;
-		background: linear-gradient(106deg, #f8f4e9 0 54%, #e3f0eb 54%);
-	}
-
-	.hero::before {
-		position: absolute;
-		top: -120px;
-		left: -170px;
-		width: 500px;
-		height: 500px;
-		border: 1px solid rgba(20, 95, 82, 0.08);
-		border-radius: 50%;
-		content: '';
-	}
-
-	.hero-grid {
-		display: grid;
-		width: min(1280px, calc(100% - 64px));
-		min-height: 785px;
-		margin: auto;
-		grid-template-columns: 48% 52%;
-		align-items: center;
-	}
-
-	.hero-copy {
-		position: relative;
-		z-index: 2;
-		padding-top: 76px;
-	}
-
-	.eyebrow {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		margin-bottom: 26px;
-		color: var(--forest);
-		font-size: 11px;
-		font-weight: 800;
-		letter-spacing: 2.1px;
-		text-transform: uppercase;
-	}
-
-	.eyebrow > span {
-		width: 28px;
-		height: 1px;
-		background: var(--gold);
-	}
-
-	.eyebrow.light {
-		color: #b5d8ce;
-	}
-
-	h1 {
-		max-width: 690px;
-		margin-bottom: 27px;
-		color: var(--ink);
-		font-size: clamp(62px, 6.3vw, 94px);
-		font-weight: 700;
-		line-height: 0.98;
-		letter-spacing: -5.8px;
-	}
-
-	h1 em,
-	h2 em {
-		color: var(--forest);
-		font-family: Georgia, serif;
-		font-weight: 400;
-	}
-
-	.hero-lead {
-		max-width: 505px;
-		margin-bottom: 34px;
-		color: var(--muted);
-		font-size: 17px;
-		line-height: 1.75;
-	}
-
-	.hero-actions {
-		display: flex;
-		align-items: center;
-		gap: 34px;
-	}
-
-	.text-link,
-	.inline-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 11px;
-		padding-bottom: 5px;
-		border-bottom: 1px solid var(--ink);
-		color: var(--ink);
-		font-size: 13px;
-		font-weight: 700;
-	}
-
-	.trust-row {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-		margin-top: 43px;
-	}
-
-	.avatar-stack {
-		display: flex;
-	}
-
-	.avatar-stack img {
-		width: 35px;
-		height: 35px;
-		margin-left: -9px;
-		border: 2px solid #f8f4e9;
-		border-radius: 50%;
-		object-fit: cover;
-	}
-
-	.avatar-stack img:first-child {
-		margin-left: 0;
-	}
-
-	.trust-row p {
-		margin: 0;
-		color: #6c7a77;
-		font-size: 11px;
-		line-height: 1.5;
-	}
-
-	.trust-row strong {
-		color: var(--ink);
-	}
-
-	.hero-visual {
-		position: relative;
-		height: 100%;
-		min-height: 700px;
-	}
-
-	.sun-shape {
-		position: absolute;
-		top: 112px;
-		right: 2%;
-		width: 84%;
-		aspect-ratio: 1;
-		border-radius: 50%;
-		background: var(--gold);
-	}
-
-	.sun-shape::before,
-	.sun-shape::after {
-		position: absolute;
-		border: 1px solid rgba(20, 95, 82, 0.16);
-		border-radius: 50%;
-		content: '';
-	}
-
-	.sun-shape::before {
-		inset: -42px;
-	}
-
-	.sun-shape::after {
-		inset: -85px;
-	}
-
-	.photo-frame {
-		position: absolute;
-		top: 146px;
-		right: 5.5%;
-		width: 75%;
-		height: 542px;
-		overflow: hidden;
-		border: 9px solid rgba(255,255,255,.78);
-		border-radius: 48% 48% 5px 5px;
-		box-shadow: var(--shadow);
-		transform: rotate(1.8deg);
-	}
-
-	.photo-frame img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 53% center;
-	}
-
-	.route-card {
-		position: absolute;
-		z-index: 2;
-		top: 215px;
-		left: 3%;
-		display: flex;
-		width: 198px;
-		align-items: center;
-		gap: 12px;
-		padding: 13px 16px;
-		border: 1px solid rgba(255, 255, 255, 0.7);
-		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.91);
-		box-shadow: 0 17px 45px rgba(20, 59, 52, 0.15);
-		backdrop-filter: blur(8px);
-	}
-
-	.route-icon {
-		display: grid;
-		width: 38px;
-		height: 38px;
-		border-radius: 50%;
-		color: var(--forest);
-		background: var(--mint);
-		place-items: center;
-	}
-
-	.route-icon svg {
-		width: 20px;
-	}
-
-	.route-card span,
-	.route-card strong {
-		display: block;
-	}
-
-	.route-card span {
-		color: #788883;
-		font-size: 10px;
-	}
-
-	.route-card strong {
-		margin-top: 3px;
-		font-family: 'Manrope', sans-serif;
-		font-size: 14px;
-	}
-
-	.destination-chip {
-		position: absolute;
-		z-index: 2;
-		right: 1%;
-		bottom: 67px;
-		padding: 12px 18px;
-		border-radius: 100px;
-		color: white;
-		background: var(--forest);
-		font-size: 10px;
-		font-weight: 700;
-		letter-spacing: 0.6px;
-		text-transform: uppercase;
-		transform: rotate(-5deg);
-	}
-
-	.destination-chip span {
-		padding: 0 5px;
-		color: var(--gold);
-	}
-
-	.scroll-note {
-		position: absolute;
-		bottom: 0;
-		left: 38px;
-		display: flex;
-		align-items: center;
-		gap: 14px;
-		color: #71807d;
-		font-size: 8px;
-		font-weight: 700;
-		letter-spacing: 1.7px;
-		transform: rotate(-90deg);
-		transform-origin: left center;
-	}
-
-	.scroll-note span {
-		width: 44px;
-		height: 1px;
-		background: #9daaa6;
-	}
-
-	.section-wrap {
-		width: min(1160px, calc(100% - 64px));
-		margin-inline: auto;
-	}
-
-	.mission {
-		padding: 115px 0 0;
-		color: white;
-		background: var(--forest);
-	}
-
-	.mission-grid {
-		display: grid;
-		grid-template-columns: 1.2fr 0.8fr;
-		gap: 130px;
-		align-items: start;
-	}
-
-	h2 {
-		margin-bottom: 0;
-		color: var(--ink);
-		font-size: clamp(42px, 4.4vw, 64px);
-		font-weight: 650;
-		line-height: 1.09;
-		letter-spacing: -3px;
-	}
-
-	.mission h2,
-	.mentor-copy h2,
-	.cta-section h2 {
-		color: white;
-	}
-
-	.mission h2 em,
-	.mentor-copy h2 em,
-	.cta-section h2 em {
-		color: var(--gold);
-	}
-
-	.mission-copy {
-		padding-top: 43px;
-	}
-
-	.mission-copy p {
-		color: #cee2dc;
-		font-size: 15px;
-		line-height: 1.75;
-	}
-
-	.mission-copy .inline-link {
-		margin-top: 13px;
-		border-color: #9ec4ba;
-		color: white;
-	}
-
-	.impact-strip {
-		display: grid;
-		margin-top: 88px;
-		border-top: 1px solid rgba(255,255,255,.14);
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.impact-strip div {
-		padding: 35px 20px 38px;
-		border-right: 1px solid rgba(255,255,255,.14);
-		text-align: center;
-	}
-
-	.impact-strip div:last-child {
-		border-right: 0;
-	}
-
-	.impact-strip strong,
-	.impact-strip small {
-		display: block;
-	}
-
-	.impact-strip strong {
-		font-family: 'Manrope', sans-serif;
-		font-size: 41px;
-		letter-spacing: -1.5px;
-	}
-
-	.impact-strip strong span {
-		color: var(--gold);
-	}
-
-	.impact-strip small {
-		margin-top: 7px;
-		color: #a8cec4;
-		font-size: 8px;
-		font-weight: 700;
-		letter-spacing: 1.6px;
-	}
-
-	.programs {
-		padding-block: 116px 128px;
-	}
-
-	.programs-header {
-		display: grid;
-		margin-bottom: 57px;
-		grid-template-columns: 1fr 410px;
-		gap: 80px;
-		align-items: end;
-	}
-
-	.programs-header > p {
-		margin-bottom: 8px;
-		color: var(--muted);
-		font-size: 14px;
-		line-height: 1.75;
-	}
-
-	.program-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 17px;
-	}
-
-	.program-card {
-		position: relative;
-		min-height: 368px;
-		padding: 27px 30px;
-		overflow: hidden;
-		border-radius: 7px;
-	}
-
-	.program-card::after {
-		position: absolute;
-		right: -42px;
-		bottom: -68px;
-		width: 170px;
-		height: 170px;
-		border: 1px solid currentColor;
-		border-radius: 50%;
-		content: '';
-		opacity: .12;
-	}
-
-	.program-card.sage { background: #e0efe7; }
-	.program-card.sand { background: #f5e9cf; }
-	.program-card.coral { background: #f7ded3; }
-
-	.card-top {
-		display: flex;
-		align-items: start;
-		justify-content: space-between;
-		color: var(--forest);
-	}
-
-	.card-top > span {
-		font-family: 'Manrope', sans-serif;
-		font-size: 11px;
-		font-weight: 700;
-	}
-
-	.program-icon {
-		display: grid;
-		width: 68px;
-		height: 68px;
-		border-radius: 50%;
-		background: rgba(255,255,255,.68);
-		place-items: center;
-	}
-
-	.program-icon svg { width: 38px; }
-
-	.program-card h3 {
-		margin: 42px 0 13px;
-		font-size: 24px;
-		letter-spacing: -1px;
-	}
-
-	.program-card p {
-		max-width: 290px;
-		color: #5b6f6a;
-		font-size: 13px;
-		line-height: 1.72;
-	}
-
-	.program-card a {
-		position: absolute;
-		bottom: 31px;
-		display: flex;
-		gap: 8px;
-		border-bottom: 1px solid;
-		font-size: 12px;
-		font-weight: 700;
-	}
-
-	.mentor-band {
-		display: grid;
-		min-height: 640px;
-		grid-template-columns: 1fr 1fr;
-		background: var(--forest-dark);
-	}
-
-	.mentor-image {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.mentor-image::after {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(90deg, transparent 75%, var(--forest-dark));
-		content: '';
-	}
-
-	.mentor-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.availability {
-		position: absolute;
-		z-index: 2;
-		right: 36px;
-		bottom: 42px;
-		padding: 13px 18px;
-		border-radius: 4px;
-		color: #183e37;
-		background: white;
-		font-size: 10px;
-		font-weight: 700;
-	}
-
-	.availability span {
-		display: inline-block;
-		width: 7px;
-		height: 7px;
-		margin-right: 7px;
-		border-radius: 50%;
-		background: #45ad72;
-		box-shadow: 0 0 0 4px rgba(69,173,114,.15);
-	}
-
-	.mentor-copy {
-		display: flex;
-		max-width: 650px;
-		padding: 95px 90px;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.mentor-copy h2 {
-		margin-bottom: 25px;
-	}
-
-	.mentor-copy > p {
-		color: #bfd7d1;
-		font-size: 14px;
-		line-height: 1.8;
-	}
-
-	.mentor-points {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 22px;
-		margin: 14px 0 34px;
-		color: white;
-		font-size: 11px;
-	}
-
-	.mentor-points span::first-letter {
-		color: var(--gold);
-	}
-
-	.mentor-copy .button {
-		align-self: flex-start;
-	}
-
-	.stories {
-		display: grid;
-		padding-block: 120px;
-		grid-template-columns: 0.85fr 1.15fr;
-		gap: 90px;
-		align-items: center;
-	}
-
-	.story-controls {
-		display: flex;
-		gap: 10px;
-		margin-top: 44px;
-	}
-
-	.story-controls button {
-		width: 45px;
-		height: 45px;
-		border: 1px solid var(--line);
-		border-radius: 50%;
-		color: var(--forest);
-		background: transparent;
-		font-size: 18px;
-		transition: background .2s ease, color .2s ease;
-	}
-
-	.story-controls button:hover {
-		color: white;
-		background: var(--forest);
-	}
-
-	.story-card {
-		position: relative;
-		min-height: 390px;
-		padding: 63px 67px 38px;
-		border-radius: 7px;
-		background: var(--cream);
-	}
-
-	.quote-mark {
-		position: absolute;
-		top: -37px;
-		right: 44px;
-		color: var(--gold);
-		font-family: Georgia, serif;
-		font-size: 130px;
-		line-height: 1;
-	}
-
-	blockquote {
-		margin: 0 0 42px;
-		color: var(--ink);
-		font-family: Georgia, serif;
-		font-size: 25px;
-		font-style: italic;
-		line-height: 1.55;
-	}
-
-	.student {
-		display: flex;
-		align-items: center;
-		gap: 14px;
-	}
-
-	.student img {
-		width: 51px;
-		height: 51px;
-		border-radius: 50%;
-		object-fit: cover;
-	}
-
-	.student strong,
-	.student span {
-		display: block;
-	}
-
-	.student strong { font-size: 12px; }
-	.student span { margin-top: 4px; color: var(--muted); font-size: 10px; }
-
-	.story-progress {
-		position: absolute;
-		right: 37px;
-		bottom: 48px;
-		display: flex;
-		gap: 6px;
-	}
-
-	.story-progress button {
-		width: 17px;
-		height: 3px;
-		padding: 0;
-		background: #cad1ca;
-	}
-
-	.story-progress button.active {
-		width: 35px;
-		background: var(--forest);
-	}
-
-	.resources {
-		padding: 115px 0 125px;
-		background: #edf4f0;
-	}
-
-	.resource-heading {
-		display: flex;
-		margin-bottom: 55px;
-		align-items: end;
-		justify-content: space-between;
-	}
-
-	.resource-grid {
-		display: grid;
-		grid-template-columns: 2.1fr 1fr 1fr;
-		gap: 17px;
-	}
-
-	.feature-resource {
-		display: grid;
-		min-height: 370px;
-		overflow: hidden;
-		border-radius: 7px;
-		background: white;
-		grid-template-columns: 43% 57%;
-	}
-
-	.feature-art {
-		position: relative;
-		display: grid;
-		overflow: hidden;
-		background: var(--gold);
-		place-items: center;
-	}
-
-	.feature-art::before,
-	.feature-art::after {
-		position: absolute;
-		border: 1px solid rgba(20,59,52,.21);
-		border-radius: 50%;
-		content: '';
-	}
-
-	.feature-art::before { width: 330px; height: 330px; }
-	.feature-art::after { width: 240px; height: 240px; }
-
-	.art-stamp {
-		position: absolute;
-		z-index: 2;
-		top: 25px;
-		right: 22px;
-		display: grid;
-		width: 48px;
-		height: 48px;
-		border-radius: 50%;
-		color: white;
-		background: var(--forest);
-		font-size: 7px;
-		font-weight: 700;
-		line-height: 1.4;
-		text-align: center;
-		place-items: center;
-		transform: rotate(8deg);
-	}
-
-	.book {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		width: 166px;
-		height: 225px;
-		padding: 24px 20px;
-		border-left: 6px solid #dfece6;
-		color: white;
-		background: var(--forest);
-		box-shadow: 16px 16px 28px rgba(20,59,52,.2);
-		flex-direction: column;
-		transform: rotate(-7deg);
-	}
-
-	.book small { font-size: 6px; letter-spacing: 1px; }
-	.book strong { margin-top: 37px; font-family: Georgia, serif; font-size: 25px; font-style: italic; font-weight: 400; line-height: 1.03; }
-	.book span { margin-top: auto; color: var(--gold); font-size: 6px; font-weight: 700; letter-spacing: 1px; }
-
-	.resource-content {
-		display: flex;
-		padding: 54px 40px 45px;
-		flex-direction: column;
-	}
-
-	.tag {
-		color: var(--forest);
-		font-size: 8px;
-		font-weight: 800;
-		letter-spacing: 1.5px;
-	}
-
-	.resource-content h3,
-	.mini-resource h3 {
-		margin: 27px 0 14px;
-		font-size: 21px;
-		line-height: 1.25;
-		letter-spacing: -.6px;
-	}
-
-	.resource-content p {
-		color: var(--muted);
-		font-size: 12px;
-		line-height: 1.75;
-	}
-
-	.resource-content a,
-	.mini-resource a {
-		display: flex;
-		margin-top: auto;
-		align-items: center;
-		justify-content: space-between;
-		padding-top: 16px;
-		border-top: 1px solid var(--line);
-		color: var(--forest);
-		font-size: 11px;
-		font-weight: 700;
-	}
-
-	.mini-resource {
-		display: flex;
-		min-height: 370px;
-		padding: 30px 27px;
-		border-radius: 7px;
-		background: #f7e6c7;
-		flex-direction: column;
-	}
-
-	.mini-resource.green { background: #cfe6da; }
-
-	.mini-icon {
-		display: grid;
-		width: 57px;
-		height: 57px;
-		margin-bottom: 34px;
-		border-radius: 50%;
-		color: var(--forest);
-		background: rgba(255,255,255,.62);
-		font-family: Georgia, serif;
-		font-size: 29px;
-		place-items: center;
-	}
-
-	.mini-resource h3 {
-		margin-top: 20px;
-	}
-
-	.cta-section {
-		position: relative;
-		display: grid;
-		min-height: 530px;
-		overflow: hidden;
-		color: white;
-		background: var(--forest);
-		text-align: center;
-		place-items: center;
-	}
-
-	.cta-orbit {
-		position: absolute;
-		border: 1px solid rgba(255,255,255,.1);
-		border-radius: 50%;
-	}
-
-	.cta-orbit.one { width: 670px; height: 670px; }
-	.cta-orbit.two { width: 950px; height: 950px; }
-
-	.cta-content {
-		position: relative;
-		z-index: 1;
-	}
-
-	.eyebrow.centered { justify-content: center; color: #c7ddd7; }
-	.eyebrow.centered span:last-child { display: block; }
-
-	.cta-section h2 {
-		font-size: clamp(45px, 5vw, 68px);
-	}
-
-	.cta-section p:not(.eyebrow) {
-		max-width: 460px;
-		margin: 25px auto 32px;
-		color: #c5dcd6;
-		font-size: 14px;
-		line-height: 1.7;
-	}
-
-	.cta-actions {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 32px;
-	}
-
-	.cta-actions > a:last-child {
-		padding-bottom: 5px;
-		border-bottom: 1px solid rgba(255,255,255,.5);
-		font-size: 12px;
-		font-weight: 700;
-	}
-
-	footer {
-		color: #afc8c1;
-		background: #0d352e;
-	}
-
-	.footer-main {
-		display: grid;
-		padding-block: 70px;
-		grid-template-columns: 1.1fr 1.3fr .9fr;
-		gap: 80px;
-	}
-
-	.brand.inverse { color: white; }
-	.brand.inverse .brand-mark { color: var(--gold); }
-
-	.footer-brand p {
-		margin: 23px 0;
-		font-family: Georgia, serif;
-		font-size: 16px;
-		font-style: italic;
-		line-height: 1.55;
-	}
-
-	.socials {
-		display: flex;
-		gap: 8px;
-	}
-
-	.socials a {
-		display: grid;
-		width: 30px;
-		height: 30px;
-		border: 1px solid rgba(255,255,255,.2);
-		border-radius: 50%;
-		color: white;
-		font-size: 9px;
-		font-weight: 700;
-		place-items: center;
-	}
-
-	.footer-links {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 45px;
-	}
-
-	.footer-links div {
-		display: flex;
-		flex-direction: column;
-		gap: 13px;
-	}
-
-	.footer-links strong,
-	.newsletter > strong {
-		margin-bottom: 7px;
-		color: var(--gold);
-		font-size: 8px;
-		letter-spacing: 1.4px;
-	}
-
-	.footer-links a {
-		color: #d6e3df;
-		font-size: 12px;
-	}
-
-	.newsletter p {
-		color: #b7ccc6;
-		font-size: 11px;
-		line-height: 1.6;
-	}
-
-	.newsletter form {
-		display: flex;
-		margin-top: 20px;
-		border-bottom: 1px solid rgba(255,255,255,.35);
-	}
-
-	.newsletter input {
-		width: 100%;
-		padding: 12px 0;
-		border: 0;
-		outline: 0;
-		color: white;
-		background: transparent;
-		font-size: 11px;
-	}
-
-	.newsletter input::placeholder { color: #8aaaa2; }
-	.newsletter button { color: var(--gold); background: transparent; }
-	.thanks { margin-top: 24px; color: var(--gold); font-size: 12px; }
-
-	.footer-bottom {
-		display: flex;
-		padding-block: 24px;
-		border-top: 1px solid rgba(255,255,255,.1);
-		justify-content: space-between;
-		font-size: 7px;
-		font-weight: 700;
-		letter-spacing: 1px;
-	}
-
-	.footer-bottom div { display: flex; gap: 26px; }
-
-	.sr-only {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
-	}
-
-	@media (max-width: 1050px) {
-		.site-header,
-		.hero-grid { width: min(100% - 40px, 920px); }
-		.site-header nav { gap: 22px; margin-left: 20px; }
-		.hero-grid { grid-template-columns: 50% 50%; }
-		h1 { font-size: clamp(56px, 7.5vw, 76px); }
-		.photo-frame { right: 0; width: 88%; }
-		.sun-shape { right: -7%; width: 100%; }
-		.section-wrap { width: min(100% - 48px, 920px); }
-		.mentor-copy { padding: 70px 50px; }
-		.resource-grid { grid-template-columns: 1.6fr 1fr; }
-		.mini-resource.green { grid-column: 2; }
-		.feature-resource { grid-row: span 2; }
-		.footer-main { gap: 40px; }
-	}
-
-	@media (max-width: 780px) {
-		.site-header {
-			position: absolute;
-			height: 78px;
-		}
-
-		.desktop-cta { display: none; }
-		.menu-button { display: block; z-index: 3; }
-
-		nav {
-			position: fixed;
-			inset: 0;
-			display: flex;
-			margin: 0;
-			padding: 120px 32px;
-			visibility: hidden;
-			background: #f8f4e9;
-			flex-direction: column;
-			gap: 28px;
-			opacity: 0;
-			transition: opacity .2s ease, visibility .2s ease;
-		}
-
-		nav.open { visibility: visible; opacity: 1; }
-		nav a { font-family: 'Manrope', sans-serif; font-size: 27px; }
-
-		.menu-button.active span:first-child { transform: translateY(3.5px) rotate(45deg); }
-		.menu-button.active span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
-
-		.hero { min-height: auto; background: linear-gradient(180deg, #f8f4e9 0 58%, #e3f0eb 58%); }
-		.hero-grid { display: block; width: calc(100% - 40px); padding-top: 120px; }
-		.hero-copy { padding-top: 30px; }
-		h1 { font-size: clamp(53px, 16vw, 76px); letter-spacing: -4px; }
-		.hero-lead { font-size: 15px; }
-		.hero-visual { min-height: 570px; margin-top: 30px; }
-		.photo-frame { top: 55px; right: 5%; width: 84%; height: 450px; }
-		.sun-shape { top: 20px; right: 0; width: 92%; }
-		.route-card { top: 105px; left: 0; }
-		.destination-chip { bottom: 35px; }
-		.scroll-note { display: none; }
-
-		.section-wrap { width: calc(100% - 40px); }
-		.mission { padding-top: 80px; }
-		.mission-grid,
-		.programs-header,
-		.stories { grid-template-columns: 1fr; gap: 40px; }
-		.mission-copy { padding-top: 0; }
-		.impact-strip { grid-template-columns: 1fr 1fr; margin-top: 70px; }
-		.impact-strip div:nth-child(2) { border-right: 0; }
-		.impact-strip div:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
-
-		h2 { font-size: clamp(39px, 12vw, 58px); letter-spacing: -2.5px; }
-		.programs { padding-block: 80px; }
-		.programs-header { margin-bottom: 36px; }
-		.program-grid { grid-template-columns: 1fr; }
-		.program-card { min-height: 330px; }
-
-		.mentor-band { grid-template-columns: 1fr; }
-		.mentor-image { min-height: 430px; }
-		.mentor-image::after { background: linear-gradient(180deg, transparent 80%, var(--forest-dark)); }
-		.mentor-copy { padding: 70px 30px 80px; }
-
-		.stories { padding-block: 80px; }
-		.story-controls { margin-top: 25px; }
-		.story-card { min-height: 420px; padding: 55px 35px 35px; }
-		blockquote { font-size: 22px; }
-
-		.resources { padding-block: 80px; }
-		.resource-heading { align-items: start; flex-direction: column; gap: 30px; }
-		.resource-grid { grid-template-columns: 1fr; }
-		.feature-resource { grid-row: auto; grid-template-columns: 1fr; }
-		.feature-art { min-height: 340px; }
-		.mini-resource,
-		.mini-resource.green { min-height: 300px; grid-column: auto; }
-
-		.cta-section { min-height: 570px; padding-inline: 20px; }
-		.cta-actions { flex-direction: column; }
-
-		.footer-main { grid-template-columns: 1fr; gap: 50px; }
-		.footer-bottom { flex-direction: column; gap: 15px; line-height: 1.6; }
-	}
-
-	@media (max-width: 480px) {
-		.hero-actions { align-items: flex-start; flex-direction: column; gap: 22px; }
-		.hero-visual { min-height: 485px; }
-		.photo-frame { height: 385px; }
-		.route-card { top: 80px; width: 175px; }
-		.destination-chip { right: 0; bottom: 20px; }
-		.mentor-image { min-height: 350px; }
-		.availability { right: 16px; bottom: 25px; }
-		.mentor-points { flex-direction: column; gap: 12px; }
-		.story-card { min-height: 460px; }
-		.story-progress { right: 28px; bottom: 30px; }
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		:global(*) {
-			scroll-behavior: auto !important;
-			transition-duration: 0.01ms !important;
-		}
-	}
+	:global(.reveal){opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+	.site-header{position:absolute;z-index:20;top:0;left:50%;display:flex;width:min(1240px,calc(100% - 64px));height:96px;align-items:center;justify-content:space-between;transform:translateX(-50%)}
+	.brand{display:flex;align-items:center;gap:10px;font:800 20px/1 'Manrope',sans-serif;letter-spacing:-.5px}.brand small{display:block;margin-top:4px;color:var(--forest);font-size:8px;letter-spacing:2.6px}.brand-mark{display:grid;width:42px;height:42px;place-items:center;border-radius:50% 50% 46% 54%;color:white;background:var(--forest);font-size:20px}.brand.inverse small{color:var(--gold)}
+	nav{display:flex;gap:36px;margin-left:80px}nav a{font-size:14px;font-weight:600}.button{display:inline-flex;min-height:52px;align-items:center;justify-content:center;gap:18px;padding:0 25px;border-radius:7px;color:white;background:var(--forest);box-shadow:0 10px 25px #145f522a;font-size:14px;font-weight:700;transition:.2s}.button:hover{background:var(--forest-dark);transform:translateY(-2px)}.button.gold{color:var(--ink);background:var(--gold);box-shadow:none}.header-cta{min-height:44px}.menu{display:none}
+	.hero{position:relative;display:grid;min-height:780px;grid-template-columns:minmax(340px,540px) minmax(460px,620px);align-items:center;justify-content:center;gap:58px;overflow:hidden;padding:115px 52px 50px;background:linear-gradient(105deg,#f9f4e8 0 56%,#dceee7 56%)}.hero:before{position:absolute;top:-210px;left:-140px;width:520px;height:520px;border:1px solid #145f5218;border-radius:50%;content:''}.hero-copy{position:relative;z-index:2}.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px;color:var(--forest);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.eyebrow span{width:26px;height:2px;background:var(--gold)}.eyebrow.light{color:#dcefe8}.hero h1,.section-heading h2,.intro h2,.community h2,.final-cta h2{margin:0;font:700 clamp(48px,5.4vw,76px)/1.03 'Manrope',sans-serif;letter-spacing:-4px}.hero h1 em,h2 em{color:var(--forest);font-family:Georgia,serif;font-weight:400}.lead{max-width:500px;margin:30px 0;color:#4f6862;font-size:19px;line-height:1.65}.actions{display:flex;align-items:center;gap:27px}.text-link,.volunteer-link{border-bottom:1px solid #9faaa7;padding:10px 0;font-size:14px;font-weight:700}
+	.hero-art{position:relative;height:540px}.photo-main{position:absolute;top:25px;right:0;width:79%;height:440px;overflow:hidden;border-radius:180px 180px 20px 20px;box-shadow:0 30px 60px #194e4230}.photo-main img,.photo-small img,.community-photo img{width:100%;height:100%;object-fit:cover}.photo-main img{object-position:center}.photo-small{position:absolute;bottom:0;left:0;width:190px;height:215px;overflow:hidden;border:9px solid #dceee7;border-radius:100px 100px 12px 12px}.hello-card{position:absolute;top:0;left:3%;display:flex;width:150px;height:150px;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;color:var(--ink);background:var(--gold);box-shadow:0 15px 35px #8b67262e;transform:rotate(-8deg)}.hello-card span{font:italic 28px Georgia}.hello-card strong{margin-top:5px;font-size:12px}.hello-card small{margin-top:4px;font-size:8px;letter-spacing:2px}.doodle{position:absolute;right:-18px;bottom:12px;width:150px;color:var(--forest)}.location-pill{position:absolute;right:8%;bottom:28px;padding:11px 16px;border-radius:100px;background:#fff;font-size:11px;font-weight:700;letter-spacing:1px}
+	.section-wrap{width:min(1160px,calc(100% - 64px));margin:auto}.intro{padding:110px 0;color:white;background:var(--forest)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}.intro h2{font-size:clamp(45px,5vw,68px)}.intro h2 em{color:var(--gold)}.intro-copy{padding-top:8px}.intro-copy p{max-width:530px;margin-bottom:22px;font-size:18px;line-height:1.75}.intro-copy p:first-child{font-weight:700}
+	.support{padding:120px 0}.section-heading{text-align:center}.section-heading .eyebrow{justify-content:center}.section-heading h2{font-size:clamp(44px,5vw,66px)}.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:62px}.support-card{position:relative;min-height:340px;padding:35px;border-radius:14px}.support-card.life{background:#e1efe9}.support-card.grow{background:#f5ead6}.support-card.belong{background:#f2d3c8}.support-card>span{position:absolute;top:35px;right:35px;font-size:11px;font-weight:800}.card-icon{display:grid;width:65px;height:65px;place-items:center;border:1px solid #18352f55;border-radius:50%;font:28px Georgia}.support-card h3{margin:70px 0 14px;font-size:25px;letter-spacing:-1px}.support-card p{color:#536963;line-height:1.7}
+	.community{display:grid;grid-template-columns:1.12fr .88fr;min-height:650px;background:#123f37}.community-photo{position:relative;min-height:650px}.community-photo img{object-position:center}.photo-note{position:absolute;right:30px;bottom:28px;padding:14px 18px;border-radius:7px;background:#fff;font-family:Georgia,serif;font-style:italic}.community-copy{display:flex;max-width:520px;flex-direction:column;align-items:flex-start;justify-content:center;padding:70px;color:#fff}.community-copy h2{font-size:clamp(50px,5vw,72px)}.community-copy h2 em{color:var(--gold)}.community-copy>p:not(.eyebrow){margin:28px 0 32px;color:#d5e4df;font-size:17px;line-height:1.75}
+	.final-cta{position:relative;overflow:hidden;padding:125px 30px;text-align:center;background:#e7f2ee}.final-cta:before,.final-cta:after{position:absolute;width:400px;height:400px;border:1px solid #145f521a;border-radius:50%;content:''}.final-cta:before{top:-240px;left:-80px}.final-cta:after{right:-100px;bottom:-280px}.cta-inner{position:relative;z-index:1}.eyebrow.centered{justify-content:center}.final-cta h2{font-size:clamp(46px,5.5vw,72px)}.final-cta>div>p:not(.eyebrow){max-width:560px;margin:25px auto 33px;color:var(--muted);font-size:17px;line-height:1.6}.centered-actions{justify-content:center}
+	footer{padding:70px 0 25px;color:#fff;background:#0d302a}.footer-row{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start}.footer-row p{color:#b9cdc7;line-height:1.6}.footer-links{display:flex;justify-content:flex-end;gap:25px;font-size:14px}.footer-bottom{display:flex;justify-content:space-between;margin-top:55px;padding-top:22px;border-top:1px solid #ffffff1f;color:#8fa8a1;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+	@media(max-width:800px){.site-header{width:calc(100% - 36px);height:78px}.header-cta{display:none}.menu{display:block;width:43px;height:43px;padding:12px;border-radius:50%;background:var(--forest)}.menu span{display:block;height:2px;margin:5px 0;background:#fff}nav{position:absolute;top:68px;right:0;display:none;width:210px;flex-direction:column;gap:0;margin:0;padding:12px;border-radius:10px;background:#fff;box-shadow:var(--shadow)}nav.open{display:flex}nav a{padding:13px}.hero{min-height:auto;grid-template-columns:1fr;gap:25px;padding:125px 24px 70px;background:linear-gradient(160deg,#f9f4e8 0 58%,#dceee7 58%)}.hero h1{font-size:49px;letter-spacing:-3px}.lead{font-size:17px}.hero-art{height:410px}.photo-main{height:350px}.photo-small{width:135px;height:155px}.hello-card{width:110px;height:110px}.hello-card span{font-size:22px}.doodle{display:none}.location-pill{display:none}.section-wrap{width:calc(100% - 40px)}.intro,.support{padding:80px 0}.intro-grid{grid-template-columns:1fr;gap:35px}.intro h2,.section-heading h2{letter-spacing:-2.5px}.support-grid{grid-template-columns:1fr;margin-top:42px}.support-card{min-height:285px}.community{grid-template-columns:1fr}.community-photo{min-height:380px}.community-copy{padding:70px 25px}.final-cta{padding:90px 20px}.final-cta h2{letter-spacing:-2.5px}.actions{flex-wrap:wrap}.centered-actions{flex-direction:column}.footer-row{grid-template-columns:1fr;gap:32px}.footer-links{justify-content:flex-start}.footer-bottom{gap:20px}.footer-bottom span:last-child{text-align:right}}
+	@media(prefers-reduced-motion:reduce){:global(html){scroll-behavior:auto}:global(.reveal){opacity:1;transform:none;transition:none}}
+
+	/* Warm KAWAN theme */
+	.brand{font-family:'DM Sans',sans-serif;font-weight:700}.brand.inverse small{color:#ead7c7}
+	.button{box-shadow:0 10px 25px #b85c4226}
+	.hero{background:linear-gradient(105deg,var(--cream) 0 56%,#e5e8e1 56%)}
+	.hero:before{border-color:#b85c421c}
+	.eyebrow{font-weight:700;letter-spacing:1.7px}.eyebrow.light{color:#f5e9df}
+	.hero h1,.section-heading h2,.intro h2,.community h2,.final-cta h2{font-family:'Newsreader',serif;font-weight:500;line-height:1.02;letter-spacing:-2.2px}
+	.hero h1 em,h2 em{font-family:inherit}.lead,.support-card p{color:var(--muted)}
+	.text-link,.volunteer-link{border-color:#aaa69f}
+	.photo-main{box-shadow:0 30px 60px #57483e24}.photo-small{border-color:#e5e8e1}
+	.hello-card{background:#e8c7b7}.hello-card span,.photo-note{font-family:'Newsreader',serif}.doodle{color:var(--sage)}.location-pill,.photo-note{background:#fffdfa}
+	.intro{color:#fffaf5}.intro h2 em{color:#f1d6c8}
+	.support-card.life{background:#e5e8e1}.support-card.grow{background:var(--oat)}.support-card.belong{background:#f1ddd4}
+	.card-icon{border-color:#2f312e55;font-family:'Newsreader',serif}.support-card h3{font-size:28px;letter-spacing:-.5px}
+	.community{background:var(--sage-dark)}.community-copy h2 em{color:#efd3c5}.community-copy>p:not(.eyebrow){color:#eef0eb}
+	.final-cta{background:var(--oat)}.final-cta:before,.final-cta:after{border-color:#b85c421a}
+	footer{background:#343733}.footer-row p{color:#d0d0ca}.footer-bottom{color:#aeb0aa}
+	@media(max-width:800px){nav{background:#fffdfa}.hero{background:linear-gradient(160deg,var(--cream) 0 58%,#e5e8e1 58%)}.hero h1{letter-spacing:-2px}}
+
+	/* Minimal hero image */
+	.hero-art{height:500px}
+	.photo-main{inset:0;width:100%;height:100%;border-radius:24px;box-shadow:0 18px 45px #57483e1f}
+	.photo-main img{object-position:center}
+	@media(max-width:800px){.hero-art{height:360px}.photo-main{height:100%;border-radius:18px}}
+
+	/* Typography-first hero */
+	.hero{display:flex;min-height:720px;align-items:center;justify-content:center;padding:130px 24px 90px;text-align:center;background:var(--cream)}
+	.hero:before{top:50%;left:50%;width:540px;height:540px;border-color:#b85c4212;transform:translate(-50%,-50%)}
+	.hero-copy{display:flex;max-width:850px;flex-direction:column;align-items:center}
+	.hero h1{font-size:clamp(58px,8vw,104px);line-height:.94;letter-spacing:-3.5px}
+	.lead{max-width:570px;margin:30px auto;font-size:18px}
+	@media(max-width:800px){.hero{min-height:650px;padding:120px 22px 75px;background:var(--cream)}.hero:before{width:390px;height:390px}.hero h1{font-size:clamp(52px,15vw,72px);letter-spacing:-2.5px}.hero .actions{justify-content:center}}
+
+	/* Welcoming neutral palette */
+	.brand.inverse small{color:#d9e1e4}
+	.button{box-shadow:0 10px 25px #63798522}
+	.hero:before,.final-cta:before,.final-cta:after{border-color:#63798518}
+	.eyebrow.light{color:#e8edef}
+	.intro{color:#fff}.intro h2 em{color:#dce5e8}
+	.support-card.life{background:#e3eaed}.support-card.grow{background:#ece8e1}.support-card.belong{background:#f1efeb}
+	.community{background:#56615d}.community-copy h2 em{color:#dfe7e3}
+	footer{background:#30322f}
+
+	/* Fresh, contemporary student palette */
+	.brand.inverse small{color:#b9c3ff}
+	.hero h1,.section-heading h2,.intro h2,.community h2,.final-cta h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;line-height:1;letter-spacing:-4px}
+	.hero h1 em,h2 em{font-family:inherit;font-style:normal;font-weight:700}
+	.hero:before,.final-cta:before,.final-cta:after{border-color:#5965d81a}
+	.button{border-radius:10px;box-shadow:0 10px 25px #5965d824}
+	.eyebrow.light{color:#dfe3ff}
+	.intro{background:#5965d8}.intro h2 em{color:#dfe3ff}
+	.support-card{border:1px solid #e7e8ed}.support-card.life{background:#e8edff}.support-card.grow{background:#f1f3f8}.support-card.belong{background:#edf4f7}
+	.community{background:#293a51}.community-copy h2 em{color:#b8ceef}
+	.final-cta{background:#f0f1f5}
+	footer{background:#20222a}
+	@media(max-width:800px){.hero h1{letter-spacing:-3px}}
+
+	/* Calm, low-saturation finish */
+	.brand.inverse small{color:#d4d9dc}
+	.hero:before,.final-cta:before,.final-cta:after{border-color:#65717d18}
+	.button{box-shadow:0 10px 25px #505b661c}
+	.eyebrow.light{color:#e2e6e8}
+	.intro{background:#65717d}.intro h2 em{color:#e5e9eb}
+	.support-card{border-color:#e5e7e8}.support-card.life{background:#e9edef}.support-card.grow{background:#f1f1ef}.support-card.belong{background:#edf0ef}
+	.community{background:#46515b}.community-copy h2 em{color:#dce3e6}
+	.final-cta{background:#f0f1f1}
+	footer{background:#292d32}
+
+	/* Warm Modern palette */
+	.brand.inverse small{color:#d8c4a8}
+	.hero{background:#faf8f5}.hero:before,.final-cta:before,.final-cta:after{border-color:#c9785c1f}
+	.button{box-shadow:0 10px 25px #365c4a24}.button.gold{color:#2d3748;background:#d8c4a8}
+	.eyebrow span{background:#c9785c}.eyebrow.light{color:#f2e9df}
+	.intro{background:#365c4a}.intro h2 em{color:#d8c4a8}
+	.support-card{border-color:#e7e3dd}.support-card.life{background:#eaf0ec}.support-card.grow{background:#f3ede5}.support-card.belong{background:#f4e5df}
+	.community{background:#2d3748}.community-copy h2 em{color:#d8c4a8}
+	.final-cta{background:#f3ede5}
+	footer{background:#252f3e}
+
+	/* Soft & Welcoming palette */
+	.brand.inverse small{color:#e8d9c5}
+	.hero{background:#fcfaf7}.hero:before,.final-cta:before,.final-cta:after{border-color:#d79a9a24}
+	.button{box-shadow:0 10px 25px #50627a24}.button.gold{color:#303846;background:#e8d9c5}
+	.eyebrow span{background:#d79a9a}.eyebrow.light{color:#f2e9e9}
+	.intro{background:#50627a}.intro h2 em{color:#e8d9c5}
+	.support-card{border-color:#e8e3dc}.support-card.life{background:#e8eee7}.support-card.grow{background:#f5eee5}.support-card.belong{background:#f4e5e3}
+	.community{background:#46566a}.community-copy h2 em{color:#e8d9c5}
+	.final-cta{background:#f5eee5}
+	footer{background:#303846}
+
+	/* Cozy coffee shop palette */
+	.brand.inverse small{color:#d9e0d4}
+	.hero{background:#fbf8f4}.hero:before,.final-cta:before,.final-cta:after{border-color:#c9866b24}
+	.button{box-shadow:0 10px 25px #c9866b26}.button.gold{color:#3d3d3d;background:#a7b49e}
+	.eyebrow span{background:#c9866b}.eyebrow.light{color:#f2e8e2}
+	.intro{background:#6d5c54}.intro h2 em{color:#e7c1b1}
+	.support-card{border-color:#e5ddd6}.support-card.life{background:#e7ece3}.support-card.grow{background:#f1e9e1}.support-card.belong{background:#f1e2dc}
+	.community{background:#6d5c54}.community-copy h2 em{color:#dce4d7}
+	.final-cta{background:#f1e9e1}
+	footer{background:#3d3d3d}
+
+	/* About dropdown and vision/mission */
+	.nav-dropdown{position:relative}.nav-dropdown summary{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:14px;font-weight:600;list-style:none}.nav-dropdown summary::-webkit-details-marker{display:none}.nav-dropdown summary span{font-size:13px;transition:transform .2s}.nav-dropdown[open] summary span{transform:rotate(180deg)}
+	.dropdown-menu{position:absolute;top:30px;left:-18px;display:grid;width:230px;padding:9px;border:1px solid var(--line);border-radius:12px;background:#fffdf9;box-shadow:0 16px 40px #3d3d3d18}.dropdown-menu a{padding:12px 13px;border-radius:8px}.dropdown-menu a:hover{background:#f3ece6}
+	.vision{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;padding:110px 0}.vision-heading h2{margin:0;font:700 clamp(42px,5vw,64px)/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-3px}.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.vision-grid article{padding:36px;border:1px solid var(--line);border-radius:14px;background:#fffdf9}.vision-grid small{color:var(--forest);font-size:10px;font-weight:800;letter-spacing:1.7px}.vision-grid h3{margin:55px 0 15px;font-size:27px;line-height:1.15;letter-spacing:-1px}.vision-grid p{margin:0;color:var(--muted);line-height:1.7}
+	@media(max-width:800px){.nav-dropdown{width:100%}.nav-dropdown summary{padding:13px}.dropdown-menu{position:static;width:100%;margin:0;padding:4px 10px;border:0;background:#f7f2ed;box-shadow:none}.dropdown-menu a{padding:11px 12px}.vision{grid-template-columns:1fr;gap:38px;padding:75px 0}.vision-grid{grid-template-columns:1fr}.vision-grid h3{margin-top:36px}}
+
+	/* Typography and component system */
+	.brand{font-family:'Inter',sans-serif}
+	.hero h1,.section-heading h2,.intro h2,.community h2,.final-cta h2,.vision-heading h2,.support-card h3,.vision-grid h3{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-1.5px}
+	.hero h1 em,h2 em{font-family:inherit;font-weight:400;font-style:italic}
+	.button,.button.gold{border-radius:14px;color:#fff;background:#c9866b;box-shadow:0 8px 22px #c9866b20;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+	.button:hover,.button.gold:hover{color:#fff;background:#af7059;box-shadow:0 10px 26px #af705926;transform:translateY(-1px)}
+	.support-grid,.vision-grid{gap:24px}
+	.support-card,.vision-grid article{border:1px solid #eee9e4;border-radius:24px;background:#fff;padding:42px;box-shadow:0 10px 32px rgba(109,92,84,.055)}
+	.support-card h3{margin-top:78px;font-size:31px}.vision-grid h3{font-size:30px}
+	.dropdown-menu{border-radius:16px;background:#fff;box-shadow:0 12px 35px rgba(109,92,84,.08)}
+	@media(max-width:800px){.support-card,.vision-grid article{padding:32px}.hero h1{letter-spacing:-1.5px}}
 </style>
