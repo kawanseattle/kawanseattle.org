@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	const programs = [
 		{
@@ -296,7 +297,7 @@
 						<span class="tag">FEATURED GUIDE</span>
 						<h3>Your First 90 Days Abroad</h3>
 						<p>A practical guide to arriving, settling in, and building a life that feels like yours.</p>
-						<a href="/guides/first-90-days.txt" download>Download free guide <span>↓</span></a>
+						<a href={`${base}/guides/first-90-days.txt`} download>Download free guide <span>↓</span></a>
 					</div>
 				</article>
 				<article class="mini-resource reveal">
