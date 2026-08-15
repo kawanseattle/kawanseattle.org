@@ -1,17 +1,17 @@
 :root {
-	font-family: 'Crimson Text', serif;
-	color: #5c4a42;
-	background: #faf8f5;
+	font-family: 'Inter', sans-serif;
+	color: #3d3d3d;
+	background: #fbf8f4;
 	font-synthesis: none;
-	--ink: #6b5348;
-	--forest: #9b8f86;
-	--forest-dark: #8b7d74;
-	--mint: #ede4db;
-	--mint-soft: #f5eeea;
-	--gold: #e8c477;
-	--cream: #f5f0eb;
+	--ink: #3d3d3d;
+	--forest: #c9866b;
+	--forest-dark: #ad6f57;
+	--mint: #e5ebe1;
+	--mint-soft: #f1f4ef;
+	--gold: #a7b49e;
+	--cream: #f1e9e1;
 	--white: #ffffff;
-	--muted: #8a7d76;
+	--muted: #706a66;
 	--line: rgba(91, 74, 66, 0.08);
 	--shadow: 0 24px 70px rgba(91, 74, 66, 0.08);
 }
@@ -26,7 +26,9 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
-	background: #faf8f5;
+	width: 100%;
+	overflow-x: hidden;
+	background: #fbf8f4;
 }
 
 button,
