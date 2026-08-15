@@ -6,19 +6,16 @@
 		{
 			number: '01',
 			title: 'Plan your path',
-			text: 'Clear, unbiased guidance to compare programs, scholarships, and countries with confidence.',
 			color: 'sage'
 		},
 		{
 			number: '02',
 			title: 'Prepare to go',
-			text: 'Practical support for applications, documents, visas, budgeting, and pre-departure.',
 			color: 'sand'
 		},
 		{
 			number: '03',
 			title: 'Belong & thrive',
-			text: 'Local mentors, peer circles, and resources for wellbeing, work, and life in a new place.',
 			color: 'coral'
 		}
 	];
@@ -96,7 +93,6 @@
 		<a href="#about" onclick={() => (menuOpen = false)}>About</a>
 		<a href="#programs" onclick={() => (menuOpen = false)}>How we help</a>
 		<a href="#stories" onclick={() => (menuOpen = false)}>Stories</a>
-		<a href="#resources" onclick={() => (menuOpen = false)}>Resources</a>
 	</nav>
 
 	<a class="button small desktop-cta" href="#connect">Get guidance <span>↗</span></a>
@@ -113,160 +109,87 @@
 
 <main id="top">
 	<section class="hero">
-		<div class="hero-grid">
-			<div class="hero-copy reveal visible">
-				<p class="eyebrow"><span></span> Guidance without borders</p>
-				<h1>Your journey.<br /><em>Our guidance.</em></h1>
-				<p class="hero-lead">
-					Free, trusted support for international students—from the first big dream to feeling at
-					home in a new country.
-				</p>
+		<div class="hero-minimal">
+			<div class="hero-content reveal visible">
+				<h1><span class="welcome-to-text">welcome to</span> <span class="kawan-script">kawan</span></h1>
+				<p class="hero-tagline">guidance for international students in seattle</p>
 				<div class="hero-actions">
-					<a class="button" href="#connect">Start your journey <span>↗</span></a>
-					<a class="text-link" href="#about">Discover our mission <span>↓</span></a>
-				</div>
-				<div class="trust-row">
-					<div class="avatar-stack" aria-hidden="true">
-						<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=90&q=80" alt="" />
-						<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=90&q=80" alt="" />
-						<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=90&q=80" alt="" />
-					</div>
-					<p><strong>4,800+ students</strong><br />supported across 32 countries</p>
+					<a class="button" href="#programs">let's start <span>↗</span></a>
 				</div>
 			</div>
-
-			<div class="hero-visual reveal visible">
-				<div class="sun-shape"></div>
-				<div class="photo-frame">
-					<img
-						src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=88"
-						alt="International students laughing together on campus"
-					/>
-				</div>
-				<div class="route-card">
-					<div class="route-icon">
-						<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-							<path d="M3 11.5 21 4l-7.5 18-2.4-8.1L3 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-						</svg>
-					</div>
-					<div><span>Next stop</span><strong>Your future</strong></div>
-				</div>
-				<div class="destination-chip">32 countries <span>✦</span> one community</div>
-			</div>
+			<div class="hero-shape"></div>
 		</div>
-		<div class="scroll-note"><span></span> SCROLL TO EXPLORE</div>
 	</section>
 
-	<section class="mission" id="about">
-		<div class="section-wrap mission-grid">
-			<div class="section-heading reveal">
-				<p class="eyebrow light"><span></span> Why we exist</p>
-				<h2>Big dreams shouldn't come with <em>impossible questions.</em></h2>
-			</div>
-			<div class="mission-copy reveal">
-				<p>
-					Studying abroad can transform a life—but the path there is often confusing, expensive,
-					and lonely. We're here to change that.
-				</p>
-				<p>
-					Kawan is a nonprofit powered by people who have made the journey themselves. We
-					offer free, honest guidance so every student can move forward with clarity and courage.
-				</p>
-				<a class="inline-link" href="#programs">Read our story <span>↗</span></a>
-			</div>
+	<section class="about section-wrap" id="about">
+		<div class="about-intro reveal">
+			<p class="about-eyebrow">who we are</p>
 		</div>
-		<div class="impact-strip reveal">
-			<div><strong>4,800<span>+</span></strong><small>STUDENTS GUIDED</small></div>
-			<div><strong>32</strong><small>COUNTRIES REACHED</small></div>
-			<div><strong>380<span>+</span></strong><small>VOLUNTEER MENTORS</small></div>
-			<div><strong>91<span>%</span></strong><small>FEEL MORE CONFIDENT</small></div>
+		<div class="about-grid reveal">
+			<article class="about-card">
+				<p class="about-label">definition</p>
+				<h3>kawan</h3>
+				<p class="about-description">"friend" or "companion" in indonesian — someone who walks beside you when everything feels new.</p>
+			</article>
+			<article class="about-card">
+				<p class="about-label">our vision</p>
+				<h3>make belonging feel possible</h3>
+				<p class="about-description">we imagine a seattle where international students are welcomed, understood, and fully part of the community from day one.</p>
+			</article>
+			<article class="about-card">
+				<p class="about-label">our mission</p>
+				<h3>build connection, confidence, and care</h3>
+				<p class="about-description">through mentoring, friendship, and practical guidance, we help students settle in, thrive, and feel at home where they study.</p>
+			</article>
 		</div>
 	</section>
 
 	<section class="programs section-wrap" id="programs">
-		<div class="programs-header reveal">
-			<div>
-				<p class="eyebrow"><span></span> How we help</p>
-				<h2>Support for every<br /><em>step forward.</em></h2>
-			</div>
-			<p>
-				Wherever you are in your journey, you'll find practical tools, trusted answers, and people
-				who believe in you.
-			</p>
-		</div>
-
-		<div class="program-grid">
+		<div class="program-grid minimal">
 			{#each programs as program, index}
 				<article class="program-card {program.color} reveal" style={`--delay: ${index * 90}ms`}>
-					<div class="card-top">
-						<span>{program.number}</span>
-						<div class="program-icon">
-							{#if index === 0}
-								<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-									<circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.8" />
-									<path d="m15 25 3-8 8-3-3 8-8 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-									<circle cx="20.5" cy="19.5" r="1.4" fill="currentColor" />
-								</svg>
-							{:else if index === 1}
-								<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-									<path d="M8 25.5h24M13 25.5v-11h14v11M10 30h20M17 14.5v-4h6v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-									<path d="M17 20h6" stroke="currentColor" stroke-width="1.8" />
-								</svg>
-							{:else}
-								<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-									<path d="M20 31s-11-5.8-11-13.3A6.7 6.7 0 0 1 20 12.5a6.7 6.7 0 0 1 11 5.2C31 25.2 20 31 20 31Z" stroke="currentColor" stroke-width="1.8" />
-									<path d="M15.5 20.5c1.3 1.2 2.8 1.8 4.5 1.8s3.2-.6 4.5-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-								</svg>
-							{/if}
-						</div>
+					<div class="card-icon">
+						{#if index === 0}
+							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+								<circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.8" />
+							</svg>
+						{:else if index === 1}
+							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+								<rect x="10" y="10" width="20" height="20" stroke="currentColor" stroke-width="1.8" />
+							</svg>
+						{:else}
+							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+								<path d="M20 31s-11-5.8-11-13.3A6.7 6.7 0 0 1 20 12.5a6.7 6.7 0 0 1 11 5.2C31 25.2 20 31 20 31Z" stroke="currentColor" stroke-width="1.8" />
+							</svg>
+						{/if}
 					</div>
 					<h3>{program.title}</h3>
-					<p>{program.text}</p>
-					<a href="#connect" aria-label={`Explore ${program.title}`}>Explore support <span>↗</span></a>
+					<a href="#connect" aria-label={`Explore ${program.title}`}>Learn more <span>↗</span></a>
 				</article>
 			{/each}
 		</div>
 	</section>
 
-	<section class="mentor-band" id="connect">
-		<div class="mentor-image reveal">
-			<img
-				src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1100&q=86"
-				alt="A student and mentor working together"
-			/>
-			<div class="availability"><span></span> 24 mentors available this week</div>
-		</div>
-		<div class="mentor-copy reveal">
-			<p class="eyebrow light"><span></span> One-to-one support</p>
-			<h2>Meet someone who's <em>been where you are.</em></h2>
-			<p>
-				Our volunteer mentors were international students too. Get matched with someone who knows
-				your destination, speaks your language, and understands the questions on your mind.
-			</p>
-			<div class="mentor-points">
-				<span>✓ Always free</span><span>✓ Thoughtfully matched</span><span>✓ On your schedule</span>
+	<section class="mentor-section" id="connect">
+		<div class="section-wrap">
+			<div class="mentor-minimal reveal">
+				<div class="mentor-dot"></div>
+				<h2>Meet a mentor</h2>
+				<p>Free guidance from someone who's been where you are</p>
+				<a class="button gold" href="mailto:hello@kawan.org">Find a mentor <span>↗</span></a>
 			</div>
-			<a class="button gold" href="mailto:hello@kawan.org">Find your mentor <span>↗</span></a>
 		</div>
 	</section>
 
 	<section class="stories section-wrap" id="stories">
-		<div class="stories-intro reveal">
-			<p class="eyebrow"><span></span> Student stories</p>
-			<h2>Journeys that<br /><em>inspire ours.</em></h2>
-			<div class="story-controls">
-				<button aria-label="Previous story" onclick={() => (storyIndex = (storyIndex + stories.length - 1) % stories.length)}>←</button>
-				<button aria-label="Next story" onclick={() => (storyIndex = (storyIndex + 1) % stories.length)}>→</button>
-			</div>
-		</div>
 		<div class="story-card reveal">
-			<div class="quote-mark">“</div>
+			<div class="quote-mark">"</div>
 			<blockquote>{stories[storyIndex].quote}</blockquote>
 			<div class="student">
 				<img src={stories[storyIndex].image} alt={stories[storyIndex].name} />
 				<div><strong>{stories[storyIndex].name}</strong><span>{stories[storyIndex].detail}</span></div>
 			</div>
-			<div class="story-progress" aria-label={`Story ${storyIndex + 1} of ${stories.length}`}>
+			<div class="story-progress">
 				{#each stories as _, index}
 					<button class:active={index === storyIndex} onclick={() => (storyIndex = index)} aria-label={`Show story ${index + 1}`}></button>
 				{/each}
@@ -274,58 +197,11 @@
 		</div>
 	</section>
 
-	<section class="resources" id="resources">
+	<section class="cta-minimal">
 		<div class="section-wrap">
-			<div class="resource-heading reveal">
-				<div>
-					<p class="eyebrow"><span></span> Free resources</p>
-					<h2>Good guidance,<br /><em>within reach.</em></h2>
-				</div>
-				<a class="inline-link" href="#guide">View all resources <span>↗</span></a>
-			</div>
-			<div class="resource-grid" id="guide">
-				<article class="feature-resource reveal">
-					<div class="feature-art">
-						<span class="art-stamp">2026<br />EDITION</span>
-						<div class="book">
-							<small>THE ESSENTIAL GUIDE</small>
-							<strong>Your First<br />90 Days<br />Abroad</strong>
-							<span>KAWAN</span>
-						</div>
-					</div>
-					<div class="resource-content">
-						<span class="tag">FEATURED GUIDE</span>
-						<h3>Your First 90 Days Abroad</h3>
-						<p>A practical guide to arriving, settling in, and building a life that feels like yours.</p>
-						<a href={`${base}/guides/first-90-days.txt`} download>Download free guide <span>↓</span></a>
-					</div>
-				</article>
-				<article class="mini-resource reveal">
-					<div class="mini-icon">⌁</div>
-					<span class="tag">CHECKLIST</span>
-					<h3>The application<br />master checklist</h3>
-					<a href="#connect">Open resource <span>↗</span></a>
-				</article>
-				<article class="mini-resource green reveal">
-					<div class="mini-icon">◌</div>
-					<span class="tag">TOOLKIT</span>
-					<h3>Scholarship search<br />starter kit</h3>
-					<a href="#connect">Open resource <span>↗</span></a>
-				</article>
-			</div>
-		</div>
-	</section>
-
-	<section class="cta-section">
-		<div class="cta-orbit one"></div>
-		<div class="cta-orbit two"></div>
-		<div class="cta-content reveal">
-			<p class="eyebrow centered"><span></span> Your next chapter starts here <span></span></p>
-			<h2>You don't have to figure<br />it out <em>alone.</em></h2>
-			<p>Tell us where you are in your journey. We'll help you find your next clear step.</p>
-			<div class="cta-actions">
-				<a class="button gold" href="mailto:hello@kawan.org">Get free guidance <span>↗</span></a>
-				<a href="mailto:volunteer@kawan.org">Become a volunteer <span>→</span></a>
+			<div class="cta-content reveal">
+				<h2>Ready?</h2>
+				<a class="button gold large" href="mailto:hello@kawan.org">Get started <span>↗</span></a>
 			</div>
 		</div>
 	</section>
@@ -343,30 +219,15 @@
 				</span>
 				<span>Kawan</span>
 			</a>
-			<p>Guidance without borders.<br />Opportunity without limits.</p>
-			<div class="socials"><a href="#top">in</a><a href="#top">ig</a><a href="#top">yt</a></div>
+			<p>Guidance without borders.</p>
 		</div>
 		<div class="footer-links">
-			<div><strong>EXPLORE</strong><a href="#about">About us</a><a href="#programs">How we help</a><a href="#stories">Student stories</a><a href="#resources">Resources</a></div>
-			<div><strong>GET INVOLVED</strong><a href="mailto:volunteer@kawan.org">Volunteer</a><a href="#connect">Partner with us</a><a href="#connect">Donate</a><a href="#connect">Careers</a></div>
-		</div>
-		<div class="newsletter">
-			<strong>STAY IN THE LOOP</strong>
-			<p>Stories, resources, and practical tips—once a month.</p>
-			{#if submitted}
-				<div class="thanks">Thank you — you're on the list!</div>
-			{:else}
-				<form onsubmit={(event) => { event.preventDefault(); subscribe(); }}>
-					<label class="sr-only" for="email">Email address</label>
-					<input id="email" type="email" required placeholder="Your email address" bind:value={email} />
-					<button aria-label="Subscribe">→</button>
-				</form>
-			{/if}
+			<div><strong>LINKS</strong><a href="#programs">How we help</a><a href="#stories">Stories</a></div>
+			<div><strong>GET INVOLVED</strong><a href="mailto:volunteer@kawan.org">Volunteer</a><a href="mailto:hello@kawan.org">Contact us</a></div>
 		</div>
 	</div>
 	<div class="footer-bottom section-wrap">
-		<span>© 2026 KAWAN. REGISTERED NONPROFIT.</span>
-		<div><a href="#top">PRIVACY</a><a href="#top">TERMS</a><a href="#top">ACCESSIBILITY</a></div>
+		<span>© 2026 KAWAN.</span>
 	</div>
 </footer>
 
@@ -386,23 +247,30 @@
 	.site-header {
 		position: absolute;
 		z-index: 20;
-		top: 0;
+		top: 18px;
 		left: 50%;
 		display: flex;
 		width: min(1280px, calc(100% - 64px));
-		height: 96px;
+		height: 88px;
 		align-items: center;
 		justify-content: space-between;
+		padding: 0 18px 0 20px;
+		border: 1px solid rgba(107, 83, 72, 0.08);
+		border-radius: 999px;
+		background: rgba(250, 248, 245, 0.7);
+		backdrop-filter: blur(8px);
+		box-shadow: 0 14px 40px rgba(91, 74, 66, 0.05);
 		transform: translateX(-50%);
 	}
 
 	.brand {
 		display: inline-flex;
 		align-items: center;
-		font-family: 'Manrope', sans-serif;
-		font-size: 21px;
-		font-weight: 800;
-		letter-spacing: -0.7px;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: -0.8px;
+		text-transform: lowercase;
 	}
 
 	.brand > span:last-child > span {
@@ -419,15 +287,15 @@
 
 	nav {
 		display: flex;
-		gap: 37px;
+		gap: 50px;
 		margin-left: 90px;
 	}
 
 	nav a {
 		position: relative;
-		color: #294a43;
-		font-size: 14px;
-		font-weight: 600;
+		color: var(--ink);
+		font-size: 18px;
+		font-weight: 500;
 	}
 
 	nav a::after {
@@ -453,23 +321,31 @@
 		justify-content: center;
 		gap: 18px;
 		padding: 0 25px;
-		border-radius: 5px;
+		border-radius: 999px;
 		color: #fff;
-		background: var(--forest);
-		box-shadow: 0 10px 25px rgba(20, 95, 82, 0.18);
+		background: linear-gradient(135deg, var(--forest) 0%, #a08f86 100%);
+		box-shadow: 0 12px 28px rgba(91, 74, 66, 0.13);
 		font-size: 14px;
 		font-weight: 700;
-		transition: transform 0.2s ease, background 0.2s ease;
+		transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 	}
 
 	.button:hover {
-		background: var(--forest-dark);
+		background: linear-gradient(135deg, var(--forest-dark) 0%, #927d71 100%);
 		transform: translateY(-2px);
+		box-shadow: 0 18px 32px rgba(91, 74, 66, 0.15);
+		filter: saturate(1.05);
 	}
 
 	.button.small {
 		min-height: 44px;
 		padding: 0 19px;
+	}
+
+	.button.large {
+		min-height: 60px;
+		padding: 0 32px;
+		font-size: 16px;
 	}
 
 	.button.gold {
@@ -500,1087 +376,540 @@
 		transition: transform 0.2s ease;
 	}
 
+	/* Hero Section */
 	.hero {
 		position: relative;
-		min-height: 785px;
+		min-height: 100vh;
 		overflow: hidden;
-		background: linear-gradient(106deg, #f8f4e9 0 54%, #e3f0eb 54%);
+		background: radial-gradient(circle at 20% 20%, rgba(232, 196, 119, 0.18), transparent 22%),
+			radial-gradient(circle at 80% 10%, rgba(155, 143, 134, 0.13), transparent 24%),
+			linear-gradient(135deg, #faf8f5 0%, #ede4db 100%);
+	}
+
+	.hero::before,
+	.hero::after {
+		position: absolute;
+		content: '';
+		border-radius: 50%;
+		pointer-events: none;
 	}
 
 	.hero::before {
-		position: absolute;
-		top: -120px;
-		left: -170px;
-		width: 500px;
-		height: 500px;
-		border: 1px solid rgba(20, 95, 82, 0.08);
-		border-radius: 50%;
-		content: '';
+		right: -80px;
+		bottom: -70px;
+		width: 320px;
+		height: 320px;
+		background: rgba(232, 196, 119, 0.12);
 	}
 
-	.hero-grid {
-		display: grid;
+	.hero::after {
+		left: -60px;
+		top: 60px;
+		width: 200px;
+		height: 200px;
+		background: rgba(155, 143, 134, 0.08);
+	}
+
+	.hero-minimal {
+		display: flex;
 		width: min(1280px, calc(100% - 64px));
-		min-height: 785px;
+		height: 100vh;
+		min-height: 760px;
 		margin: auto;
-		grid-template-columns: 48% 52%;
 		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 
-	.hero-copy {
+	.hero-content {
 		position: relative;
 		z-index: 2;
-		padding-top: 76px;
-	}
-
-	.eyebrow {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		margin-bottom: 26px;
-		color: var(--forest);
-		font-size: 11px;
-		font-weight: 800;
-		letter-spacing: 2.1px;
-		text-transform: uppercase;
-	}
-
-	.eyebrow > span {
-		width: 28px;
-		height: 1px;
-		background: var(--gold);
-	}
-
-	.eyebrow.light {
-		color: #b5d8ce;
+		text-align: center;
+		max-width: 600px;
 	}
 
 	h1 {
-		max-width: 690px;
-		margin-bottom: 27px;
+		max-width: 100%;
+		margin: 0 0 22px 0;
 		color: var(--ink);
-		font-size: clamp(62px, 6.3vw, 94px);
-		font-weight: 700;
-		line-height: 0.98;
-		letter-spacing: -5.8px;
+		font-family: 'Cormorant Garamond', serif;
+		font-size: clamp(72px, 8vw, 128px);
+		font-weight: 600;
+		line-height: 1.1;
+		letter-spacing: -2px;
+		text-transform: lowercase;
 	}
 
-	h1 em,
-	h2 em {
+	.kawan-script {
+		font-family: 'Cormorant Garamond', serif;
+		font-size: 1.35em;
+		font-weight: 800;
+		letter-spacing: -1px;
 		color: var(--forest);
-		font-family: Georgia, serif;
-		font-weight: 400;
 	}
 
-	.hero-lead {
-		max-width: 505px;
-		margin-bottom: 34px;
+	.welcome-to-text {
+		font-size: 0.45em;
+		font-weight: 500;
+	}
+
+	.hero-tagline {
+		max-width: 100%;
+		margin: 0 0 40px 0;
 		color: var(--muted);
-		font-size: 17px;
-		line-height: 1.75;
+		font-size: 22px;
+		line-height: 1.6;
+		text-transform: lowercase;
 	}
 
 	.hero-actions {
 		display: flex;
-		align-items: center;
-		gap: 34px;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 30px;
 	}
 
-	.text-link,
-	.inline-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 11px;
-		padding-bottom: 5px;
-		border-bottom: 1px solid var(--ink);
-		color: var(--ink);
-		font-size: 13px;
-		font-weight: 700;
+	/* Hero Shape */
+	.hero-shape {
+		display: none;
 	}
 
-	.trust-row {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-		margin-top: 43px;
-	}
-
-	.avatar-stack {
-		display: flex;
-	}
-
-	.avatar-stack img {
-		width: 35px;
-		height: 35px;
-		margin-left: -9px;
-		border: 2px solid #f8f4e9;
-		border-radius: 50%;
-		object-fit: cover;
-	}
-
-	.avatar-stack img:first-child {
-		margin-left: 0;
-	}
-
-	.trust-row p {
-		margin: 0;
-		color: #6c7a77;
-		font-size: 11px;
-		line-height: 1.5;
-	}
-
-	.trust-row strong {
-		color: var(--ink);
-	}
-
-	.hero-visual {
+	/* About Section */
+	.about {
 		position: relative;
-		height: 100%;
-		min-height: 700px;
+		min-height: 100vh;
+		padding: 120px 0 110px;
+		background: radial-gradient(circle at top left, rgba(232, 196, 119, 0.16), transparent 30%),
+			linear-gradient(180deg, #f5eeea 0%, #f7f1eb 100%);
 	}
 
-	.sun-shape {
+	.about::before {
 		position: absolute;
-		top: 112px;
-		right: 2%;
-		width: 84%;
-		aspect-ratio: 1;
-		border-radius: 50%;
-		background: var(--gold);
-	}
-
-	.sun-shape::before,
-	.sun-shape::after {
-		position: absolute;
-		border: 1px solid rgba(20, 95, 82, 0.16);
+		inset: 80px auto auto 8%;
+		width: 280px;
+		height: 280px;
+		border: 1px solid rgba(107, 83, 72, 0.08);
 		border-radius: 50%;
 		content: '';
 	}
 
-	.sun-shape::before {
-		inset: -42px;
-	}
-
-	.sun-shape::after {
-		inset: -85px;
-	}
-
-	.photo-frame {
+	.about::after {
 		position: absolute;
-		top: 146px;
-		right: 5.5%;
-		width: 75%;
-		height: 542px;
-		overflow: hidden;
-		border: 9px solid rgba(255,255,255,.78);
-		border-radius: 48% 48% 5px 5px;
-		box-shadow: var(--shadow);
-		transform: rotate(1.8deg);
-	}
-
-	.photo-frame img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 53% center;
-	}
-
-	.route-card {
-		position: absolute;
-		z-index: 2;
-		top: 215px;
-		left: 3%;
-		display: flex;
-		width: 198px;
-		align-items: center;
-		gap: 12px;
-		padding: 13px 16px;
-		border: 1px solid rgba(255, 255, 255, 0.7);
-		border-radius: 8px;
-		background: rgba(255, 255, 255, 0.91);
-		box-shadow: 0 17px 45px rgba(20, 59, 52, 0.15);
-		backdrop-filter: blur(8px);
-	}
-
-	.route-icon {
-		display: grid;
-		width: 38px;
-		height: 38px;
+		right: 10%;
+		bottom: 12%;
+		width: 220px;
+		height: 220px;
 		border-radius: 50%;
-		color: var(--forest);
-		background: var(--mint);
-		place-items: center;
+		background: rgba(155, 143, 134, 0.08);
+		content: '';
 	}
 
-	.route-icon svg {
-		width: 20px;
-	}
-
-	.route-card span,
-	.route-card strong {
-		display: block;
-	}
-
-	.route-card span {
-		color: #788883;
-		font-size: 10px;
-	}
-
-	.route-card strong {
-		margin-top: 3px;
-		font-family: 'Manrope', sans-serif;
-		font-size: 14px;
-	}
-
-	.destination-chip {
-		position: absolute;
-		z-index: 2;
-		right: 1%;
-		bottom: 67px;
-		padding: 12px 18px;
-		border-radius: 100px;
-		color: white;
-		background: var(--forest);
-		font-size: 10px;
-		font-weight: 700;
-		letter-spacing: 0.6px;
-		text-transform: uppercase;
-		transform: rotate(-5deg);
-	}
-
-	.destination-chip span {
-		padding: 0 5px;
-		color: var(--gold);
-	}
-
-	.scroll-note {
-		position: absolute;
-		bottom: 0;
-		left: 38px;
-		display: flex;
-		align-items: center;
-		gap: 14px;
-		color: #71807d;
-		font-size: 8px;
-		font-weight: 700;
-		letter-spacing: 1.7px;
-		transform: rotate(-90deg);
-		transform-origin: left center;
-	}
-
-	.scroll-note span {
-		width: 44px;
-		height: 1px;
-		background: #9daaa6;
-	}
-
-	.section-wrap {
-		width: min(1160px, calc(100% - 64px));
-		margin-inline: auto;
-	}
-
-	.mission {
-		padding: 115px 0 0;
-		color: white;
-		background: var(--forest);
-	}
-
-	.mission-grid {
-		display: grid;
-		grid-template-columns: 1.2fr 0.8fr;
-		gap: 130px;
-		align-items: start;
-	}
-
-	h2 {
-		margin-bottom: 0;
-		color: var(--ink);
-		font-size: clamp(42px, 4.4vw, 64px);
-		font-weight: 650;
-		line-height: 1.09;
-		letter-spacing: -3px;
-	}
-
-	.mission h2,
-	.mentor-copy h2,
-	.cta-section h2 {
-		color: white;
-	}
-
-	.mission h2 em,
-	.mentor-copy h2 em,
-	.cta-section h2 em {
-		color: var(--gold);
-	}
-
-	.mission-copy {
-		padding-top: 43px;
-	}
-
-	.mission-copy p {
-		color: #cee2dc;
-		font-size: 15px;
-		line-height: 1.75;
-	}
-
-	.mission-copy .inline-link {
-		margin-top: 13px;
-		border-color: #9ec4ba;
-		color: white;
-	}
-
-	.impact-strip {
-		display: grid;
-		margin-top: 88px;
-		border-top: 1px solid rgba(255,255,255,.14);
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.impact-strip div {
-		padding: 35px 20px 38px;
-		border-right: 1px solid rgba(255,255,255,.14);
+	.about-intro {
+		position: relative;
+		z-index: 1;
+		max-width: 720px;
+		margin: 0 auto 52px;
 		text-align: center;
 	}
 
-	.impact-strip div:last-child {
-		border-right: 0;
-	}
-
-	.impact-strip strong,
-	.impact-strip small {
-		display: block;
-	}
-
-	.impact-strip strong {
-		font-family: 'Manrope', sans-serif;
-		font-size: 41px;
-		letter-spacing: -1.5px;
-	}
-
-	.impact-strip strong span {
-		color: var(--gold);
-	}
-
-	.impact-strip small {
-		margin-top: 7px;
-		color: #a8cec4;
-		font-size: 8px;
-		font-weight: 700;
-		letter-spacing: 1.6px;
-	}
-
-	.programs {
-		padding-block: 116px 128px;
-	}
-
-	.programs-header {
-		display: grid;
-		margin-bottom: 57px;
-		grid-template-columns: 1fr 410px;
-		gap: 80px;
-		align-items: end;
-	}
-
-	.programs-header > p {
-		margin-bottom: 8px;
+	.about-eyebrow {
+		margin: 0;
 		color: var(--muted);
-		font-size: 14px;
-		line-height: 1.75;
+		font-size: 12px;
+		font-weight: 800;
+		letter-spacing: 2px;
+		text-transform: uppercase;
 	}
 
-	.program-grid {
+	.about-grid {
+		position: relative;
+		z-index: 1;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 17px;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 24px;
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+
+	.about-card {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		min-height: 300px;
+		padding: 34px 28px 30px;
+		border: 1px solid rgba(107, 83, 72, 0.1);
+		border-radius: 24px;
+		background: rgba(255, 255, 255, 0.28);
+		box-shadow: 0 18px 40px rgba(91, 74, 66, 0.03);
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.about-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 24px 48px rgba(91, 74, 66, 0.06);
+	}
+
+	.about-label {
+		margin: 0;
+		font-size: 11px;
+		font-weight: 800;
+		letter-spacing: 1.8px;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.about-card h3 {
+		margin: 0;
+		font-size: clamp(24px, 2vw, 32px);
+		line-height: 1.15;
+		color: var(--ink);
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		letter-spacing: -0.7px;
+		text-transform: lowercase;
+	}
+
+	.about-description {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.75;
+		color: var(--muted);
+	}
+
+	@media (max-width: 900px) {
+		.about {
+			min-height: auto;
+		}
+
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	/* Programs Section */
+	.program-grid.minimal {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 24px;
+		margin-top: 60px;
 	}
 
 	.program-card {
-		position: relative;
-		min-height: 368px;
-		padding: 27px 30px;
-		overflow: hidden;
-		border-radius: 7px;
-	}
-
-	.program-card::after {
-		position: absolute;
-		right: -42px;
-		bottom: -68px;
-		width: 170px;
-		height: 170px;
-		border: 1px solid currentColor;
-		border-radius: 50%;
-		content: '';
-		opacity: .12;
-	}
-
-	.program-card.sage { background: #e0efe7; }
-	.program-card.sand { background: #f5e9cf; }
-	.program-card.coral { background: #f7ded3; }
-
-	.card-top {
+		padding: 48px 32px;
+		border-radius: 18px;
 		display: flex;
-		align-items: start;
-		justify-content: space-between;
-		color: var(--forest);
+		flex-direction: column;
+		gap: 24px;
+		border: 1px solid rgba(107, 83, 72, 0.08);
+		box-shadow: 0 18px 36px rgba(91, 74, 66, 0.04);
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
 	}
 
-	.card-top > span {
-		font-family: 'Manrope', sans-serif;
-		font-size: 11px;
-		font-weight: 700;
+	.program-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 22px 44px rgba(91, 74, 66, 0.06);
 	}
 
-	.program-icon {
-		display: grid;
-		width: 68px;
-		height: 68px;
-		border-radius: 50%;
-		background: rgba(255,255,255,.68);
-		place-items: center;
+	.card-icon {
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--ink);
 	}
 
-	.program-icon svg { width: 38px; }
+	.card-icon svg {
+		width: 100%;
+		height: 100%;
+	}
 
 	.program-card h3 {
-		margin: 42px 0 13px;
-		font-size: 24px;
-		letter-spacing: -1px;
-	}
-
-	.program-card p {
-		max-width: 290px;
-		color: #5b6f6a;
-		font-size: 13px;
-		line-height: 1.72;
+		margin: 0;
+		font-size: 28px;
+		line-height: 1.2;
+		color: var(--ink);
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		letter-spacing: -0.6px;
 	}
 
 	.program-card a {
-		position: absolute;
-		bottom: 31px;
-		display: flex;
-		gap: 8px;
-		border-bottom: 1px solid;
-		font-size: 12px;
-		font-weight: 700;
-	}
-
-	.mentor-band {
-		display: grid;
-		min-height: 640px;
-		grid-template-columns: 1fr 1fr;
-		background: var(--forest-dark);
-	}
-
-	.mentor-image {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.mentor-image::after {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(90deg, transparent 75%, var(--forest-dark));
-		content: '';
-	}
-
-	.mentor-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.availability {
-		position: absolute;
-		z-index: 2;
-		right: 36px;
-		bottom: 42px;
-		padding: 13px 18px;
-		border-radius: 4px;
-		color: #183e37;
-		background: white;
-		font-size: 10px;
-		font-weight: 700;
-	}
-
-	.availability span {
-		display: inline-block;
-		width: 7px;
-		height: 7px;
-		margin-right: 7px;
-		border-radius: 50%;
-		background: #45ad72;
-		box-shadow: 0 0 0 4px rgba(69,173,114,.15);
-	}
-
-	.mentor-copy {
-		display: flex;
-		max-width: 650px;
-		padding: 95px 90px;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.mentor-copy h2 {
-		margin-bottom: 25px;
-	}
-
-	.mentor-copy > p {
-		color: #bfd7d1;
+		color: var(--ink);
 		font-size: 14px;
-		line-height: 1.8;
-	}
-
-	.mentor-points {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 22px;
-		margin: 14px 0 34px;
-		color: white;
-		font-size: 11px;
-	}
-
-	.mentor-points span::first-letter {
-		color: var(--gold);
-	}
-
-	.mentor-copy .button {
-		align-self: flex-start;
-	}
-
-	.stories {
-		display: grid;
-		padding-block: 120px;
-		grid-template-columns: 0.85fr 1.15fr;
-		gap: 90px;
+		font-weight: 700;
+		text-decoration: none;
+		display: inline-flex;
 		align-items: center;
+		gap: 8px;
+		border-bottom: 1px solid var(--ink);
+		padding-bottom: 5px;
+		width: fit-content;
 	}
 
-	.story-controls {
-		display: flex;
-		gap: 10px;
-		margin-top: 44px;
+	/* Mentor Section */
+	.mentor-section {
+		padding: 120px 0;
+		background: #ede4db;
 	}
 
-	.story-controls button {
-		width: 45px;
-		height: 45px;
-		border: 1px solid var(--line);
+	.mentor-minimal {
+		text-align: center;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.mentor-dot {
+		width: 80px;
+		height: 80px;
+		border: 2px solid var(--forest);
 		border-radius: 50%;
-		color: var(--forest);
-		background: transparent;
-		font-size: 18px;
-		transition: background .2s ease, color .2s ease;
+		margin: 0 auto 40px;
 	}
 
-	.story-controls button:hover {
-		color: white;
-		background: var(--forest);
+	.mentor-minimal h2 {
+		font-size: 48px;
+		margin: 0 0 16px 0;
+		color: var(--ink);
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		letter-spacing: -1px;
+	}
+
+	.mentor-minimal p {
+		color: var(--muted);
+		font-size: 16px;
+		margin: 0 0 32px 0;
+		line-height: 1.6;
+	}
+
+	/* Stories Section */
+	.stories {
+		padding: 100px 0;
 	}
 
 	.story-card {
-		position: relative;
-		min-height: 390px;
-		padding: 63px 67px 38px;
-		border-radius: 7px;
-		background: var(--cream);
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 60px;
+		background: linear-gradient(180deg, rgba(245,238,234,0.95), rgba(255,255,255,0.7));
+		border: 1px solid rgba(107, 83, 72, 0.08);
+		border-radius: 24px;
+		box-shadow: 0 22px 50px rgba(91, 74, 66, 0.04);
 	}
 
 	.quote-mark {
-		position: absolute;
-		top: -37px;
-		right: 44px;
+		font-size: 80px;
 		color: var(--gold);
-		font-family: Georgia, serif;
-		font-size: 130px;
-		line-height: 1;
+		line-height: 0.6;
+		margin-bottom: 20px;
 	}
 
 	blockquote {
-		margin: 0 0 42px;
+		margin: 0 0 40px 0;
+		font-size: 24px;
+		line-height: 1.6;
 		color: var(--ink);
-		font-family: Georgia, serif;
-		font-size: 25px;
 		font-style: italic;
-		line-height: 1.55;
 	}
 
 	.student {
 		display: flex;
 		align-items: center;
-		gap: 14px;
+		gap: 16px;
+		margin-bottom: 32px;
 	}
 
 	.student img {
-		width: 51px;
-		height: 51px;
+		width: 60px;
+		height: 60px;
 		border-radius: 50%;
-		object-fit: cover;
 	}
 
-	.student strong,
+	.student strong {
+		display: block;
+		color: var(--ink);
+	}
+
 	.student span {
 		display: block;
+		font-size: 13px;
+		color: var(--muted);
 	}
 
-	.student strong { font-size: 12px; }
-	.student span { margin-top: 4px; color: var(--muted); font-size: 10px; }
-
 	.story-progress {
-		position: absolute;
-		right: 37px;
-		bottom: 48px;
 		display: flex;
-		gap: 6px;
+		gap: 8px;
+		justify-content: center;
 	}
 
 	.story-progress button {
-		width: 17px;
-		height: 3px;
-		padding: 0;
-		background: #cad1ca;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: rgba(91, 74, 66, 0.2);
+		border: none;
+		cursor: pointer;
+		transition: background 0.3s ease;
 	}
 
 	.story-progress button.active {
-		width: 35px;
-		background: var(--forest);
+		background: var(--ink);
 	}
 
-	.resources {
-		padding: 115px 0 125px;
-		background: #edf4f0;
+	/* CTA Section */
+	.cta-minimal {
+		padding: 120px 0;
+		background: radial-gradient(circle at top left, rgba(232, 196, 119, 0.18), transparent 30%),
+			linear-gradient(135deg, #f0dccb 0%, #e8dfd6 100%);
 	}
-
-	.resource-heading {
-		display: flex;
-		margin-bottom: 55px;
-		align-items: end;
-		justify-content: space-between;
-	}
-
-	.resource-grid {
-		display: grid;
-		grid-template-columns: 2.1fr 1fr 1fr;
-		gap: 17px;
-	}
-
-	.feature-resource {
-		display: grid;
-		min-height: 370px;
-		overflow: hidden;
-		border-radius: 7px;
-		background: white;
-		grid-template-columns: 43% 57%;
-	}
-
-	.feature-art {
-		position: relative;
-		display: grid;
-		overflow: hidden;
-		background: var(--gold);
-		place-items: center;
-	}
-
-	.feature-art::before,
-	.feature-art::after {
-		position: absolute;
-		border: 1px solid rgba(20,59,52,.21);
-		border-radius: 50%;
-		content: '';
-	}
-
-	.feature-art::before { width: 330px; height: 330px; }
-	.feature-art::after { width: 240px; height: 240px; }
-
-	.art-stamp {
-		position: absolute;
-		z-index: 2;
-		top: 25px;
-		right: 22px;
-		display: grid;
-		width: 48px;
-		height: 48px;
-		border-radius: 50%;
-		color: white;
-		background: var(--forest);
-		font-size: 7px;
-		font-weight: 700;
-		line-height: 1.4;
-		text-align: center;
-		place-items: center;
-		transform: rotate(8deg);
-	}
-
-	.book {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		width: 166px;
-		height: 225px;
-		padding: 24px 20px;
-		border-left: 6px solid #dfece6;
-		color: white;
-		background: var(--forest);
-		box-shadow: 16px 16px 28px rgba(20,59,52,.2);
-		flex-direction: column;
-		transform: rotate(-7deg);
-	}
-
-	.book small { font-size: 6px; letter-spacing: 1px; }
-	.book strong { margin-top: 37px; font-family: Georgia, serif; font-size: 25px; font-style: italic; font-weight: 400; line-height: 1.03; }
-	.book span { margin-top: auto; color: var(--gold); font-size: 6px; font-weight: 700; letter-spacing: 1px; }
-
-	.resource-content {
-		display: flex;
-		padding: 54px 40px 45px;
-		flex-direction: column;
-	}
-
-	.tag {
-		color: var(--forest);
-		font-size: 8px;
-		font-weight: 800;
-		letter-spacing: 1.5px;
-	}
-
-	.resource-content h3,
-	.mini-resource h3 {
-		margin: 27px 0 14px;
-		font-size: 21px;
-		line-height: 1.25;
-		letter-spacing: -.6px;
-	}
-
-	.resource-content p {
-		color: var(--muted);
-		font-size: 12px;
-		line-height: 1.75;
-	}
-
-	.resource-content a,
-	.mini-resource a {
-		display: flex;
-		margin-top: auto;
-		align-items: center;
-		justify-content: space-between;
-		padding-top: 16px;
-		border-top: 1px solid var(--line);
-		color: var(--forest);
-		font-size: 11px;
-		font-weight: 700;
-	}
-
-	.mini-resource {
-		display: flex;
-		min-height: 370px;
-		padding: 30px 27px;
-		border-radius: 7px;
-		background: #f7e6c7;
-		flex-direction: column;
-	}
-
-	.mini-resource.green { background: #cfe6da; }
-
-	.mini-icon {
-		display: grid;
-		width: 57px;
-		height: 57px;
-		margin-bottom: 34px;
-		border-radius: 50%;
-		color: var(--forest);
-		background: rgba(255,255,255,.62);
-		font-family: Georgia, serif;
-		font-size: 29px;
-		place-items: center;
-	}
-
-	.mini-resource h3 {
-		margin-top: 20px;
-	}
-
-	.cta-section {
-		position: relative;
-		display: grid;
-		min-height: 530px;
-		overflow: hidden;
-		color: white;
-		background: var(--forest);
-		text-align: center;
-		place-items: center;
-	}
-
-	.cta-orbit {
-		position: absolute;
-		border: 1px solid rgba(255,255,255,.1);
-		border-radius: 50%;
-	}
-
-	.cta-orbit.one { width: 670px; height: 670px; }
-	.cta-orbit.two { width: 950px; height: 950px; }
 
 	.cta-content {
-		position: relative;
-		z-index: 1;
+		text-align: center;
 	}
 
-	.eyebrow.centered { justify-content: center; color: #c7ddd7; }
-	.eyebrow.centered span:last-child { display: block; }
-
-	.cta-section h2 {
-		font-size: clamp(45px, 5vw, 68px);
-	}
-
-	.cta-section p:not(.eyebrow) {
-		max-width: 460px;
-		margin: 25px auto 32px;
-		color: #c5dcd6;
-		font-size: 14px;
-		line-height: 1.7;
-	}
-
-	.cta-actions {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 32px;
-	}
-
-	.cta-actions > a:last-child {
-		padding-bottom: 5px;
-		border-bottom: 1px solid rgba(255,255,255,.5);
-		font-size: 12px;
+	.cta-content h2 {
+		font-size: 64px;
+		margin: 0 0 40px 0;
+		color: var(--ink);
+		font-family: 'Playfair Display', serif;
 		font-weight: 700;
+		letter-spacing: -2px;
 	}
 
+	/* Footer */
 	footer {
-		color: #afc8c1;
-		background: #0d352e;
+		background: var(--cream);
+		color: var(--ink);
+		padding: 60px 0 20px;
 	}
 
 	.footer-main {
 		display: grid;
-		padding-block: 70px;
-		grid-template-columns: 1.1fr 1.3fr .9fr;
-		gap: 80px;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		margin-bottom: 60px;
 	}
-
-	.brand.inverse { color: white; }
-	.brand.inverse .brand-mark { color: var(--gold); }
 
 	.footer-brand p {
-		margin: 23px 0;
-		font-family: Georgia, serif;
-		font-size: 16px;
-		font-style: italic;
-		line-height: 1.55;
-	}
-
-	.socials {
-		display: flex;
-		gap: 8px;
-	}
-
-	.socials a {
-		display: grid;
-		width: 30px;
-		height: 30px;
-		border: 1px solid rgba(255,255,255,.2);
-		border-radius: 50%;
-		color: white;
-		font-size: 9px;
-		font-weight: 700;
-		place-items: center;
+		margin: 12px 0;
+		color: var(--muted);
+		font-size: 14px;
+		line-height: 1.6;
 	}
 
 	.footer-links {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 45px;
+		gap: 40px;
 	}
 
-	.footer-links div {
-		display: flex;
-		flex-direction: column;
-		gap: 13px;
-	}
-
-	.footer-links strong,
-	.newsletter > strong {
-		margin-bottom: 7px;
-		color: var(--gold);
-		font-size: 8px;
-		letter-spacing: 1.4px;
+	.footer-links strong {
+		display: block;
+		font-size: 11px;
+		font-weight: 800;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		margin-bottom: 16px;
+		color: var(--muted);
 	}
 
 	.footer-links a {
-		color: #d6e3df;
-		font-size: 12px;
+		display: block;
+		margin-bottom: 12px;
+		color: var(--ink);
+		text-decoration: none;
+		font-size: 14px;
+		transition: opacity 0.2s ease;
 	}
 
-	.newsletter p {
-		color: #b7ccc6;
-		font-size: 11px;
-		line-height: 1.6;
+	.footer-links a:hover {
+		opacity: 0.6;
 	}
-
-	.newsletter form {
-		display: flex;
-		margin-top: 20px;
-		border-bottom: 1px solid rgba(255,255,255,.35);
-	}
-
-	.newsletter input {
-		width: 100%;
-		padding: 12px 0;
-		border: 0;
-		outline: 0;
-		color: white;
-		background: transparent;
-		font-size: 11px;
-	}
-
-	.newsletter input::placeholder { color: #8aaaa2; }
-	.newsletter button { color: var(--gold); background: transparent; }
-	.thanks { margin-top: 24px; color: var(--gold); font-size: 12px; }
 
 	.footer-bottom {
+		padding-top: 20px;
+		border-top: 1px solid rgba(91, 74, 66, 0.1);
 		display: flex;
-		padding-block: 24px;
-		border-top: 1px solid rgba(255,255,255,.1);
 		justify-content: space-between;
-		font-size: 7px;
-		font-weight: 700;
-		letter-spacing: 1px;
+		font-size: 12px;
+		color: var(--muted);
 	}
 
-	.footer-bottom div { display: flex; gap: 26px; }
-
-	.sr-only {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
+	/* Utilities */
+	.section-wrap {
+		width: min(1280px, calc(100% - 64px));
+		margin: 0 auto;
 	}
 
-	@media (max-width: 1050px) {
-		.site-header,
-		.hero-grid { width: min(100% - 40px, 920px); }
-		.site-header nav { gap: 22px; margin-left: 20px; }
-		.hero-grid { grid-template-columns: 50% 50%; }
-		h1 { font-size: clamp(56px, 7.5vw, 76px); }
-		.photo-frame { right: 0; width: 88%; }
-		.sun-shape { right: -7%; width: 100%; }
-		.section-wrap { width: min(100% - 48px, 920px); }
-		.mentor-copy { padding: 70px 50px; }
-		.resource-grid { grid-template-columns: 1.6fr 1fr; }
-		.mini-resource.green { grid-column: 2; }
-		.feature-resource { grid-row: span 2; }
-		.footer-main { gap: 40px; }
-	}
-
-	@media (max-width: 780px) {
-		.site-header {
-			position: absolute;
-			height: 78px;
+	/* Responsive */
+	@media (max-width: 768px) {
+		.hero-minimal {
+			flex-direction: column;
+			gap: 40px;
+			min-height: auto;
+			padding: 60px 0;
 		}
 
-		.desktop-cta { display: none; }
-		.menu-button { display: block; z-index: 3; }
+		h1 {
+			font-size: clamp(48px, 10vw, 72px);
+		}
+
+		.hero-shape {
+			display: none;
+		}
+
+		.about-content {
+			grid-template-columns: 1fr;
+			gap: 60px;
+		}
+
+		.about-content h2 {
+			font-size: 32px;
+		}
+
+		.about-content h3 {
+			font-size: 24px;
+		}
 
 		nav {
-			position: fixed;
-			inset: 0;
-			display: flex;
-			margin: 0;
-			padding: 120px 32px;
-			visibility: hidden;
-			background: #f8f4e9;
-			flex-direction: column;
-			gap: 28px;
-			opacity: 0;
-			transition: opacity .2s ease, visibility .2s ease;
+			display: none;
 		}
 
-		nav.open { visibility: visible; opacity: 1; }
-		nav a { font-family: 'Manrope', sans-serif; font-size: 27px; }
+		.menu-button {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 
-		.menu-button.active span:first-child { transform: translateY(3.5px) rotate(45deg); }
-		.menu-button.active span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+		.program-grid.minimal {
+			grid-template-columns: 1fr;
+		}
 
-		.hero { min-height: auto; background: linear-gradient(180deg, #f8f4e9 0 58%, #e3f0eb 58%); }
-		.hero-grid { display: block; width: calc(100% - 40px); padding-top: 120px; }
-		.hero-copy { padding-top: 30px; }
-		h1 { font-size: clamp(53px, 16vw, 76px); letter-spacing: -4px; }
-		.hero-lead { font-size: 15px; }
-		.hero-visual { min-height: 570px; margin-top: 30px; }
-		.photo-frame { top: 55px; right: 5%; width: 84%; height: 450px; }
-		.sun-shape { top: 20px; right: 0; width: 92%; }
-		.route-card { top: 105px; left: 0; }
-		.destination-chip { bottom: 35px; }
-		.scroll-note { display: none; }
+		.story-card {
+			padding: 40px;
+		}
 
-		.section-wrap { width: calc(100% - 40px); }
-		.mission { padding-top: 80px; }
-		.mission-grid,
-		.programs-header,
-		.stories { grid-template-columns: 1fr; gap: 40px; }
-		.mission-copy { padding-top: 0; }
-		.impact-strip { grid-template-columns: 1fr 1fr; margin-top: 70px; }
-		.impact-strip div:nth-child(2) { border-right: 0; }
-		.impact-strip div:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
+		.mentor-section {
+			padding: 60px 0;
+		}
 
-		h2 { font-size: clamp(39px, 12vw, 58px); letter-spacing: -2.5px; }
-		.programs { padding-block: 80px; }
-		.programs-header { margin-bottom: 36px; }
-		.program-grid { grid-template-columns: 1fr; }
-		.program-card { min-height: 330px; }
+		.cta-minimal {
+			padding: 60px 0;
+		}
 
-		.mentor-band { grid-template-columns: 1fr; }
-		.mentor-image { min-height: 430px; }
-		.mentor-image::after { background: linear-gradient(180deg, transparent 80%, var(--forest-dark)); }
-		.mentor-copy { padding: 70px 30px 80px; }
+		.cta-content h2 {
+			font-size: 42px;
+		}
 
-		.stories { padding-block: 80px; }
-		.story-controls { margin-top: 25px; }
-		.story-card { min-height: 420px; padding: 55px 35px 35px; }
-		blockquote { font-size: 22px; }
+		.footer-main {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
 
-		.resources { padding-block: 80px; }
-		.resource-heading { align-items: start; flex-direction: column; gap: 30px; }
-		.resource-grid { grid-template-columns: 1fr; }
-		.feature-resource { grid-row: auto; grid-template-columns: 1fr; }
-		.feature-art { min-height: 340px; }
-		.mini-resource,
-		.mini-resource.green { min-height: 300px; grid-column: auto; }
-
-		.cta-section { min-height: 570px; padding-inline: 20px; }
-		.cta-actions { flex-direction: column; }
-
-		.footer-main { grid-template-columns: 1fr; gap: 50px; }
-		.footer-bottom { flex-direction: column; gap: 15px; line-height: 1.6; }
-	}
-
-	@media (max-width: 480px) {
-		.hero-actions { align-items: flex-start; flex-direction: column; gap: 22px; }
-		.hero-visual { min-height: 485px; }
-		.photo-frame { height: 385px; }
-		.route-card { top: 80px; width: 175px; }
-		.destination-chip { right: 0; bottom: 20px; }
-		.mentor-image { min-height: 350px; }
-		.availability { right: 16px; bottom: 25px; }
-		.mentor-points { flex-direction: column; gap: 12px; }
-		.story-card { min-height: 460px; }
-		.story-progress { right: 28px; bottom: 30px; }
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		:global(*) {
-			scroll-behavior: auto !important;
-			transition-duration: 0.01ms !important;
+		.footer-links {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

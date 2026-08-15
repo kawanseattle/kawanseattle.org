@@ -1,21 +1,20 @@
 :root {
-	font-family: 'DM Sans', sans-serif;
-	color: #18352f;
-	background: #fcfbf6;
+	font-family: 'Crimson Text', serif;
+	color: #5c4a42;
+	background: #faf8f5;
 	font-synthesis: none;
-	--ink: #143b34;
-	--forest: #145f52;
-	--forest-dark: #0e493f;
-	--mint: #dcefe8;
-	--mint-soft: #eef7f3;
-	--gold: #f2b866;
-	--cream: #f8f3e8;
+	--ink: #6b5348;
+	--forest: #9b8f86;
+	--forest-dark: #8b7d74;
+	--mint: #ede4db;
+	--mint-soft: #f5eeea;
+	--gold: #e8c477;
+	--cream: #f5f0eb;
 	--white: #ffffff;
-	--muted: #60736f;
-	--line: rgba(20, 59, 52, 0.13);
-	--shadow: 0 24px 70px rgba(25, 70, 61, 0.11);
+	--muted: #8a7d76;
+	--line: rgba(91, 74, 66, 0.08);
+	--shadow: 0 24px 70px rgba(91, 74, 66, 0.08);
 }
-
 * {
 	box-sizing: border-box;
 }
@@ -27,7 +26,7 @@ html {
 body {
 	margin: 0;
 	min-width: 320px;
-	background: #fcfbf6;
+	background: #faf8f5;
 }
 
 button,
