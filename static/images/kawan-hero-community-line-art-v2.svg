@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" role="presentation">
+	<defs>
+		<filter id="remove-light-background" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+			<feColorMatrix type="matrix" values="
+				1 0 0 0 0
+				0 1 0 0 0
+				0 0 1 0 0
+				-0.2126 -0.7152 -0.0722 0 1" />
+			<feComponentTransfer>
+				<feFuncA type="linear" slope="3" intercept="-1" />
+			</feComponentTransfer>
+		</filter>
+	</defs>
+	<image href="kawan-hero-community-line-art-v2-source.png" width="1672" height="941" filter="url(#remove-light-background)" />
+</svg>
