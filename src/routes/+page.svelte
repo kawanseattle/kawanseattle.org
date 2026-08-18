@@ -30,35 +30,31 @@
 		}
 	];
 
-	const stories = [
+	const today = new Date();
+	const calendarYear = today.getFullYear();
+	const calendarMonth = 8;
+	const calendarDate = new Date(calendarYear, calendarMonth, 1);
+	const monthLabel = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(calendarDate);
+	const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	const firstWeekday = new Date(calendarYear, calendarMonth, 1).getDay();
+	const daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
+	const calendarDays: Array<number | null> = [
+		...Array.from({ length: firstWeekday }, () => null),
+		...Array.from({ length: daysInMonth }, (_, index) => index + 1)
+	];
+	const events = [
 		{
-			quote:
-				'My mentor helped me turn a confusing process into a clear plan. I arrived feeling prepared and supported.',
-			name: 'Nadia Rahman',
-			detail: 'Bangladesh → Canada',
-			image:
-				'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=85'
-		},
-		{
-			quote:
-				'Kawan connected me with students who understood exactly what I was going through.',
-			name: 'Mateo Silva',
-			detail: 'Brazil → Germany',
-			image:
-				'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=85'
-		},
-		{
-			quote:
-				'I found a scholarship I would never have discovered on my own. It changed what felt possible.',
-			name: 'Amara Okafor',
-			detail: 'Nigeria → United Kingdom',
-			image:
-				'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=85'
+			day: 7,
+			title: 'Labor Day Hike',
+			time: 'Time TBD',
+			description: 'Spend Labor Day outdoors with the KAWAN community for a refreshing hike and time together.',
+			image: `${base}/images/labor-day-hike.png`
 		}
 	];
+	const eventByDay = new Map(events.map((event, index) => [event.day, index]));
 
 	let menuOpen = false;
-	let storyIndex = 0;
+	let selectedEventIndex = 0;
 	let email = '';
 	let submitted = false;
 	let heroElement: HTMLElement;
@@ -112,7 +108,7 @@
 	<nav class:open={menuOpen} aria-label="Primary navigation">
 		<a href="#about" onclick={() => (menuOpen = false)}>About</a>
 		<a href="#programs" onclick={() => (menuOpen = false)}>How we help</a>
-		<a href="#stories" onclick={() => (menuOpen = false)}>Stories</a>
+		<a href="#events" onclick={() => (menuOpen = false)}>Events</a>
 	</nav>
 
 	<a class="desktop-cta" href="#connect">Connect</a>
@@ -138,7 +134,7 @@
 			</div>
 			<div class="hero-content">
 				<p class="hero-kicker">Welcome to</p>
-				<h1><span class="kawan-script">KAWAN</span></h1>
+				<h1><span class="kawan-script">kawan</span></h1>
 				<p class="hero-statement">A friend for your journey.</p>
 				<p class="hero-tagline">Helping international students settle in, build meaningful friendships, and navigate life in Seattle.</p>
 				<div class="hero-actions">
@@ -220,23 +216,66 @@
 		<p>Community begins by showing up for one another.</p>
 	</section>
 
-	<section class="stories section-wrap" id="stories">
-		<div class="journey-section-heading stories-heading reveal">
-			<p class="about-eyebrow">belonging</p>
-			<h2>The journey becomes a shared one.</h2>
+	<section class="stories events section-wrap" id="events">
+		<div class="events-heading reveal">
+			<p class="about-eyebrow">Come as you are</p>
+			<h2>Events</h2>
+			<p>Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.</p>
 		</div>
-		<div class="story-card reveal">
-			<div class="quote-mark">"</div>
-			<blockquote>{stories[storyIndex].quote}</blockquote>
-			<div class="student">
-				<img src={stories[storyIndex].image} alt={stories[storyIndex].name} />
-				<div><strong>{stories[storyIndex].name}</strong><span>{stories[storyIndex].detail}</span></div>
+
+		<div class="events-feature reveal">
+			<div class="event-calendar" aria-label={`${monthLabel} event calendar`}>
+				<div class="calendar-heading"><p>Upcoming events</p><h3>{monthLabel}</h3></div>
+				<div class="calendar-grid calendar-weekdays">
+					{#each weekdays as weekday}<span>{weekday}</span>{/each}
+				</div>
+				<div class="calendar-grid calendar-dates">
+					{#each calendarDays as day}
+						{#if day && eventByDay.has(day)}
+							<button
+								class:active={eventByDay.get(day) === selectedEventIndex}
+								onclick={() => (selectedEventIndex = eventByDay.get(day) ?? 0)}
+								onmouseenter={() => (selectedEventIndex = eventByDay.get(day) ?? 0)}
+								aria-label={`Show event on ${monthLabel.split(' ')[0]} ${day}`}
+							>{day}</button>
+						{:else}<span class:empty={!day}>{day ?? ''}</span>{/if}
+					{/each}
+				</div>
 			</div>
-			<div class="story-progress">
-				{#each stories as _, index}
-					<button class:active={index === storyIndex} onclick={() => (storyIndex = index)} aria-label={`Show story ${index + 1}`}></button>
-				{/each}
-			</div>
+
+			<article class="featured-event">
+				<div class="featured-event-photo"><img src={events[selectedEventIndex].image} alt="KAWAN community gathering together" /></div>
+				<div class="featured-event-copy">
+					<p class="event-date">{monthLabel.split(' ')[0]} {events[selectedEventIndex].day} <span>{events[selectedEventIndex].time}</span></p>
+					<h3>{events[selectedEventIndex].title}</h3>
+					<p>{events[selectedEventIndex].description}</p>
+					<a class="button" href="mailto:hello@kawan.org">RSVP / Learn More <span>↗</span></a>
+				</div>
+			</article>
+		</div>
+
+		<div class="moments-heading reveal">
+			<p class="about-eyebrow">Life with KAWAN</p>
+			<h3>Moments Together</h3>
+			<p>A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.</p>
+		</div>
+		<div class="moments-gallery">
+			<figure class="moment moment-wide reveal">
+				<img src={`${base}/images/kawan-hiking-trips-trail.jpeg`} alt="KAWAN community members together on a mountain trail" />
+				<figcaption><strong>Hiking Trips</strong><span>Summer outings</span></figcaption>
+			</figure>
+			<figure class="moment moment-tall reveal" style="--delay: 80ms">
+				<img src={`${base}/images/kawan-thanksgiving-retreat-cabin.jpeg`} alt="KAWAN community members together at the Thanksgiving retreat cabin" />
+				<figcaption><strong>Thanksgiving Retreat</strong><span>Community getaway</span></figcaption>
+			</figure>
+			<figure class="moment moment-small reveal" style="--delay: 140ms">
+				<img src={`${base}/images/kawan-community-outing.jpeg`} alt="Friends enjoying a Seattle community adventure" />
+				<figcaption><strong>Seattle Adventures</strong><span>Exploring together</span></figcaption>
+			</figure>
+			<figure class="moment moment-small reveal" style="--delay: 200ms">
+				<img src={`${base}/images/kawan-summer-camping.avif`} alt="KAWAN community members enjoying a summer camping trip" />
+				<figcaption><strong>Summer Camping</strong><span>Outdoor adventures</span></figcaption>
+			</figure>
 		</div>
 	</section>
 
@@ -262,7 +301,7 @@
 			<p>A friend for your journey.</p>
 		</div>
 		<div class="footer-links">
-			<div><strong>LINKS</strong><a href="#programs">How we help</a><a href="#stories">Stories</a></div>
+			<div><strong>LINKS</strong><a href="#programs">How we help</a><a href="#events">Events</a></div>
 			<div><strong>GET INVOLVED</strong><a href="mailto:volunteer@kawan.org">Volunteer</a><a href="mailto:hello@kawan.org">Contact us</a></div>
 		</div>
 	</div>
@@ -725,7 +764,7 @@
 		padding: 100px 0;
 	}
 
-	.story-card {
+	:global(.story-card) {
 		max-width: 720px;
 		margin: 0 auto;
 		padding: 60px;
@@ -735,14 +774,14 @@
 		box-shadow: 0 22px 50px rgba(91, 74, 66, 0.04);
 	}
 
-	.quote-mark {
+	:global(.quote-mark) {
 		font-size: 80px;
 		color: var(--gold);
 		line-height: 0.6;
 		margin-bottom: 20px;
 	}
 
-	blockquote {
+	:global(blockquote) {
 		margin: 0 0 40px 0;
 		font-size: 24px;
 		line-height: 1.6;
@@ -750,37 +789,37 @@
 		font-style: italic;
 	}
 
-	.student {
+	:global(.student) {
 		display: flex;
 		align-items: center;
 		gap: 16px;
 		margin-bottom: 32px;
 	}
 
-	.student img {
+	:global(.student) img {
 		width: 60px;
 		height: 60px;
 		border-radius: 50%;
 	}
 
-	.student strong {
+	:global(.student) strong {
 		display: block;
 		color: var(--ink);
 	}
 
-	.student span {
+	:global(.student) span {
 		display: block;
 		font-size: 13px;
 		color: var(--muted);
 	}
 
-	.story-progress {
+	:global(.story-progress) {
 		display: flex;
 		gap: 8px;
 		justify-content: center;
 	}
 
-	.story-progress button {
+	:global(.story-progress) button {
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
@@ -790,7 +829,7 @@
 		transition: background 0.3s ease;
 	}
 
-	.story-progress button.active {
+	:global(.story-progress) button.active {
 		background: var(--ink);
 	}
 
@@ -920,7 +959,7 @@
 			grid-template-columns: 1fr;
 		}
 
-		.story-card {
+		:global(.story-card) {
 			padding: 40px;
 		}
 
@@ -1777,11 +1816,11 @@
 		padding-bottom: 130px;
 	}
 
-	.stories-heading {
+	:global(.stories-heading) {
 		margin-bottom: 54px;
 	}
 
-	.story-card {
+	:global(.story-card) {
 		background: rgba(255, 255, 255, 0.55);
 		backdrop-filter: blur(9px);
 	}
@@ -1924,9 +1963,9 @@
 	.program-card h3 { margin-top: auto; font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: 400; }
 	:global(.mentor-section) { background: #d9d3c4; }
 	:global(.mentor-minimal) { border-color: rgba(52,58,53,.3); }
-	.story-card { border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none; }
-	blockquote { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(26px, 3vw, 40px); line-height: 1.42; }
-	.student img { filter: grayscale(.35) sepia(.15); }
+	:global(.story-card) { border: 0; border-radius: 0; background: transparent; box-shadow: none; backdrop-filter: none; }
+	:global(blockquote) { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(26px, 3vw, 40px); line-height: 1.42; }
+	:global(.student) img { filter: grayscale(.35) sepia(.15); }
 	.cta-minimal { border-top: 1px solid rgba(52,58,53,.18); }
 	footer { border-top: 1px solid rgba(52,58,53,.22); }
 
@@ -1945,7 +1984,7 @@
 		.about-grid { grid-template-columns: 1fr; }
 		.about-card + .about-card { border-top: 1px solid rgba(52,58,53,.22); border-left: 0; }
 		.program-card { min-height: 220px; border-left: 1px solid rgba(52,58,53,.22); }
-		.story-card { padding: 20px 0; }
+		:global(.story-card) { padding: 20px 0; }
 	}
 	*/
 
@@ -2130,7 +2169,7 @@
 	.text-link { padding-bottom: 5px; border-bottom: 1px solid #78685e; color: #514843; font-size: 13px; font-weight: 650; }
 
 	.stories { padding-top: 140px; padding-bottom: 140px; background: #fbf8f2; }
-	.story-card { max-width: 820px; border-radius: 2px; background: #fffdf8; box-shadow: 0 24px 60px rgba(76, 70, 59, 0.07); }
+	:global(.story-card) { max-width: 820px; border-radius: 2px; background: #fffdf8; box-shadow: 0 24px 60px rgba(76, 70, 59, 0.07); }
 	.cta-minimal { background: #e4e9df; }
 
 	@media (max-width: 768px) {
@@ -2224,7 +2263,7 @@
 		filter: saturate(.72) contrast(.96);
 	}
 	.stories :global(.heading-accent) { width: 168px; margin-bottom: -4px; }
-	.story-card { box-shadow: none; border: 1px solid rgba(93,102,87,.11); }
+	:global(.story-card) { box-shadow: none; border: 1px solid rgba(93,102,87,.11); }
 
 	@media (max-width: 768px) {
 		.illustration-band { grid-template-columns: 1fr; gap: 40px; padding: 36px 24px; }
@@ -2314,8 +2353,8 @@
 
 	:global(.mentor-section) { padding-top: 145px; padding-bottom: 145px; }
 	:global(.involve-photo) { box-shadow: 0 18px 46px rgba(58,55,48,.1); transform: none; }
-	.story-card { transition: transform .35s ease, border-color .35s ease; }
-	.story-card:hover { transform: translateY(-3px); border-color: rgba(93,102,87,.2); }
+	:global(.story-card) { transition: transform .35s ease, border-color .35s ease; }
+	:global(.story-card):hover { transform: translateY(-3px); border-color: rgba(93,102,87,.2); }
 	.button, .text-link, nav a { transition-duration: .3s; }
 
 	@media (max-width: 900px) {
@@ -2333,7 +2372,7 @@
 		:global(html) { scroll-behavior: auto; }
 		:global(.reveal), :global(.reveal.visible) { opacity: 1; transform: none; transition: none; }
 		:global(.line-accent) path { stroke-dashoffset: 0; transition: none; }
-		.program-card, .story-card, .button { transition: none; }
+		.program-card, :global(.story-card), .button { transition: none; }
 	}
 
 	.header-logo {
@@ -2867,7 +2906,7 @@
 		background: #faf7f0;
 		font-family: 'Manrope', sans-serif;
 	}
-	h1, h2, h3, blockquote,
+	h1, h2, h3, :global(blockquote),
 	.hero-statement,
 	.illustration-copy h2,
 	.belief-heading h2,
@@ -2933,7 +2972,7 @@
 	.hero-content .hero-actions { animation-delay: .62s; }
 	.hero-kicker { margin: 0 0 10px; color: #846351; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
 	.hero h1 { margin: 0; font-size: clamp(88px, 12vw, 152px); line-height: .85; letter-spacing: -.065em; text-transform: none; }
-	.hero .kawan-script { padding: 0; color: #405047; font-family: 'Fraunces', serif; font-size: 1em; font-style: normal; font-weight: 650; letter-spacing: -.065em; text-transform: uppercase; }
+	.hero .kawan-script { padding: 0; color: #405047; font-family: 'Fraunces', serif; font-size: 1em; font-style: normal; font-weight: 650; letter-spacing: -.065em; text-transform: none; }
 	.hero .kawan-script::before { display: none; }
 	.hero-statement { margin: 32px 0 13px; font-size: clamp(30px, 3.3vw, 43px); font-weight: 550; letter-spacing: -.035em; }
 	.hero-statement + .hero-tagline { max-width: 620px; margin: 0 auto 32px; color: #66635e; font-size: 15px; line-height: 1.75; }
@@ -3017,8 +3056,57 @@
 	.community-photo-break p { position: absolute; z-index: 2; right: 7%; bottom: 7%; max-width: 620px; margin: 0; color: white; font-family: 'Fraunces', serif; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.05; text-align: right; }
 
 	.stories { padding-top: 145px; padding-bottom: 145px; background: #faf7f0; }
-	.story-card { border: 1px solid rgba(64,77,66,.11); border-radius: 8px; box-shadow: none; }
-	.student img { filter: saturate(.82); }
+	:global(.story-card) { border: 1px solid rgba(64,77,66,.11); border-radius: 8px; box-shadow: none; }
+	:global(.student) img { filter: saturate(.82); }
+
+	/* Events */
+	.events { padding-top: 145px; padding-bottom: 150px; }
+	.events-heading { max-width: 760px; margin-bottom: 82px; }
+	.events-heading h2 { margin: 10px 0 22px; color: #3e4841; font-family: 'Fraunces', serif; font-size: clamp(64px, 8vw, 104px); line-height: .9; letter-spacing: -.055em; }
+	.events-heading > p:last-child { max-width: 650px; margin: 0; color: #696b66; font-size: 16px; line-height: 1.75; }
+	.events-feature { display: grid; grid-template-columns: minmax(320px, .78fr) minmax(520px, 1.22fr); gap: clamp(42px, 6vw, 82px); align-items: start; }
+	.event-calendar { padding-top: 6px; }
+	.calendar-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid rgba(65,77,67,.15); }
+	.calendar-heading p { margin: 0; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+	.calendar-heading h3 { margin: 0; color: #414b44; font-family: 'Fraunces', serif; font-size: 28px; font-weight: 550; letter-spacing: -.03em; }
+	.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+	.calendar-weekdays { margin-bottom: 12px; }
+	.calendar-weekdays span { color: #8b8c86; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+	.calendar-dates { row-gap: 8px; }
+	.calendar-dates > span,
+	.calendar-dates > button { display: grid; width: 42px; height: 42px; margin: auto; place-items: center; border: 0; border-radius: 50%; color: #5f625d; background: transparent; font: 500 12px 'Manrope', sans-serif; }
+	.calendar-dates > span.empty { visibility: hidden; }
+	.calendar-dates > button { position: relative; color: #435248; cursor: pointer; transition: color .24s ease, background .24s ease, transform .24s ease; }
+	.calendar-dates > button::after { position: absolute; bottom: 5px; width: 3px; height: 3px; border-radius: 50%; background: #a76f54; content: ''; }
+	.calendar-dates > button:hover { background: #ebece5; transform: translateY(-1px); }
+	.calendar-dates > button.active { color: #fff; background: #4b5b50; }
+	.calendar-dates > button.active::after { background: #e8c9b8; }
+	.featured-event { overflow: hidden; border: 1px solid rgba(65,77,67,.1); border-radius: 8px; background: #fffdf8; }
+	.featured-event-photo { overflow: hidden; aspect-ratio: 16 / 9; background: #e8e7df; }
+	.featured-event-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.86) contrast(.97); transition: transform .55s ease; }
+	.featured-event:hover .featured-event-photo img { transform: scale(1.015); }
+	.featured-event-copy { padding: clamp(28px, 4vw, 46px); }
+	.event-date { display: flex; gap: 14px; margin: 0 0 14px; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+	.event-date span { color: #797a74; }
+	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Fraunces', serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
+	.featured-event-copy > p:not(.event-date) { max-width: 590px; margin: 0 0 26px; color: #696b66; font-size: 14px; line-height: 1.7; }
+	.featured-event-copy .button { width: fit-content; }
+	.moments-heading { max-width: 680px; margin: 150px 0 58px; }
+	.moments-heading h3 { margin: 10px 0 18px; color: #414a43; font-family: 'Fraunces', serif; font-size: clamp(50px, 6vw, 76px); line-height: .98; letter-spacing: -.045em; }
+	.moments-heading > p:last-child { margin: 0; color: #696b66; font-size: 15px; line-height: 1.75; }
+	.moments-gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 300px 300px; gap: 16px; }
+	.moment { position: relative; overflow: hidden; min-width: 0; margin: 0; border-radius: 7px; background: #e6e5dd; }
+	.moment-wide { grid-column: 1 / 8; grid-row: 1 / 3; }
+	.moment-tall { grid-column: 8 / 13; grid-row: 1; }
+	.moment-small { grid-column: 8 / 11; grid-row: 2; }
+	.moment-small:last-child { grid-column: 11 / 13; }
+	.moment img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(.96); transition: transform .55s ease, filter .55s ease; }
+	.moment-wide img { object-position: center; }
+	.moment-tall img { object-position: center 42%; }
+	.moment figcaption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding: 52px 24px 22px; color: #fff; background: linear-gradient(transparent, rgba(31,38,33,.72)); }
+	.moment figcaption strong { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 550; }
+	.moment figcaption span { font-size: 9px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+	.moment:hover img { filter: saturate(.9) contrast(.98); transform: scale(1.018); }
 
 	.cta-minimal { padding: 150px 0; background: #eef2eb; }
 	.cta-content { max-width: 820px; margin: 0 auto; }
@@ -3034,6 +3122,9 @@
 		.hero-illustrations { inset: 112px -10% 20px; }
 		.hero-illustration { width: 100%; max-width: none; }
 		.about-card, .about-card:first-child, .about-card:last-child { grid-template-columns: 1fr; gap: 28px; }
+		.events-feature { grid-template-columns: 1fr; }
+		.event-calendar { max-width: 600px; }
+		.moments-gallery { grid-template-rows: 280px 280px; }
 	}
 	@media (max-width: 620px) {
 		.hero, .hero-minimal { min-height: 700px; }
@@ -3047,6 +3138,16 @@
 		.about { padding-top: 100px; }
 		.community-photo-break { width: calc(100% - 24px); height: 62vh; border-radius: 7px; }
 		.community-photo-break p { right: 8%; bottom: 7%; left: 8%; text-align: left; }
+		.events { padding-top: 100px; padding-bottom: 100px; }
+		.events-heading { margin-bottom: 58px; }
+		.events-feature { gap: 48px; }
+		.calendar-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+		.calendar-dates > span, .calendar-dates > button { width: 38px; height: 38px; }
+		.moments-heading { margin-top: 100px; }
+		.moments-gallery { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
+		.moment, .moment-wide, .moment-tall, .moment-small { display: block; grid-column: auto; grid-row: auto; height: 300px; }
+		.moment-wide { height: 390px; }
+		.moment figcaption { align-items: flex-start; flex-direction: column; gap: 4px; }
 		.cta-actions { align-items: stretch; flex-direction: column; }
 	}
 	@media (prefers-reduced-motion: reduce) {
