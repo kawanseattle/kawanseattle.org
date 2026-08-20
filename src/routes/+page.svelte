@@ -2943,7 +2943,7 @@
 		position: relative;
 		overflow: hidden;
 		min-height: 790px;
-		background: #f4eee4;
+		background: #f8f2e8;
 	}
 	.hero::before, .hero::after { display: none; }
 	.hero-minimal {
