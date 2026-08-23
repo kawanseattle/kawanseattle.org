@@ -2668,7 +2668,7 @@
 		max-width: 510px;
 		margin: 0 0 28px;
 		color: #464541;
-		font-family: 'Fraunces', serif;
+		font-family: 'Source Serif 4', Georgia, serif;
 		font-size: clamp(26px, 2.7vw, 39px);
 		font-weight: 500;
 		line-height: 1.22;
@@ -2906,7 +2906,10 @@
 		background: #faf7f0;
 		font-family: 'Manrope', sans-serif;
 	}
-	h1, h2, h3, :global(blockquote),
+	h1, :global(blockquote) {
+		font-family: 'Fraunces', serif;
+	}
+	h2, h3,
 	.hero-statement,
 	.illustration-copy h2,
 	.belief-heading h2,
@@ -2914,7 +2917,17 @@
 	.journey-section-heading h2,
 	.program-card h3,
 	.cta-content h2 {
-		font-family: 'Fraunces', serif;
+		font-family: 'Source Serif 4', Georgia, serif;
+	}
+	.illustration-copy h2,
+	.belief-heading h2,
+	.journey-section-heading h2,
+	.events-heading h2,
+	.moments-heading h3,
+	.cta-content h2 {
+		font-weight: 650;
+		letter-spacing: -.04em;
+		text-rendering: optimizeLegibility;
 	}
 	.about-eyebrow, .about-label {
 		color: #8a6250;
@@ -3062,13 +3075,13 @@
 	/* Events */
 	.events { padding-top: 145px; padding-bottom: 150px; }
 	.events-heading { max-width: 760px; margin-bottom: 82px; }
-	.events-heading h2 { margin: 10px 0 22px; color: #3e4841; font-family: 'Fraunces', serif; font-size: clamp(64px, 8vw, 104px); line-height: .9; letter-spacing: -.055em; }
+	.events-heading h2 { margin: 10px 0 22px; color: #3e4841; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(64px, 8vw, 104px); line-height: .9; letter-spacing: -.055em; }
 	.events-heading > p:last-child { max-width: 650px; margin: 0; color: #696b66; font-size: 16px; line-height: 1.75; }
 	.events-feature { display: grid; grid-template-columns: minmax(320px, .78fr) minmax(520px, 1.22fr); gap: clamp(42px, 6vw, 82px); align-items: start; }
 	.event-calendar { padding-top: 6px; }
 	.calendar-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid rgba(65,77,67,.15); }
 	.calendar-heading p { margin: 0; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
-	.calendar-heading h3 { margin: 0; color: #414b44; font-family: 'Fraunces', serif; font-size: 28px; font-weight: 550; letter-spacing: -.03em; }
+	.calendar-heading h3 { margin: 0; color: #414b44; font-family: 'Source Serif 4', Georgia, serif; font-size: 28px; font-weight: 550; letter-spacing: -.03em; }
 	.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
 	.calendar-weekdays { margin-bottom: 12px; }
 	.calendar-weekdays span { color: #8b8c86; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
@@ -3088,11 +3101,11 @@
 	.featured-event-copy { padding: clamp(28px, 4vw, 46px); }
 	.event-date { display: flex; gap: 14px; margin: 0 0 14px; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 	.event-date span { color: #797a74; }
-	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Fraunces', serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
+	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
 	.featured-event-copy > p:not(.event-date) { max-width: 590px; margin: 0 0 26px; color: #696b66; font-size: 14px; line-height: 1.7; }
 	.featured-event-copy .button { width: fit-content; }
 	.moments-heading { max-width: 680px; margin: 150px 0 58px; }
-	.moments-heading h3 { margin: 10px 0 18px; color: #414a43; font-family: 'Fraunces', serif; font-size: clamp(50px, 6vw, 76px); line-height: .98; letter-spacing: -.045em; }
+	.moments-heading h3 { margin: 10px 0 18px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(50px, 6vw, 76px); line-height: .98; letter-spacing: -.045em; }
 	.moments-heading > p:last-child { margin: 0; color: #696b66; font-size: 15px; line-height: 1.75; }
 	.moments-gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 300px 300px; gap: 16px; }
 	.moment { position: relative; overflow: hidden; min-width: 0; margin: 0; border-radius: 7px; background: #e6e5dd; }
