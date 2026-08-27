@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import intlTelInput, { type Iti } from 'intl-tel-input/intlTelInputWithUtils';
+	import 'intl-tel-input/styles';
 
 	const programs = [
 		{
@@ -65,6 +67,7 @@
 	let connectFormOpen = false;
 	let connectName = '';
 	let connectPhone = '';
+	let phoneInputInstance: Iti | null = null;
 	let connectSubmitted = false;
 	let connectSubmitting = false;
 	let connectError = '';
@@ -87,8 +90,41 @@
 		connectFormOpen = false;
 	}
 
+	function internationalPhoneInput(input: HTMLInputElement) {
+		const instance = intlTelInput(input, {
+			initialCountry: 'us',
+			countrySearch: true,
+			separateDialCode: true,
+			formatAsYouType: true,
+			strictMode: true
+		});
+		phoneInputInstance = instance;
+
+		const syncPhone = () => {
+			connectPhone = input.value;
+			connectError = '';
+		};
+		input.addEventListener('input', syncPhone);
+		input.addEventListener('countrychange', syncPhone);
+
+		return {
+			destroy() {
+				input.removeEventListener('input', syncPhone);
+				input.removeEventListener('countrychange', syncPhone);
+				instance.destroy();
+				if (phoneInputInstance === instance) phoneInputInstance = null;
+			}
+		};
+	}
+
 	async function submitConnectForm() {
 		if (!connectName.trim() || !connectPhone.trim() || connectSubmitting) return;
+		await phoneInputInstance?.promise;
+		if (!phoneInputInstance?.isValidNumber()) {
+			connectError = 'Please enter a valid phone number for the selected country.';
+			return;
+		}
+		const formattedPhone = phoneInputInstance.getNumber();
 
 		connectSubmitting = true;
 		connectError = '';
@@ -98,7 +134,7 @@
 				headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 				body: JSON.stringify({
 					name: connectName.trim(),
-					phone: connectPhone.trim(),
+					phone: formattedPhone,
 					_subject: 'New KAWAN Get Connected submission',
 					_template: 'table',
 					_honey: ''
@@ -403,7 +439,10 @@
 					<label for="connect-name">Name</label>
 					<input id="connect-name" name="name" type="text" autocomplete="name" bind:value={connectName} required placeholder="Your name" />
 					<label for="connect-phone">Phone number</label>
-					<input id="connect-phone" name="phone" type="tel" autocomplete="tel" bind:value={connectPhone} required placeholder="Your phone number" />
+					<div class="phone-field">
+						<input id="connect-phone" name="phone" type="tel" autocomplete="tel" use:internationalPhoneInput required aria-describedby="connect-phone-hint" />
+					</div>
+					<p id="connect-phone-hint" class="phone-hint">Choose your country, then enter your phone number.</p>
 					<p class="connect-privacy">Your information will be securely forwarded to KAWAN by our form delivery provider.</p>
 					{#if connectError}<p class="connect-error" role="alert">{connectError}</p>{/if}
 					<button class="button" type="submit" disabled={connectSubmitting}>{connectSubmitting ? 'Sending…' : 'Submit'}</button>
@@ -3326,6 +3365,39 @@
 	}
 	.connect-form input:focus { border-color: #65766a; box-shadow: 0 0 0 3px rgba(101, 118, 106, .1); }
 	.connect-form input::placeholder { color: #9a9b95; }
+	.phone-field { width: 100%; }
+	:global(.phone-field .iti) {
+		width: 100%;
+		--iti-border-color: rgba(65, 77, 67, .16);
+		--iti-dropdown-bg: #fffdf8;
+		--iti-hover-color: rgba(101, 118, 106, .09);
+	}
+	:global(.phone-field .iti__country-container) { padding: 1px; }
+	:global(.phone-field .iti__selected-country) {
+		padding: 0 12px;
+		border-radius: 5px 0 0 5px;
+		color: #485149;
+		font-family: 'Manrope', sans-serif;
+		transition: background .2s ease;
+	}
+	:global(.phone-field .iti__selected-dial-code) { margin-left: 8px; font-size: 13px; font-weight: 650; }
+	:global(.phone-field .iti__dropdown-content) {
+		z-index: 110;
+		border: 1px solid rgba(65, 77, 67, .16);
+		border-radius: 7px;
+		background: #fffdf8;
+		box-shadow: 0 16px 38px rgba(35, 41, 36, .16);
+		font-family: 'Manrope', sans-serif;
+	}
+	:global(.phone-field .iti__search-input) {
+		height: 42px;
+		border: 0;
+		border-bottom: 1px solid rgba(65, 77, 67, .14);
+		border-radius: 0;
+		box-shadow: none;
+	}
+	:global(.phone-field .iti__country) { padding-block: 9px; font-size: 13px; }
+	.phone-hint { margin: -2px 0 2px; color: #858780; font-size: 10px; line-height: 1.5; }
 	.connect-privacy { margin: 8px 0 0; color: #858780; font-size: 10px; line-height: 1.55; }
 	.connect-error { margin: 5px 0 0; color: #9a4f3e; font-size: 12px; line-height: 1.5; }
 	.connect-form .button { width: fit-content; margin-top: 18px; cursor: pointer; }
