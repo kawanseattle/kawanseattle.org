@@ -20,7 +20,7 @@
 		},
 		{
 			title: 'Guidance & Mentorship',
-			description: 'Get thoughtful guidance from someone who understands what starting over feels like.',
+			description: 'Get thoughtful guidance from someone who understands what college life is like.',
 			activities: ['One to one mentorship', 'College planning', 'Campus resources']
 		},
 		{
@@ -52,18 +52,77 @@
 		}
 	];
 	const eventByDay = new Map(events.map((event, index) => [event.day, index]));
+	const hikingPhotos = [
+		{ src: `${base}/images/kawan-hiking-group-2026.jpg`, alt: 'KAWAN friends gathered along a mountain hiking trail' },
+		{ src: `${base}/images/kawan-hiking-lake-2026.jpg`, alt: 'KAWAN friends beside an alpine lake during a hiking trip' }
+	];
 
 	let menuOpen = false;
 	let selectedEventIndex = 0;
 	let email = '';
 	let submitted = false;
 	let heroElement: HTMLElement;
+	let connectFormOpen = false;
+	let connectName = '';
+	let connectPhone = '';
+	let connectSubmitted = false;
+	let connectSubmitting = false;
+	let connectError = '';
+	let hikingSlideIndex = 0;
 
 	function subscribe() {
 		if (email.trim()) {
 			submitted = true;
 			email = '';
 		}
+	}
+
+	function openConnectForm() {
+		connectSubmitted = false;
+		connectError = '';
+		connectFormOpen = true;
+	}
+
+	function closeConnectForm() {
+		connectFormOpen = false;
+	}
+
+	async function submitConnectForm() {
+		if (!connectName.trim() || !connectPhone.trim() || connectSubmitting) return;
+
+		connectSubmitting = true;
+		connectError = '';
+		try {
+			const response = await fetch('https://formsubmit.co/ajax/kawanseattle@gmail.com', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+				body: JSON.stringify({
+					name: connectName.trim(),
+					phone: connectPhone.trim(),
+					_subject: 'New KAWAN Get Connected submission',
+					_template: 'table',
+					_honey: ''
+				})
+			});
+			if (!response.ok) throw new Error('Submission failed');
+			connectSubmitted = true;
+		} catch {
+			connectError = 'We could not send your information. Please try again.';
+		} finally {
+			connectSubmitting = false;
+		}
+	}
+
+	function handleWindowKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape' && connectFormOpen) closeConnectForm();
+	}
+
+	function showPreviousHikingPhoto() {
+		hikingSlideIndex = (hikingSlideIndex - 1 + hikingPhotos.length) % hikingPhotos.length;
+	}
+
+	function showNextHikingPhoto() {
+		hikingSlideIndex = (hikingSlideIndex + 1) % hikingPhotos.length;
 	}
 
 	onMount(() => {
@@ -95,6 +154,8 @@
 		};
 	});
 </script>
+
+<svelte:window onkeydown={handleWindowKeydown} />
 
 <svelte:head>
 	<title>Kawan | Your journey. Our guidance.</title>
@@ -138,7 +199,7 @@
 				<p class="hero-statement">A friend for your journey.</p>
 				<p class="hero-tagline">Helping international students settle in, build meaningful friendships, and navigate life in Seattle.</p>
 				<div class="hero-actions">
-					<a class="button" href="#connect">Get Connected <span>↗</span></a>
+					<a class="button hero-button" href="#connect">Let’s Go</a>
 				</div>
 			</div>
 		</div>
@@ -149,7 +210,7 @@
 				<p class="about-eyebrow">about us</p>
 				<h2>It starts with a friend.</h2>
 				<p class="story-lead"><strong>KAWAN means “friend” in Indonesian.</strong></p>
-				<p><strong>Founded by international students, we understand the challenges of moving to a new country—from navigating school and everyday life to building friendships and planning for the future.</strong></p>
+				<p><strong>Founded by international students, we understand the challenges of moving to a new country, from navigating school and everyday life to building friendships and planning for the future.</strong></p>
 				<p><strong>We're here to help students settle into life in the U.S., build lasting friendships, and find a community that walks alongside them.</strong></p>
 			</div>
 			<figure class="about-photo-frame">
@@ -261,7 +322,18 @@
 		</div>
 		<div class="moments-gallery">
 			<figure class="moment moment-wide reveal">
-				<img src={`${base}/images/kawan-hiking-trips-trail.jpeg`} alt="KAWAN community members together on a mountain trail" />
+				<div class="hiking-slide" aria-live="polite">
+					{#key hikingSlideIndex}
+						<img src={hikingPhotos[hikingSlideIndex].src} alt={hikingPhotos[hikingSlideIndex].alt} />
+					{/key}
+				</div>
+				<button class="slide-arrow slide-previous" type="button" onclick={showPreviousHikingPhoto} aria-label="Previous hiking photo">‹</button>
+				<button class="slide-arrow slide-next" type="button" onclick={showNextHikingPhoto} aria-label="Next hiking photo">›</button>
+				<div class="slide-dots" aria-label="Choose a hiking photo">
+					{#each hikingPhotos as _, index}
+						<button class:active={index === hikingSlideIndex} type="button" onclick={() => (hikingSlideIndex = index)} aria-label={`Show hiking photo ${index + 1}`}></button>
+					{/each}
+				</div>
 				<figcaption><strong>Hiking Trips</strong><span>Summer outings</span></figcaption>
 			</figure>
 			<figure class="moment moment-tall reveal" style="--delay: 80ms">
@@ -269,11 +341,11 @@
 				<figcaption><strong>Thanksgiving Retreat</strong><span>Community getaway</span></figcaption>
 			</figure>
 			<figure class="moment moment-small reveal" style="--delay: 140ms">
-				<img src={`${base}/images/kawan-community-outing.jpeg`} alt="Friends enjoying a Seattle community adventure" />
+				<img src={`${base}/images/kawan-seattle-adventures.jpeg`} alt="Seattle skyline viewed from the water during a KAWAN adventure" />
 				<figcaption><strong>Seattle Adventures</strong><span>Exploring together</span></figcaption>
 			</figure>
 			<figure class="moment moment-small reveal" style="--delay: 200ms">
-				<img src={`${base}/images/kawan-summer-camping.avif`} alt="KAWAN community members enjoying a summer camping trip" />
+				<img src={`${base}/images/kawan-summer-camping-fire.jpg`} alt="A glowing campfire during a KAWAN summer camping trip" />
 				<figcaption><strong>Summer Camping</strong><span>Outdoor adventures</span></figcaption>
 			</figure>
 		</div>
@@ -285,7 +357,7 @@
 				<p class="about-eyebrow">Get connected</p>
 				<h2>There’s a place for you here.</h2>
 				<p>Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.</p>
-				<div class="cta-actions"><a class="button large" href="mailto:hello@kawan.org">Get Connected <span>↗</span></a><a class="text-link" href="mailto:volunteer@kawan.org">Volunteer with us</a></div>
+				<div class="cta-actions"><button class="button large" type="button" onclick={openConnectForm}>Get Connected <span>↗</span></button></div>
 			</div>
 		</div>
 	</section>
@@ -302,13 +374,44 @@
 		</div>
 		<div class="footer-links">
 			<div><strong>LINKS</strong><a href="#programs">How we help</a><a href="#events">Events</a></div>
-			<div><strong>GET INVOLVED</strong><a href="mailto:volunteer@kawan.org">Volunteer</a><a href="mailto:hello@kawan.org">Contact us</a></div>
+			<div><strong>GET INVOLVED</strong><a href="mailto:hello@kawan.org">Contact us</a></div>
 		</div>
 	</div>
 	<div class="footer-bottom section-wrap">
 		<span>© 2026 KAWAN Seattle.</span>
 	</div>
 </footer>
+
+{#if connectFormOpen}
+	<div class="connect-modal-backdrop" role="presentation">
+		<div class="connect-modal" role="dialog" aria-modal="true" aria-labelledby="connect-form-title">
+			<button class="connect-modal-close" type="button" onclick={closeConnectForm} aria-label="Close connection form">Close</button>
+			{#if connectSubmitted}
+				<div class="connect-confirmation">
+					<p class="about-eyebrow">Thank you</p>
+					<h2 id="connect-form-title">We’re glad you’re here.</h2>
+					<p>Thanks, {connectName}. Your information has been entered.</p>
+					<button class="button" type="button" onclick={closeConnectForm}>Done</button>
+				</div>
+			{:else}
+				<div class="connect-form-heading">
+					<p class="about-eyebrow">Get connected</p>
+					<h2 id="connect-form-title">Let’s get to know you.</h2>
+					<p>Share your information and take the first step toward the KAWAN community.</p>
+				</div>
+				<form class="connect-form" onsubmit={(event) => { event.preventDefault(); submitConnectForm(); }}>
+					<label for="connect-name">Name</label>
+					<input id="connect-name" name="name" type="text" autocomplete="name" bind:value={connectName} required placeholder="Your name" />
+					<label for="connect-phone">Phone number</label>
+					<input id="connect-phone" name="phone" type="tel" autocomplete="tel" bind:value={connectPhone} required placeholder="Your phone number" />
+					<p class="connect-privacy">Your information will be securely forwarded to KAWAN by our form delivery provider.</p>
+					{#if connectError}<p class="connect-error" role="alert">{connectError}</p>{/if}
+					<button class="button" type="submit" disabled={connectSubmitting}>{connectSubmitting ? 'Sending…' : 'Submit'}</button>
+				</form>
+			{/if}
+		</div>
+	</div>
+{/if}
 
 <style>
 	:global(.reveal) {
@@ -2166,7 +2269,6 @@
 	:global(.mentor-minimal) p { max-width: 470px; font-size: 16px; line-height: 1.75; }
 	:global(.community-watercolor) { margin: -80px -16% -90px -5%; opacity: 0.72; }
 	:global(.involve-actions) { display: flex; align-items: center; gap: 28px; }
-	.text-link { padding-bottom: 5px; border-bottom: 1px solid #78685e; color: #514843; font-size: 13px; font-weight: 650; }
 
 	.stories { padding-top: 140px; padding-bottom: 140px; background: #fbf8f2; }
 	:global(.story-card) { max-width: 820px; border-radius: 2px; background: #fffdf8; box-shadow: 0 24px 60px rgba(76, 70, 59, 0.07); }
@@ -2355,7 +2457,7 @@
 	:global(.involve-photo) { box-shadow: 0 18px 46px rgba(58,55,48,.1); transform: none; }
 	:global(.story-card) { transition: transform .35s ease, border-color .35s ease; }
 	:global(.story-card):hover { transform: translateY(-3px); border-color: rgba(93,102,87,.2); }
-	.button, .text-link, nav a { transition-duration: .3s; }
+	.button, nav a { transition-duration: .3s; }
 
 	@media (max-width: 900px) {
 		.program-grid.minimal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -3014,10 +3116,16 @@
 	.illustration-board-game { clip-path: inset(0 0 50% 50%); animation-delay: .9s; }
 	.illustration-water-taxi { clip-path: inset(50% 50% 0 0); animation-delay: 1.08s; }
 	.illustration-hiking { clip-path: inset(50% 0 0 50%); animation-delay: 1.26s; }
-	.hero-actions .button { transition: background .25s ease, box-shadow .25s ease, transform .25s ease; }
-	.hero-actions .button span { display: inline-block; transition: transform .25s ease; }
-	.hero-actions .button:hover { background: #35433a; box-shadow: 0 8px 18px rgba(48,60,51,.16); transform: translateY(-2px); }
-	.hero-actions .button:hover span { transform: translate(4px, -4px); }
+	.hero-actions .hero-button {
+		min-width: 132px;
+		padding: 0 30px;
+		border: 1px solid rgba(255,255,255,.2);
+		border-radius: 999px;
+		box-shadow: 0 7px 18px rgba(48,60,51,.12);
+		letter-spacing: .025em;
+		transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
+	}
+	.hero-actions .hero-button:hover { background: #35433a; box-shadow: 0 10px 24px rgba(48,60,51,.18); transform: translateY(-2px); }
 	@keyframes hero-copy-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 	@keyframes illustration-reveal { to { mask-size: 100% 100%; } }
 
@@ -3109,24 +3217,122 @@
 	.moments-heading > p:last-child { margin: 0; color: #696b66; font-size: 15px; line-height: 1.75; }
 	.moments-gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 300px 300px; gap: 16px; }
 	.moment { position: relative; overflow: hidden; min-width: 0; margin: 0; border-radius: 7px; background: #e6e5dd; }
-	.moment-wide { grid-column: 1 / 8; grid-row: 1 / 3; }
-	.moment-tall { grid-column: 8 / 13; grid-row: 1; }
-	.moment-small { grid-column: 8 / 11; grid-row: 2; }
-	.moment-small:last-child { grid-column: 11 / 13; }
+	.moment-wide { grid-column: 1 / 6; grid-row: 1 / 3; }
+	.moment-tall { grid-column: 6 / 13; grid-row: 1; }
+	.moment-small { grid-column: 6 / 9; grid-row: 2; }
+	.moment-small:last-child { grid-column: 9 / 13; }
+	.hiking-slide { width: 100%; height: 100%; }
+	.hiking-slide img { animation: hiking-photo-in .45s ease both; }
 	.moment img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(.96); transition: transform .55s ease, filter .55s ease; }
 	.moment-wide img { object-position: center; }
 	.moment-tall img { object-position: center 42%; }
-	.moment figcaption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding: 52px 24px 22px; color: #fff; background: linear-gradient(transparent, rgba(31,38,33,.72)); }
+	.moment figcaption { position: absolute; z-index: 2; right: 0; bottom: 0; left: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding: 52px 24px 22px; color: #fff; background: linear-gradient(transparent, rgba(31,38,33,.72)); }
 	.moment figcaption strong { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 550; }
 	.moment figcaption span { font-size: 9px; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
 	.moment:hover img { filter: saturate(.9) contrast(.98); transform: scale(1.018); }
+	.slide-arrow {
+		position: absolute;
+		z-index: 4;
+		top: 50%;
+		display: grid;
+		width: 38px;
+		height: 38px;
+		padding: 0 0 3px;
+		place-items: center;
+		border: 1px solid rgba(255,255,255,.42);
+		border-radius: 50%;
+		color: #fff;
+		background: rgba(45,54,47,.38);
+		font: 400 26px/1 Georgia, serif;
+		cursor: pointer;
+		transform: translateY(-50%);
+		backdrop-filter: blur(5px);
+		transition: background .24s ease, transform .24s ease;
+	}
+	.slide-previous { left: 18px; }
+	.slide-next { right: 18px; }
+	.slide-arrow:hover { background: rgba(45,54,47,.62); transform: translateY(-50%) scale(1.04); }
+	.slide-dots { position: absolute; z-index: 4; right: 22px; bottom: 72px; display: flex; gap: 7px; }
+	.slide-dots button { width: 7px; height: 7px; padding: 0; border: 1px solid rgba(255,255,255,.75); border-radius: 50%; background: rgba(255,255,255,.18); cursor: pointer; transition: background .22s ease, transform .22s ease; }
+	.slide-dots button.active { background: #fff; transform: scale(1.15); }
+	@keyframes hiking-photo-in { from { opacity: .25; } to { opacity: 1; } }
 
 	.cta-minimal { padding: 150px 0; background: #eef2eb; }
 	.cta-content { max-width: 820px; margin: 0 auto; }
 	.cta-content h2 { margin: 12px 0 24px; font-size: clamp(56px, 7vw, 88px); line-height: .98; }
 	.cta-content > p:not(.about-eyebrow) { max-width: 590px; margin: 0 auto 34px; color: #666b65; font-size: 16px; line-height: 1.75; }
 	.cta-actions { display: flex; align-items: center; justify-content: center; gap: 28px; }
-	.text-link { font-family: 'Manrope', sans-serif; }
+
+	.connect-modal-backdrop {
+		position: fixed;
+		z-index: 100;
+		inset: 0;
+		display: grid;
+		padding: 24px;
+		place-items: center;
+		background: rgba(38, 43, 39, .48);
+		backdrop-filter: blur(5px);
+		animation: modal-backdrop-in .25s ease both;
+	}
+	.connect-modal {
+		position: relative;
+		width: min(540px, 100%);
+		padding: clamp(38px, 6vw, 58px);
+		border: 1px solid rgba(65, 77, 67, .11);
+		border-radius: 10px;
+		background: #faf7f0;
+		box-shadow: 0 26px 70px rgba(35, 41, 36, .2);
+		animation: modal-content-in .38s cubic-bezier(.2,.7,.2,1) both;
+	}
+	.connect-modal-close {
+		position: absolute;
+		top: 20px;
+		right: 22px;
+		padding: 4px 0;
+		border: 0;
+		border-bottom: 1px solid rgba(60, 70, 62, .35);
+		color: #626860;
+		background: transparent;
+		font: 650 10px 'Manrope', sans-serif;
+		letter-spacing: .08em;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+	.connect-form-heading h2,
+	.connect-confirmation h2 {
+		margin: 10px 0 16px;
+		color: #3e4841;
+		font-family: 'Source Serif 4', Georgia, serif;
+		font-size: clamp(38px, 6vw, 52px);
+		font-weight: 650;
+		line-height: 1;
+		letter-spacing: -.04em;
+	}
+	.connect-form-heading > p:last-child,
+	.connect-confirmation > p:not(.about-eyebrow) { margin: 0 0 28px; color: #696b66; font-size: 14px; line-height: 1.7; }
+	.connect-form { display: grid; gap: 10px; }
+	.connect-form label { margin-top: 8px; color: #4f5851; font-size: 11px; font-weight: 700; letter-spacing: .06em; }
+	.connect-form input {
+		width: 100%;
+		height: 52px;
+		padding: 0 15px;
+		border: 1px solid rgba(65, 77, 67, .2);
+		border-radius: 6px;
+		outline: none;
+		color: #343a35;
+		background: #fffdf8;
+		font: 500 14px 'Manrope', sans-serif;
+		transition: border-color .22s ease, box-shadow .22s ease;
+	}
+	.connect-form input:focus { border-color: #65766a; box-shadow: 0 0 0 3px rgba(101, 118, 106, .1); }
+	.connect-form input::placeholder { color: #9a9b95; }
+	.connect-privacy { margin: 8px 0 0; color: #858780; font-size: 10px; line-height: 1.55; }
+	.connect-error { margin: 5px 0 0; color: #9a4f3e; font-size: 12px; line-height: 1.5; }
+	.connect-form .button { width: fit-content; margin-top: 18px; cursor: pointer; }
+	.connect-form .button:disabled { cursor: wait; opacity: .65; transform: none; }
+	.connect-confirmation .button { cursor: pointer; }
+	@keyframes modal-backdrop-in { from { opacity: 0; } }
+	@keyframes modal-content-in { from { opacity: 0; transform: translateY(12px); } }
 
 	footer { background: #e5e9e1; }
 	@media (max-width: 900px) {
@@ -3162,8 +3368,12 @@
 		.moment-wide { height: 390px; }
 		.moment figcaption { align-items: flex-start; flex-direction: column; gap: 4px; }
 		.cta-actions { align-items: stretch; flex-direction: column; }
+		.connect-modal-backdrop { padding: 14px; }
+		.connect-modal { padding: 48px 24px 30px; }
+		.connect-form .button, .connect-confirmation .button { width: 100%; }
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.hero-content > *, .hero-illustration { opacity: 1; animation: none; mask-size: 100% 100%; }
+		.connect-modal-backdrop, .connect-modal, .hiking-slide img { animation: none; }
 	}
 </style>
