@@ -199,7 +199,7 @@
 
 <header class="site-header">
 	<a class="brand" href="#top" aria-label="Kawan home">
-		<img class="header-logo" src={`${base}/images/kawan-logo.png`} alt="Kawan Seattle" />
+		<span class="brand-wordmark"><span>kawan</span><small>seattle</small></span>
 	</a>
 
 	<nav class:open={menuOpen} aria-label="Primary navigation">
@@ -258,15 +258,15 @@
 				<p class="about-eyebrow">our direction</p>
 				<h2>What drives us.</h2>
 			</div>
-			<div class="about-grid">
-			<article class="about-card reveal" id="our-vision">
+			<div class="about-grid belief-grid">
+			<article class="about-card belief-block reveal" id="our-vision">
 				<div class="belief-label"><p class="about-label">our vision</p></div>
 				<div class="belief-copy">
 					<h3>Building a generation<br />that thrives.</h3>
 					<p class="about-description">Building a generation of international students who thrive in life relationally, academically, and professionally, and empower those who come after them.</p>
 				</div>
 			</article>
-			<article class="about-card reveal" id="our-mission" style="--delay: 120ms">
+			<article class="about-card belief-block reveal" id="our-mission" style="--delay: 120ms">
 				<div class="belief-label"><p class="about-label">our mission</p></div>
 				<div class="belief-copy">
 					<h3>Welcoming.<br />Connecting.<br />Supporting.</h3>
@@ -403,8 +403,7 @@
 	<div class="footer-main section-wrap">
 		<div class="footer-brand">
 			<a class="footer-identity" href="#top" aria-label="KAWAN Seattle home">
-				<img src={`${base}/images/kawan-logo.png`} alt="" aria-hidden="true" />
-				<span><strong>KAWAN</strong><small>SEATTLE</small></span>
+				<span class="footer-wordmark"><span>kawan</span><small>seattle</small></span>
 			</a>
 			<p>A friend for your journey.</p>
 		</div>
@@ -2516,19 +2515,35 @@
 		.program-card, :global(.story-card), .button { transition: none; }
 	}
 
-	.header-logo {
-		display: block;
-		width: 58px;
-		height: 58px;
-		object-fit: contain;
+	.brand-wordmark {
+		display: inline-flex;
+		flex-direction: column;
+		color: #405047;
+		font-family: 'Fraunces', serif;
+		line-height: .78;
+	}
+	.brand-wordmark > span {
+		font-size: 38px;
+		font-weight: 650;
+		letter-spacing: -.065em;
+	}
+	.brand-wordmark small {
+		margin-top: 4px;
+		font-family: 'Manrope', sans-serif;
+		font-size: 8px;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: .2em;
+		text-align: center;
 	}
 	.site-header > .brand {
 		align-self: stretch;
 		align-items: center;
-		line-height: 0;
+		line-height: 1;
 	}
 	@media (max-width: 768px) {
-		.header-logo { width: 48px; height: 48px; }
+		.brand-wordmark > span { font-size: 33px; }
+		.brand-wordmark small { margin-top: 4px; font-size: 7px; }
 	}
 
 	/* Reverted community first homepage styles
@@ -2765,29 +2780,27 @@
 	.footer-identity {
 		display: inline-flex;
 		align-items: center;
-		gap: 16px;
 	}
-	.footer-identity img {
-		width: 76px;
-		height: 76px;
-		object-fit: contain;
-	}
-	.footer-identity > span {
-		display: flex;
+	.footer-wordmark {
+		display: inline-flex;
 		flex-direction: column;
-		gap: 3px;
+		color: #405047;
+		font-family: 'Fraunces', serif;
+		line-height: .8;
 	}
-	.footer-identity strong {
-		color: var(--ink);
+	.footer-wordmark > span {
+		font-size: clamp(44px, 5vw, 62px);
+		font-weight: 650;
+		letter-spacing: -.065em;
+	}
+	.footer-wordmark small {
+		margin-top: 6px;
 		font-family: 'Manrope', sans-serif;
-		font-size: 20px;
-		letter-spacing: .08em;
-	}
-	.footer-identity small {
-		color: var(--muted);
-		font-size: 8px;
-		font-weight: 700;
+		font-size: 9px;
+		font-weight: 400;
+		line-height: 1;
 		letter-spacing: .24em;
+		text-align: center;
 	}
 
 	/* Human, photo led About section */
@@ -3178,15 +3191,71 @@
 	.illustration-copy > p:not(.story-lead) { font-weight: 500; }
 	.illustration-copy > p strong { font-weight: 600; }
 
-	.belief-section { margin-top: 0; padding: 128px 0 136px; }
-	.belief-section::before { background: #f1f4ee; }
-	.belief-heading { margin-bottom: 88px; }
-	.about-grid { display: block; max-width: 1000px; }
-	.about-card, .about-card:first-child, .about-card:last-child { display: grid; grid-template-columns: 210px 1fr; gap: 60px; padding: 58px 0; border-top: 1px solid rgba(67,79,69,.15); }
-	.about-card:last-child { border-bottom: 1px solid rgba(67,79,69,.15); }
-	.about-card:hover, .about-card:first-child:hover, .about-card:last-child:hover { padding: 58px 0; }
-	.belief-label { margin: 8px 0 0; }
-	.belief-copy h3 { max-width: 650px; font-size: clamp(48px, 5.4vw, 72px); }
+	.belief-section {
+		margin-top: 0;
+		padding: 132px 0 142px;
+		border-top: 1px solid rgba(67, 79, 69, .1);
+		border-bottom: 1px solid rgba(67, 79, 69, .1);
+	}
+	.belief-section::before { background: #faf7f0; }
+	.belief-heading { max-width: 760px; margin-bottom: 82px; }
+	.belief-heading h2 { margin-top: 12px; font-size: clamp(50px, 5.8vw, 74px); }
+	.belief-section .belief-grid {
+		display: grid;
+		max-width: none;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0;
+		margin: 0;
+	}
+	.belief-section .belief-block,
+	.belief-section .belief-block:first-child,
+	.belief-section .belief-block:last-child {
+		display: block;
+		min-height: 0;
+		padding: 12px clamp(48px, 6vw, 88px) 8px 0;
+		border: 0;
+		background: transparent;
+		box-shadow: none;
+	}
+	.belief-section .belief-block:last-child {
+		padding-right: 0;
+		padding-left: clamp(48px, 6vw, 88px);
+		border-left: 1px solid rgba(67, 79, 69, .14);
+	}
+	.belief-section .belief-block:hover,
+	.belief-section .belief-block:first-child:hover,
+	.belief-section .belief-block:last-child:hover {
+		padding-top: 12px;
+		padding-bottom: 8px;
+		background: transparent;
+		box-shadow: none;
+		transform: none;
+	}
+	.belief-label { margin: 0 0 30px; }
+	.belief-copy h3 {
+		max-width: 520px;
+		margin-bottom: 28px;
+		font-size: clamp(40px, 4vw, 57px);
+		font-weight: 600;
+		line-height: 1.06;
+		letter-spacing: -.045em;
+	}
+	.belief-copy .about-description { max-width: 510px; font-size: 15px; line-height: 1.8; }
+	@media (max-width: 800px) {
+		.belief-section { padding: 96px 0 104px; }
+		.belief-heading { margin-bottom: 54px; }
+		.belief-section .belief-grid { grid-template-columns: 1fr; }
+		.belief-section .belief-block,
+		.belief-section .belief-block:first-child,
+		.belief-section .belief-block:last-child {
+			padding: 42px 0 50px;
+			border-left: 0;
+		}
+		.belief-section .belief-block + .belief-block { border-top: 1px solid rgba(67, 79, 69, .14); }
+		.belief-section .belief-block:hover,
+		.belief-section .belief-block:first-child:hover,
+		.belief-section .belief-block:last-child:hover { padding: 42px 0 50px; }
+	}
 
 	.programs { padding-top: 145px; padding-bottom: 150px; background: #faf7f0; }
 	.journey-section-heading { max-width: 760px; }
