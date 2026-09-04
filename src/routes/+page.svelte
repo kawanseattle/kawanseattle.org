@@ -6,29 +6,32 @@
 
 	const programs = [
 		{
+			title: 'Settle In',
+			description: 'Help students settle into life in Seattle.',
+			illustration: `${base}/images/support-settle-editorial-v2.png`,
+			illustrationAlt: 'A hand-drawn airplane, suitcase, and key',
+			activities: ['Airport pickup', 'Housing guidance', 'Bank account setup', 'State ID / driver’s license guidance', 'Everyday essentials']
+		},
+		{
 			title: 'Explore Seattle',
-			description: 'Discover the city with people who are excited to experience it alongside you.',
-			activities: ['Monthly city trips', 'Local landmarks', 'Seasonal outings']
+			description: 'Discover the city together.',
+			illustration: `${base}/images/support-explore-editorial-v2.png`,
+			illustrationAlt: 'A hand-drawn Space Needle, folded map, and location pin',
+			activities: ['Seattle city trips', 'Local landmarks', 'Hiking', 'Seasonal activities', 'Neighborhood exploration']
 		},
 		{
-			title: 'Community & Events',
-			description: 'Build genuine friendships through relaxed gatherings designed for connection.',
-			activities: ['Game nights', 'Holiday celebrations', 'Monthly gatherings']
+			title: 'Find Community',
+			description: 'Build genuine friendships through simple, relaxed moments together.',
+			illustration: `${base}/images/support-community-editorial-v2.png`,
+			illustrationAlt: 'Hand-drawn game pieces, popcorn, tickets, and coffee mugs',
+			activities: ['Game nights', 'Movie nights', 'Holiday activities', 'Community dinners', 'Monthly gatherings']
 		},
 		{
-			title: 'Study Together',
-			description: 'Find encouragement and practical support throughout your academic journey.',
-			activities: ['Study buddy matching', 'Group study sessions', 'Tutoring support']
-		},
-		{
-			title: 'Guidance & Mentorship',
-			description: 'Get thoughtful guidance from someone who understands what college life is like.',
-			activities: ['One to one mentorship', 'College planning', 'Campus resources']
-		},
-		{
-			title: 'Career Development',
-			description: 'Take confident next steps with practical tools and a supportive professional network.',
-			activities: ['Resume reviews', 'Interview practice', 'Career networking']
+			title: 'Learn & Grow',
+			description: 'Support throughout school and beyond.',
+			illustration: `${base}/images/support-learn-editorial-v2.png`,
+			illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap',
+			activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation']
 		}
 	];
 
@@ -56,7 +59,8 @@
 	const eventByDay = new Map(events.map((event, index) => [event.day, index]));
 	const hikingPhotos = [
 		{ src: `${base}/images/kawan-hiking-group-2026.jpg`, alt: 'KAWAN friends gathered along a mountain hiking trail' },
-		{ src: `${base}/images/kawan-hiking-lake-2026.jpg`, alt: 'KAWAN friends beside an alpine lake during a hiking trip' }
+		{ src: `${base}/images/kawan-hiking-waterfall-group.jpg`, alt: 'KAWAN community gathered together at a forest waterfall' },
+		{ src: `${base}/images/kawan-hiking-multnomah-falls.jpeg`, alt: 'KAWAN friends and families visiting Multnomah Falls' }
 	];
 
 	let menuOpen = false;
@@ -71,7 +75,7 @@
 	let connectSubmitted = false;
 	let connectSubmitting = false;
 	let connectError = '';
-	let hikingSlideIndex = 0;
+	let hikingSlideIndex = 2;
 
 	function subscribe() {
 		if (email.trim()) {
@@ -245,7 +249,7 @@
 			<div class="illustration-copy">
 				<p class="about-eyebrow">about us</p>
 				<h2>It starts with a friend.</h2>
-				<p class="story-lead"><strong>KAWAN means “friend” in Indonesian.</strong></p>
+				<p class="story-lead"><strong>KAWAN means “friend” in Bahasa Indonesia.</strong></p>
 				<p><strong>Founded by international students, we understand the challenges of moving to a new country, from navigating school and everyday life to building friendships and planning for the future.</strong></p>
 				<p><strong>We're here to help students settle into life in the U.S., build lasting friendships, and find a community that walks alongside them.</strong></p>
 			</div>
@@ -255,8 +259,8 @@
 		</div>
 		<div class="belief-section">
 			<div class="belief-heading reveal">
-				<p class="about-eyebrow">our direction</p>
-				<h2>What drives us.</h2>
+				<p class="about-eyebrow">why we are here</p>
+				<h2>Our Purpose</h2>
 			</div>
 			<div class="about-grid belief-grid">
 			<article class="about-card belief-block reveal" id="our-vision">
@@ -279,30 +283,21 @@
 
 	<section class="programs section-wrap" id="programs">
 		<div class="journey-section-heading reveal">
-			<p class="about-eyebrow">How Kawan Supports You</p>
-			<h2>Practical support, shared with care.</h2>
-			<p>From discovering Seattle to planning what comes next, you’ll find people and resources for every part of student life.</p>
+			<p class="about-eyebrow">SUPPORT FOR YOUR JOURNEY</p>
+			<h2>How Kawan helps</h2>
+			<p>Practical support, genuine friendships, and a community to help you feel at home.</p>
 		</div>
-		<div class="program-grid minimal">
+		<div class="program-grid minimal support-journey">
 			{#each programs as program, index}
-				<article class="program-card reveal" style={`--delay: ${index * 75}ms`}>
-					<div class="card-icon">
-						{#if index === 0}
-							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 29c7-10 13-17 24-21M9 11c6 2 10 6 12 12m-11 6 8 2 2-8" /></svg>
-						{:else if index === 1}
-							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 32s-12-6.3-12-14.2A7 7 0 0 1 20 12.4a7 7 0 0 1 12 5.4C32 25.7 20 32 20 32Z" /></svg>
-						{:else if index === 2}
-							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 11c5-2 9-1 13 2v18c-4-3-8-4-13-2zm26 0c-5-2-9-1-13 2v18c4-3 8-4 13-2z" /></svg>
-						{:else if index === 3}
-							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="15" cy="14" r="5"/><circle cx="27" cy="18" r="4"/><path d="M6 31c1-7 5-10 9-10s8 3 9 10m0-6c5-2 9 1 10 6" /></svg>
-						{:else}
-							<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 30V13h26v17M14 13V9h12v4M5 30h30M14 20h12" /></svg>
-						{/if}
+				<article class="program-card support-stop reveal" style={`--delay: ${index * 70}ms`}>
+					<div class="card-icon support-visual">
+						<img src={program.illustration} alt={program.illustrationAlt} />
 					</div>
-					<h3>{program.title}</h3>
-					<p>{program.description}</p>
-					<ul>{#each program.activities as activity}<li>{activity}</li>{/each}</ul>
-					<a href="#connect" aria-label={`Explore ${program.title}`}>Learn more <span>↗</span></a>
+					<div class="support-copy">
+						<h3>{program.title}</h3>
+						<p>{program.description}</p>
+						<ul class="support-activities">{#each program.activities as activity}<li>{activity}</li>{/each}</ul>
+					</div>
 				</article>
 			{/each}
 		</div>
@@ -373,8 +368,8 @@
 				<figcaption><strong>Hiking Trips</strong><span>Summer outings</span></figcaption>
 			</figure>
 			<figure class="moment moment-tall reveal" style="--delay: 80ms">
-				<img src={`${base}/images/kawan-thanksgiving-retreat-cabin.jpeg`} alt="KAWAN community members together at the Thanksgiving retreat cabin" />
-				<figcaption><strong>Thanksgiving Retreat</strong><span>Community getaway</span></figcaption>
+				<img src={`${base}/images/kawan-thanksgiving-retreat-cabin.jpeg`} alt="KAWAN community members together on a holiday trip" />
+				<figcaption><strong>Holiday Getaways</strong><span>Community getaway</span></figcaption>
 			</figure>
 			<figure class="moment moment-small reveal" style="--delay: 140ms">
 				<img src={`${base}/images/kawan-seattle-adventures.jpeg`} alt="Seattle skyline viewed from the water during a KAWAN adventure" />
@@ -442,6 +437,24 @@
 						<input id="connect-phone" name="phone" type="tel" autocomplete="tel" use:internationalPhoneInput required aria-describedby="connect-phone-hint" />
 					</div>
 					<p id="connect-phone-hint" class="phone-hint">Choose your country, then enter your phone number.</p>
+					<div class="direct-contacts" aria-label="Contact KAWAN directly">
+						<a class="direct-contact whatsapp-contact" href="https://wa.me/12069924418" target="_blank" rel="noreferrer" aria-label="Chat with KAWAN on WhatsApp at +1 206 992 4418">
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.3-4.3a8.5 8.5 0 1 1 15.7-4.4Z" />
+								<path d="M8.2 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.6.8c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2 2.1.3.2.5.2.7 0l.9-1.1c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5 0 .2-.1 1.2-.7 1.8-.5.6-1.3.9-2.1.8-1-.1-2.5-.6-4.2-2.1-1.3-1.2-2.3-2.6-2.7-3.7-.4-1-.4-2.1.1-2.8l.1-.3Z" />
+							</svg>
+							<strong>+1 (206) 992-4418</strong>
+						</a>
+						<a class="direct-contact gmail-contact" href="mailto:kawanseattle@gmail.com" aria-label="Email KAWAN at kawanseattle@gmail.com">
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path class="gmail-blue" d="M3.5 6.5v11" />
+								<path class="gmail-red" d="M3.5 6.5 12 13l8.5-6.5" />
+								<path class="gmail-green" d="M20.5 6.5v11" />
+								<path class="gmail-gold" d="M3.5 17.5h17" />
+							</svg>
+							<strong>kawanseattle@gmail.com</strong>
+						</a>
+					</div>
 					<p class="connect-privacy">Your information will be securely forwarded to KAWAN by our form delivery provider.</p>
 					{#if connectError}<p class="connect-error" role="alert">{connectError}</p>{/if}
 					<button class="button" type="submit" disabled={connectSubmitting}>{connectSubmitting ? 'Sending…' : 'Submit'}</button>
@@ -836,11 +849,6 @@
 		color: var(--ink);
 	}
 
-	.card-icon svg {
-		width: 100%;
-		height: 100%;
-	}
-
 	.program-card h3 {
 		margin: 0;
 		font-size: 28px;
@@ -849,19 +857,6 @@
 		font-family: 'Playfair Display', serif;
 		font-weight: 700;
 		letter-spacing: -0.6px;
-	}
-
-	.program-card a {
-		color: var(--ink);
-		font-size: 14px;
-		font-weight: 700;
-		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		border-bottom: 1px solid var(--ink);
-		padding-bottom: 5px;
-		width: fit-content;
 	}
 
 	/* Mentor Section */
@@ -2484,12 +2479,9 @@
 		box-shadow: 0 18px 42px rgba(58, 68, 59, .07);
 	}
 	.card-icon { width: 42px; height: 42px; margin-bottom: 8px; color: #68786b; }
-	.card-icon svg { stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
 	.program-card h3 { margin-top: 0; font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; letter-spacing: -.7px; }
-	.program-card > p { margin: 0; color: #686965; font-size: 14px; line-height: 1.65; }
 	.program-card ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 2px 0 8px; padding: 0; list-style: none; }
 	.program-card li { padding: 6px 9px; border: 1px solid rgba(104,120,107,.13); border-radius: 999px; color: #666d65; background: rgba(238,241,233,.55); font-size: 10px; letter-spacing: .02em; }
-	.program-card a { margin-top: auto; font-size: 12px; }
 
 	:global(.mentor-section) { padding-top: 145px; padding-bottom: 145px; }
 	:global(.involve-photo) { box-shadow: 0 18px 46px rgba(58,55,48,.1); transform: none; }
@@ -3193,54 +3185,59 @@
 
 	.belief-section {
 		margin-top: 0;
-		padding: 132px 0 142px;
+		padding: 104px 0 112px;
 		border-top: 1px solid rgba(67, 79, 69, .1);
 		border-bottom: 1px solid rgba(67, 79, 69, .1);
 	}
 	.belief-section::before { background: #faf7f0; }
-	.belief-heading { max-width: 760px; margin-bottom: 82px; }
-	.belief-heading h2 { margin-top: 12px; font-size: clamp(50px, 5.8vw, 74px); }
+	.belief-heading { max-width: 760px; margin-bottom: 50px; }
+	.belief-heading h2 { margin-top: 10px; font-size: clamp(54px, 6vw, 78px); }
 	.belief-section .belief-grid {
 		display: grid;
 		max-width: none;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0;
 		margin: 0;
+		overflow: hidden;
+		border: 1px solid rgba(77, 82, 74, .13);
+		border-radius: 14px;
+		background: #f8f5ed;
 	}
 	.belief-section .belief-block,
 	.belief-section .belief-block:first-child,
 	.belief-section .belief-block:last-child {
-		display: block;
-		min-height: 0;
-		padding: 12px clamp(48px, 6vw, 88px) 8px 0;
+		display: flex;
+		min-height: 410px;
+		flex-direction: column;
+		padding: clamp(46px, 5vw, 70px);
 		border: 0;
-		background: transparent;
+		background: rgba(255, 253, 248, .42);
 		box-shadow: none;
 	}
 	.belief-section .belief-block:last-child {
-		padding-right: 0;
-		padding-left: clamp(48px, 6vw, 88px);
+		padding: clamp(46px, 5vw, 70px);
 		border-left: 1px solid rgba(67, 79, 69, .14);
+		background: rgba(239, 239, 229, .32);
 	}
 	.belief-section .belief-block:hover,
 	.belief-section .belief-block:first-child:hover,
 	.belief-section .belief-block:last-child:hover {
-		padding-top: 12px;
-		padding-bottom: 8px;
-		background: transparent;
+		padding: clamp(46px, 5vw, 70px);
+		background: rgba(255, 253, 248, .42);
 		box-shadow: none;
 		transform: none;
 	}
-	.belief-label { margin: 0 0 30px; }
+	.belief-section .belief-block:last-child:hover { background: rgba(239, 239, 229, .32); }
+	.belief-label { margin: 0 0 46px; }
 	.belief-copy h3 {
-		max-width: 520px;
-		margin-bottom: 28px;
-		font-size: clamp(40px, 4vw, 57px);
+		max-width: 540px;
+		margin-bottom: 30px;
+		font-size: clamp(42px, 4.15vw, 59px);
 		font-weight: 600;
-		line-height: 1.06;
+		line-height: 1.04;
 		letter-spacing: -.045em;
 	}
-	.belief-copy .about-description { max-width: 510px; font-size: 15px; line-height: 1.8; }
+	.belief-copy .about-description { max-width: 520px; font-size: 15px; line-height: 1.75; }
 	@media (max-width: 800px) {
 		.belief-section { padding: 96px 0 104px; }
 		.belief-heading { margin-bottom: 54px; }
@@ -3248,18 +3245,47 @@
 		.belief-section .belief-block,
 		.belief-section .belief-block:first-child,
 		.belief-section .belief-block:last-child {
-			padding: 42px 0 50px;
+			min-height: 0;
+			padding: 46px 34px 52px;
 			border-left: 0;
 		}
 		.belief-section .belief-block + .belief-block { border-top: 1px solid rgba(67, 79, 69, .14); }
 		.belief-section .belief-block:hover,
 		.belief-section .belief-block:first-child:hover,
-		.belief-section .belief-block:last-child:hover { padding: 42px 0 50px; }
+		.belief-section .belief-block:last-child:hover { padding: 46px 34px 52px; }
 	}
 
-	.programs { padding-top: 145px; padding-bottom: 150px; background: #faf7f0; }
-	.journey-section-heading { max-width: 760px; }
-	.program-grid.minimal { gap: 14px; }
+	.programs.section-wrap {
+		display: flex;
+		min-height: 100svh;
+		box-sizing: border-box;
+		flex-direction: column;
+		padding: 52px 5.5vw 58px;
+		background: #faf7f0;
+	}
+	.journey-section-heading {
+		max-width: 760px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.journey-section-heading h2 {
+		margin: 6px 0 8px;
+		color: #34463b;
+		font-size: clamp(47px, 4.7vw, 66px);
+		font-weight: 650;
+		line-height: 1.02;
+		letter-spacing: -.045em;
+	}
+	.journey-section-heading > p:last-child {
+		max-width: 620px;
+		margin: 0 auto;
+		color: #706b64;
+		font-family: 'Source Serif 4', Georgia, serif;
+		font-size: clamp(16px, 1.25vw, 19px);
+		font-style: italic;
+		line-height: 1.55;
+	}
+	.program-grid.minimal { gap: clamp(24px, 2.5vw, 40px); }
 	.program-card {
 		min-height: 380px;
 		padding: 34px;
@@ -3272,6 +3298,151 @@
 	.program-card:hover { border-color: rgba(64,77,66,.25); box-shadow: 0 14px 34px rgba(58,65,58,.06); }
 	.program-card li { border-radius: 4px; }
 
+	.program-grid.minimal.support-journey {
+		display: grid;
+		flex: 1;
+		width: 100%;
+		max-width: none;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(232px, 1fr));
+		gap: 18px;
+		margin: 35px 0 0;
+	}
+	.support-stop {
+		--support-accent: #7d817a;
+		position: relative;
+		display: flex;
+		width: 100%;
+		min-width: 0;
+		min-height: 0;
+		align-items: center;
+		margin: 0;
+		padding: clamp(18px, 1.5vw, 24px);
+		overflow: hidden;
+		border: 1px solid rgba(105, 97, 87, .16);
+		border-radius: 14px;
+		background: rgba(252, 249, 242, .72);
+		box-shadow: none;
+		transition: border-color .28s ease, background-color .28s ease, transform .28s ease;
+	}
+	.support-stop:nth-of-type(1),
+	.support-stop:nth-of-type(2),
+	.support-stop:nth-of-type(3),
+	.support-stop:nth-of-type(4) { grid-column: auto; }
+	.support-stop + .support-stop { border: 1px solid rgba(105, 97, 87, .12); }
+	.support-stop:hover { border-color: rgba(93, 91, 83, .22); background: rgba(255, 253, 248, .76); box-shadow: none; }
+	:global(.support-stop.visible:hover) { transform: translateY(-3px); }
+	.support-visual {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: grid;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
+		margin: 0;
+		place-items: center;
+		pointer-events: none;
+	}
+	.support-visual img {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		max-height: none;
+		object-fit: cover;
+		opacity: .72;
+		filter: saturate(.72) contrast(.98);
+		mix-blend-mode: multiply;
+		transform: scale(1.01);
+		transition: opacity .35s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+	}
+	.support-stop:nth-of-type(2) .support-visual img { width: 100%; height: 100%; }
+	.support-stop:hover .support-visual img { opacity: .82; transform: scale(1.015); }
+	.support-copy {
+		position: relative;
+		z-index: 2;
+		width: 59%;
+		max-width: none;
+		margin-left: auto;
+		padding: clamp(20px, 1.7vw, 28px);
+		border-radius: 12px;
+		background: rgba(255, 253, 248, .9);
+		backdrop-filter: blur(3px);
+	}
+	.support-stop:nth-of-type(even) .support-copy { margin-right: auto; margin-left: 0; }
+	.support-copy h3 {
+		position: relative;
+		width: fit-content;
+		margin: 0 0 8px;
+		padding-bottom: 7px;
+		color: #39443d;
+		font-family: 'Source Serif 4', Georgia, serif;
+		font-size: clamp(27px, 2.15vw, 35px);
+		font-weight: 650;
+		line-height: 1.1;
+		letter-spacing: -.035em;
+	}
+	.support-copy h3::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 46px;
+		height: 2px;
+		border-radius: 99px;
+		background: #777b75;
+		content: '';
+		transform: rotate(-1deg);
+	}
+	.support-copy > p { margin: 0; color: #74736e; font-size: 13px; line-height: 1.5; }
+	.support-activities {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 7px 8px;
+		margin: 10px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+	.support-activities li {
+		display: inline-flex;
+		align-items: center;
+		padding: 7px 12px;
+		border: 1px solid rgba(102, 99, 92, .07);
+		border-radius: 18px;
+		color: #46534a;
+		background: rgba(117, 108, 96, .035);
+		font-size: 11px;
+		font-weight: 600;
+		line-height: 1.45;
+		transition: border-color .22s ease, background-color .22s ease;
+	}
+	.support-activities li:hover { border-color: rgba(102, 99, 92, .13); background: rgba(117, 108, 96, .075); }
+	@media (max-width: 960px) {
+		.programs.section-wrap { display: block; min-height: 0; padding: 86px 5vw 94px; }
+		.program-grid.minimal.support-journey { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: auto; gap: 18px; margin-top: 44px; }
+		.support-stop,
+		.support-stop:nth-of-type(1), .support-stop:nth-of-type(2),
+		.support-stop:nth-of-type(3), .support-stop:nth-of-type(4) {
+			grid-column: auto;
+			display: grid;
+			grid-template-columns: 1fr;
+			padding: 24px;
+		}
+		.support-visual { position: relative; inset: auto; width: 100%; height: 180px; }
+		.support-visual img,
+		.support-stop:nth-of-type(2) .support-visual img { width: 100%; height: 100%; transform: none; }
+		.support-copy,
+		.support-stop:nth-of-type(even) .support-copy { width: 100%; max-width: 540px; margin: 0; }
+	}
+	@media (max-width: 700px) {
+		.programs.section-wrap { padding: 84px 24px 92px; }
+		.program-grid.minimal.support-journey { grid-template-columns: 1fr; }
+		.support-visual { height: 220px; }
+	}
+
 	.community-photo-break {
 		position: relative;
 		overflow: hidden;
@@ -3282,7 +3453,7 @@
 	}
 	.community-photo-break img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.84) contrast(.97); }
 	.community-photo-break::after { position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(29,36,31,.64)); content: ''; }
-	.community-photo-break p { position: absolute; z-index: 2; right: 7%; bottom: 7%; max-width: 620px; margin: 0; color: white; font-family: 'Fraunces', serif; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.05; text-align: right; }
+	.community-photo-break p { position: absolute; z-index: 2; right: 7%; bottom: 7%; max-width: 620px; margin: 0; color: white; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(32px, 4.6vw, 64px); font-weight: 650; line-height: 1.05; letter-spacing: -.035em; text-align: right; }
 
 	.stories { padding-top: 145px; padding-bottom: 145px; background: #faf7f0; }
 	:global(.story-card) { border: 1px solid rgba(64,77,66,.11); border-radius: 8px; box-shadow: none; }
@@ -3467,6 +3638,33 @@
 	}
 	:global(.phone-field .iti__country) { padding-block: 9px; font-size: 13px; }
 	.phone-hint { margin: -2px 0 2px; color: #858780; font-size: 10px; line-height: 1.5; }
+	.direct-contacts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 9px;
+		margin-top: 7px;
+	}
+	.direct-contact {
+		display: inline-flex;
+		width: fit-content;
+		align-items: center;
+		gap: 10px;
+		padding: 9px 12px;
+		border-radius: 6px;
+		color: #46564b;
+		background: rgba(101, 118, 106, .07);
+		transition: color .22s ease, background .22s ease, transform .22s ease;
+	}
+	.direct-contact:hover { color: #35433a; background: rgba(101, 118, 106, .13); transform: translateY(-1px); }
+	.direct-contact svg { width: 23px; height: 23px; flex: 0 0 auto; }
+	.whatsapp-contact svg { width: 23px; height: 23px; flex: 0 0 auto; fill: none; stroke: #25d366; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+	.whatsapp-contact svg path:last-child { fill: #25d366; stroke: none; }
+	.direct-contact strong { font-size: 11px; font-weight: 700; letter-spacing: .005em; white-space: nowrap; }
+	.gmail-contact svg { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+	.gmail-contact .gmail-blue { stroke: #4285f4; }
+	.gmail-contact .gmail-red { stroke: #ea4335; }
+	.gmail-contact .gmail-green { stroke: #34a853; }
+	.gmail-contact .gmail-gold { stroke: #fbbc04; }
 	.connect-privacy { margin: 8px 0 0; color: #858780; font-size: 10px; line-height: 1.55; }
 	.connect-error { margin: 5px 0 0; color: #9a4f3e; font-size: 12px; line-height: 1.5; }
 	.connect-form .button { width: fit-content; margin-top: 18px; cursor: pointer; }
