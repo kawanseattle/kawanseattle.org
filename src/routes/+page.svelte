@@ -36,7 +36,7 @@
 				{ title: 'Learn & Grow', description: 'Support throughout school and beyond.', illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap', activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation'] }
 			],
 			community: { label: 'KAWAN community', photoAlt: 'KAWAN students and families enjoying a community outing by the water', quote: 'Community begins by showing up for one another.' },
-			events: { eyebrow: 'Come as you are', title: 'Events', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Labor Day Hike', time: 'Time TBD', description: 'Spend Labor Day outdoors with the KAWAN community for a refreshing hike and time together.', photoAlt: 'KAWAN community gathering together', action: 'RSVP / Learn More' },
+			events: { eyebrow: 'Come as you are', title: 'Events', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Salmon Hatchery Tour', description: 'Visit the Issaquah Salmon Hatchery with KAWAN, learn about the salmon life cycle, and enjoy a fun day exploring together.', photoAlt: 'KAWAN students visiting a salmon hatchery and watching salmon in the water', action: 'RSVP / Learn More' },
 			weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 			moments: { eyebrow: 'Life with KAWAN', title: 'Moments Together', intro: 'A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.', previous: 'Previous hiking photo', next: 'Next hiking photo', choose: 'Choose a hiking photo', show: 'Show hiking photo', hiking: 'Hiking Trips', summerOutings: 'Summer outings', getaways: 'Holiday Getaways', communityGetaway: 'Community getaway', adventures: 'Seattle Adventures', exploring: 'Exploring together', camping: 'Summer Camping', outdoors: 'Outdoor adventures', hikingAlts: ['KAWAN friends gathered along a mountain hiking trail', 'KAWAN community gathered together at a forest waterfall', 'KAWAN friends and families visiting Multnomah Falls'], getawayAlt: 'KAWAN community members together on a holiday trip', seattleAlt: 'Seattle skyline viewed from the water during a KAWAN adventure', campingAlt: 'A glowing campfire during a KAWAN summer camping trip' },
 			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', action: 'Get Connected' },
@@ -57,7 +57,7 @@
 				{ title: 'Belajar & Bertumbuh', description: 'Dukungan selama kuliah hingga langkah berikutnya.', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan kuliah', 'Persiapan karier'] }
 			],
 			community: { label: 'Komunitas KAWAN', photoAlt: 'Pelajar dan keluarga KAWAN menikmati kebersamaan di tepi air', quote: 'Komunitas tumbuh saat kita hadir untuk satu sama lain.' },
-			events: { eyebrow: 'Datang apa adanya', title: 'Acara', intro: 'Bergabunglah sepanjang tahun untuk belajar, menjelajah, dan membangun persahabatan yang bermakna bersama kami.', upcoming: 'Acara mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Hiking Hari Buruh', time: 'Waktu menyusul', description: 'Nikmati Hari Buruh di alam terbuka bersama komunitas KAWAN—hiking santai sambil menikmati waktu bersama.', photoAlt: 'Komunitas KAWAN berkumpul bersama', action: 'RSVP / Info Selengkapnya' },
+			events: { eyebrow: 'Datang apa adanya', title: 'Acara', intro: 'Bergabunglah sepanjang tahun untuk belajar, menjelajah, dan membangun persahabatan yang bermakna bersama kami.', upcoming: 'Acara mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Tur Salmon Hatchery', description: 'Kunjungi Issaquah Salmon Hatchery bersama KAWAN, pelajari siklus hidup salmon, dan nikmati hari yang seru sambil menjelajah bersama.', photoAlt: 'Pelajar KAWAN mengunjungi tempat penetasan dan mengamati salmon di air', action: 'RSVP / Info Selengkapnya' },
 			weekdays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
 			moments: { eyebrow: 'Keseharian bersama KAWAN', title: 'Momen Kebersamaan', intro: 'Sekilas petualangan, perayaan, dan momen sehari-hari yang mendekatkan komunitas kami.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
 			cta: { eyebrow: 'Mari terhubung', title: 'Ada tempat untukmu di sini.', body: 'Siap memulai perjalananmu? Temui orang-orang yang mengerti dan temukan komunitas yang siap berjalan bersamamu.', action: 'Mari Terhubung' },
@@ -76,7 +76,7 @@
 		...Array.from({ length: firstWeekday }, () => null),
 		...Array.from({ length: daysInMonth }, (_, index) => index + 1)
 	];
-	const eventByDay = new Map([[7, 0]]);
+	const eventByDay = new Map([[12, 0]]);
 	const hikingPhotos = [
 		`${base}/images/kawan-hiking-group-2026.jpg`,
 		`${base}/images/kawan-hiking-waterfall-group.jpg`,
@@ -88,8 +88,8 @@
 	$: programs = t.programs.map((program, index) => ({ ...program, ...programMedia[index] }));
 	$: monthLabel = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long', year: 'numeric' }).format(calendarDate);
 	$: monthName = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long' }).format(calendarDate);
-	$: eventDateLabel = language === 'id' ? `7 ${monthName}` : `${monthName} 7`;
-	$: events = [{ day: 7, title: t.events.eventTitle, time: t.events.time, description: t.events.description, image: `${base}/images/labor-day-hike.png` }];
+	$: events = [{ day: 12, title: t.events.eventTitle, description: t.events.description, image: `${base}/images/salmon-hatchery-tour.png` }];
+	$: eventDateLabel = language === 'id' ? `${events[selectedEventIndex].day} ${monthName}` : `${monthName} ${events[selectedEventIndex].day}`;
 	let menuOpen = false;
 	let selectedEventIndex = 0;
 	let email = '';
@@ -381,7 +381,7 @@
 			<article class="featured-event">
 				<div class="featured-event-photo"><img src={events[selectedEventIndex].image} alt={t.events.photoAlt} /></div>
 				<div class="featured-event-copy">
-					<p class="event-date">{eventDateLabel} <span>{events[selectedEventIndex].time}</span></p>
+					<p class="event-date">{eventDateLabel}</p>
 					<h3>{events[selectedEventIndex].title}</h3>
 					<p>{events[selectedEventIndex].description}</p>
 					<a class="button" href="mailto:hello@kawan.org">{t.events.action} <span>↗</span></a>
@@ -3581,7 +3581,6 @@
 	.featured-event:hover .featured-event-photo img { transform: scale(1.015); }
 	.featured-event-copy { padding: clamp(28px, 4vw, 46px); }
 	.event-date { display: flex; gap: 14px; margin: 0 0 14px; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-	.event-date span { color: #797a74; }
 	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
 	.featured-event-copy > p:not(.event-date) { max-width: 590px; margin: 0 0 26px; color: #696b66; font-size: 14px; line-height: 1.7; }
 	.featured-event-copy .button { width: fit-content; }
