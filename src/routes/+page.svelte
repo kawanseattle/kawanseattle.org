@@ -4,65 +4,92 @@
 	import intlTelInput, { type Iti } from 'intl-tel-input/intlTelInputWithUtils';
 	import 'intl-tel-input/styles';
 
-	const programs = [
+	type Language = 'en' | 'id';
+
+	const programMedia = [
 		{
-			title: 'Settle In',
-			description: 'Help students settle into life in Seattle.',
 			illustration: `${base}/images/support-settle-editorial-v2.png`,
-			illustrationAlt: 'A hand-drawn airplane, suitcase, and key',
-			activities: ['Airport pickup', 'Housing guidance', 'Bank account setup', 'State ID / driver’s license guidance', 'Everyday essentials']
 		},
 		{
-			title: 'Explore Seattle',
-			description: 'Discover the city together.',
 			illustration: `${base}/images/support-explore-editorial-v2.png`,
-			illustrationAlt: 'A hand-drawn Space Needle, folded map, and location pin',
-			activities: ['Seattle city trips', 'Local landmarks', 'Hiking', 'Seasonal activities', 'Neighborhood exploration']
 		},
 		{
-			title: 'Find Community',
-			description: 'Build genuine friendships through simple, relaxed moments together.',
 			illustration: `${base}/images/support-community-editorial-v2.png`,
-			illustrationAlt: 'Hand-drawn game pieces, popcorn, tickets, and coffee mugs',
-			activities: ['Game nights', 'Movie nights', 'Holiday activities', 'Community dinners', 'Monthly gatherings']
 		},
 		{
-			title: 'Learn & Grow',
-			description: 'Support throughout school and beyond.',
-			illustration: `${base}/images/support-learn-editorial-v2.png`,
-			illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap',
-			activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation']
+			illustration: `${base}/images/support-learn-editorial-v2.png`
 		}
 	];
+
+	const translations = {
+		en: {
+			meta: { title: 'Kawan | Your journey. Our guidance.', description: 'KAWAN helps international students settle in, build meaningful friendships, and navigate life in Seattle.' },
+			nav: { label: 'Primary navigation', home: 'KAWAN home', about: 'About', help: 'How we help', events: 'Events', connect: 'Connect', toggle: 'Toggle navigation', language: 'Choose language' },
+			hero: { kicker: 'Welcome to', statement: 'A friend for your journey.', tagline: 'Helping international students settle in, build meaningful friendships, and navigate life in Seattle.', action: 'Let’s Go' },
+			about: { eyebrow: 'about us', title: 'It starts with a friend.', lead: 'KAWAN means “friend” in Bahasa Indonesia.', body1: 'Founded by international students, we understand the challenges of moving to a new country, from navigating school and everyday life to building friendships and planning for the future.', body2: "We're here to help students settle into life in the U.S., build lasting friendships, and find a community that walks alongside them.", photoAlt: 'KAWAN community members gathering at Evergreen Christmas Lights in 2025' },
+			purpose: { eyebrow: 'why we are here', title: 'Our Purpose', visionLabel: 'our vision', visionTitle1: 'Building a generation', visionTitle2: 'that thrives.', visionBody: 'Building a generation of international students who thrive in life relationally, academically, and professionally, and empower those who come after them.', missionLabel: 'our mission', missionTitle: ['Welcoming.', 'Connecting.', 'Supporting.'], missionBody: 'Welcoming and connecting international students to the broader community while providing friendship, support, resources, and career opportunities.' },
+			programsHeading: { eyebrow: 'SUPPORT FOR YOUR JOURNEY', title: 'How Kawan helps', body: 'Practical support, genuine friendships, and a community to help you feel at home.' },
+			programs: [
+				{ title: 'Settle In', description: 'Help students settle into life in Seattle.', illustrationAlt: 'A hand-drawn airplane, suitcase, and key', activities: ['Airport pickup', 'Housing guidance', 'Bank account setup', 'State ID / driver’s license guidance', 'Everyday essentials'] },
+				{ title: 'Explore Seattle', description: 'Discover the city together.', illustrationAlt: 'A hand-drawn Space Needle, folded map, and location pin', activities: ['Seattle city trips', 'Local landmarks', 'Hiking', 'Seasonal activities', 'Neighborhood exploration'] },
+				{ title: 'Find Community', description: 'Build genuine friendships through simple, relaxed moments together.', illustrationAlt: 'Hand-drawn game pieces, popcorn, tickets, and coffee mugs', activities: ['Game nights', 'Movie nights', 'Holiday activities', 'Community dinners', 'Monthly gatherings'] },
+				{ title: 'Learn & Grow', description: 'Support throughout school and beyond.', illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap', activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation'] }
+			],
+			community: { label: 'KAWAN community', photoAlt: 'KAWAN students and families enjoying a community outing by the water', quote: 'Community begins by showing up for one another.' },
+			events: { eyebrow: 'Come as you are', title: 'Events', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Labor Day Hike', time: 'Time TBD', description: 'Spend Labor Day outdoors with the KAWAN community for a refreshing hike and time together.', photoAlt: 'KAWAN community gathering together', action: 'RSVP / Learn More' },
+			weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+			moments: { eyebrow: 'Life with KAWAN', title: 'Moments Together', intro: 'A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.', previous: 'Previous hiking photo', next: 'Next hiking photo', choose: 'Choose a hiking photo', show: 'Show hiking photo', hiking: 'Hiking Trips', summerOutings: 'Summer outings', getaways: 'Holiday Getaways', communityGetaway: 'Community getaway', adventures: 'Seattle Adventures', exploring: 'Exploring together', camping: 'Summer Camping', outdoors: 'Outdoor adventures', hikingAlts: ['KAWAN friends gathered along a mountain hiking trail', 'KAWAN community gathered together at a forest waterfall', 'KAWAN friends and families visiting Multnomah Falls'], getawayAlt: 'KAWAN community members together on a holiday trip', seattleAlt: 'Seattle skyline viewed from the water during a KAWAN adventure', campingAlt: 'A glowing campfire during a KAWAN summer camping trip' },
+			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', action: 'Get Connected' },
+			footer: { tagline: 'A friend for your journey.', links: 'LINKS', involved: 'GET INVOLVED', contact: 'Contact us', copyright: '© 2026 KAWAN Seattle.' },
+			form: { close: 'Close', closeLabel: 'Close connection form', thanks: 'Thank you', successTitle: 'We’re glad you’re here.', successBody: 'Your information has been entered.', done: 'Done', eyebrow: 'Get connected', title: 'Let’s get to know you.', intro: 'Share your information and take the first step toward the KAWAN community.', name: 'Name', namePlaceholder: 'Your name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', direct: 'Contact KAWAN directly', whatsapp: 'Chat with KAWAN on WhatsApp at +1 206 992 4418', email: 'Email KAWAN at kawanseattle@gmail.com', privacy: 'Your information will be securely forwarded to KAWAN by our form delivery provider.', invalidPhone: 'Please enter a valid phone number for the selected country.', error: 'We could not send your information. Please try again.', sending: 'Sending…', submit: 'Submit' }
+		},
+		id: {
+			meta: { title: 'Kawan | Teman dalam perjalananmu.', description: 'KAWAN membantu pelajar internasional beradaptasi, membangun persahabatan yang bermakna, dan menjalani kehidupan di Seattle.' },
+			nav: { label: 'Navigasi utama', home: 'Beranda KAWAN', about: 'Tentang kami', help: 'Dukungan kami', events: 'Acara', connect: 'Terhubung', toggle: 'Buka atau tutup navigasi', language: 'Pilih bahasa' },
+			hero: { kicker: 'Selamat datang di', statement: 'Teman dalam perjalananmu.', tagline: 'Mendampingi pelajar internasional beradaptasi, membangun persahabatan yang bermakna, dan menjalani kehidupan di Seattle.', action: 'Mulai Bersama' },
+			about: { eyebrow: 'tentang kami', title: 'Semua berawal dari seorang teman.', lead: 'KAWAN berarti “teman” dalam bahasa Indonesia.', body1: 'Didirikan oleh para pelajar internasional, kami memahami tantangan pindah ke negara baru—mulai dari menjalani perkuliahan dan kehidupan sehari-hari hingga membangun persahabatan dan merencanakan masa depan.', body2: 'Kami hadir untuk membantu para pelajar beradaptasi dengan kehidupan di Amerika, menjalin persahabatan yang langgeng, dan menemukan komunitas yang siap berjalan bersama mereka.', photoAlt: 'Komunitas KAWAN berkumpul di Evergreen Christmas Lights pada tahun 2025' },
+			purpose: { eyebrow: 'alasan kami hadir', title: 'Tujuan Kami', visionLabel: 'visi kami', visionTitle1: 'Membangun generasi', visionTitle2: 'yang bertumbuh.', visionBody: 'Membangun generasi pelajar internasional yang berkembang dalam relasi, pendidikan, dan karier, serta mampu memberdayakan generasi yang datang setelah mereka.', missionLabel: 'misi kami', missionTitle: ['Menyambut.', 'Menghubungkan.', 'Mendampingi.'], missionBody: 'Menyambut dan menghubungkan pelajar internasional dengan komunitas yang lebih luas, sekaligus menyediakan persahabatan, dukungan, sumber daya, dan peluang karier.' },
+			programsHeading: { eyebrow: 'DUKUNGAN UNTUK PERJALANANMU', title: 'Cara Kawan mendampingi', body: 'Dukungan praktis, persahabatan yang tulus, dan komunitas yang membuatmu merasa seperti di rumah.' },
+			programs: [
+				{ title: 'Beradaptasi', description: 'Membantu pelajar memulai kehidupan di Seattle.', illustrationAlt: 'Ilustrasi tangan pesawat, koper, dan kunci', activities: ['Penjemputan bandara', 'Panduan tempat tinggal', 'Membuka rekening bank', 'Panduan State ID / SIM', 'Kebutuhan sehari-hari'] },
+				{ title: 'Jelajahi Seattle', description: 'Mengenal kota ini bersama-sama.', illustrationAlt: 'Ilustrasi tangan Space Needle, peta lipat, dan penanda lokasi', activities: ['Jalan-jalan di Seattle', 'Destinasi lokal', 'Hiking', 'Kegiatan musiman', 'Menjelajahi kawasan kota'] },
+				{ title: 'Temukan Komunitas', description: 'Membangun persahabatan tulus lewat kebersamaan yang sederhana dan santai.', illustrationAlt: 'Ilustrasi tangan bidak permainan, popcorn, tiket, dan cangkir kopi', activities: ['Malam permainan', 'Nonton bareng', 'Kegiatan hari raya', 'Makan bersama', 'Pertemuan bulanan'] },
+				{ title: 'Belajar & Bertumbuh', description: 'Dukungan selama kuliah hingga langkah berikutnya.', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan kuliah', 'Persiapan karier'] }
+			],
+			community: { label: 'Komunitas KAWAN', photoAlt: 'Pelajar dan keluarga KAWAN menikmati kebersamaan di tepi air', quote: 'Komunitas tumbuh saat kita hadir untuk satu sama lain.' },
+			events: { eyebrow: 'Datang apa adanya', title: 'Acara', intro: 'Bergabunglah sepanjang tahun untuk belajar, menjelajah, dan membangun persahabatan yang bermakna bersama kami.', upcoming: 'Acara mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Hiking Hari Buruh', time: 'Waktu menyusul', description: 'Nikmati Hari Buruh di alam terbuka bersama komunitas KAWAN—hiking santai sambil menikmati waktu bersama.', photoAlt: 'Komunitas KAWAN berkumpul bersama', action: 'RSVP / Info Selengkapnya' },
+			weekdays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+			moments: { eyebrow: 'Keseharian bersama KAWAN', title: 'Momen Kebersamaan', intro: 'Sekilas petualangan, perayaan, dan momen sehari-hari yang mendekatkan komunitas kami.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
+			cta: { eyebrow: 'Mari terhubung', title: 'Ada tempat untukmu di sini.', body: 'Siap memulai perjalananmu? Temui orang-orang yang mengerti dan temukan komunitas yang siap berjalan bersamamu.', action: 'Mari Terhubung' },
+			footer: { tagline: 'Teman dalam perjalananmu.', links: 'TAUTAN', involved: 'AYO TERLIBAT', contact: 'Hubungi kami', copyright: '© 2026 KAWAN Seattle.' },
+			form: { close: 'Tutup', closeLabel: 'Tutup formulir', thanks: 'Terima kasih', successTitle: 'Senang kamu ada di sini.', successBody: 'Informasimu sudah kami terima.', done: 'Selesai', eyebrow: 'Mari terhubung', title: 'Yuk, kenalan lebih dekat.', intro: 'Bagikan informasimu dan ambil langkah pertama untuk bergabung dengan komunitas KAWAN.', name: 'Nama', namePlaceholder: 'Namamu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', direct: 'Hubungi KAWAN secara langsung', whatsapp: 'Chat dengan KAWAN melalui WhatsApp di +1 206 992 4418', email: 'Kirim email ke KAWAN di kawanseattle@gmail.com', privacy: 'Informasimu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', error: 'Informasimu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim' }
+		}
+	} as const;
 
 	const today = new Date();
 	const calendarYear = today.getFullYear();
 	const calendarMonth = 8;
 	const calendarDate = new Date(calendarYear, calendarMonth, 1);
-	const monthLabel = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(calendarDate);
-	const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 	const firstWeekday = new Date(calendarYear, calendarMonth, 1).getDay();
 	const daysInMonth = new Date(calendarYear, calendarMonth + 1, 0).getDate();
 	const calendarDays: Array<number | null> = [
 		...Array.from({ length: firstWeekday }, () => null),
 		...Array.from({ length: daysInMonth }, (_, index) => index + 1)
 	];
-	const events = [
-		{
-			day: 7,
-			title: 'Labor Day Hike',
-			time: 'Time TBD',
-			description: 'Spend Labor Day outdoors with the KAWAN community for a refreshing hike and time together.',
-			image: `${base}/images/labor-day-hike.png`
-		}
-	];
-	const eventByDay = new Map(events.map((event, index) => [event.day, index]));
+	const eventByDay = new Map([[7, 0]]);
 	const hikingPhotos = [
-		{ src: `${base}/images/kawan-hiking-group-2026.jpg`, alt: 'KAWAN friends gathered along a mountain hiking trail' },
-		{ src: `${base}/images/kawan-hiking-waterfall-group.jpg`, alt: 'KAWAN community gathered together at a forest waterfall' },
-		{ src: `${base}/images/kawan-hiking-multnomah-falls.jpeg`, alt: 'KAWAN friends and families visiting Multnomah Falls' }
+		`${base}/images/kawan-hiking-group-2026.jpg`,
+		`${base}/images/kawan-hiking-waterfall-group.jpg`,
+		`${base}/images/kawan-hiking-multnomah-falls.jpeg`
 	];
 
+	let language: Language = 'en';
+	$: t = translations[language];
+	$: programs = t.programs.map((program, index) => ({ ...program, ...programMedia[index] }));
+	$: monthLabel = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long', year: 'numeric' }).format(calendarDate);
+	$: monthName = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long' }).format(calendarDate);
+	$: eventDateLabel = language === 'id' ? `7 ${monthName}` : `${monthName} 7`;
+	$: events = [{ day: 7, title: t.events.eventTitle, time: t.events.time, description: t.events.description, image: `${base}/images/labor-day-hike.png` }];
 	let menuOpen = false;
 	let selectedEventIndex = 0;
 	let email = '';
@@ -76,6 +103,12 @@
 	let connectSubmitting = false;
 	let connectError = '';
 	let hikingSlideIndex = 2;
+
+	function setLanguage(nextLanguage: Language) {
+		language = nextLanguage;
+		if (typeof document !== 'undefined') document.documentElement.lang = nextLanguage;
+		if (typeof localStorage !== 'undefined') localStorage.setItem('kawan-language', nextLanguage);
+	}
 
 	function subscribe() {
 		if (email.trim()) {
@@ -125,7 +158,7 @@
 		if (!connectName.trim() || !connectPhone.trim() || connectSubmitting) return;
 		await phoneInputInstance?.promise;
 		if (!phoneInputInstance?.isValidNumber()) {
-			connectError = 'Please enter a valid phone number for the selected country.';
+			connectError = t.form.invalidPhone;
 			return;
 		}
 		const formattedPhone = phoneInputInstance.getNumber();
@@ -147,7 +180,7 @@
 			if (!response.ok) throw new Error('Submission failed');
 			connectSubmitted = true;
 		} catch {
-			connectError = 'We could not send your information. Please try again.';
+			connectError = t.form.error;
 		} finally {
 			connectSubmitting = false;
 		}
@@ -166,6 +199,8 @@
 	}
 
 	onMount(() => {
+		const savedLanguage = localStorage.getItem('kawan-language');
+		setLanguage(savedLanguage === 'id' ? 'id' : 'en');
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
@@ -198,30 +233,38 @@
 <svelte:window onkeydown={handleWindowKeydown} />
 
 <svelte:head>
-	<title>Kawan | Your journey. Our guidance.</title>
+	<title>{t.meta.title}</title>
+	<meta name="description" content={t.meta.description} />
 </svelte:head>
 
 <header class="site-header">
-	<a class="brand" href="#top" aria-label="Kawan home">
+	<a class="brand" href="#top" aria-label={t.nav.home}>
 		<span class="brand-wordmark"><span>kawan</span><small>seattle</small></span>
 	</a>
 
-	<nav class:open={menuOpen} aria-label="Primary navigation">
-		<a href="#about" onclick={() => (menuOpen = false)}>About</a>
-		<a href="#programs" onclick={() => (menuOpen = false)}>How we help</a>
-		<a href="#events" onclick={() => (menuOpen = false)}>Events</a>
+	<nav class:open={menuOpen} aria-label={t.nav.label}>
+		<a href="#about" onclick={() => (menuOpen = false)}>{t.nav.about}</a>
+		<a href="#programs" onclick={() => (menuOpen = false)}>{t.nav.help}</a>
+		<a href="#events" onclick={() => (menuOpen = false)}>{t.nav.events}</a>
 	</nav>
 
-	<a class="desktop-cta" href="#connect">Connect</a>
-	<button
-		class="menu-button"
-		class:active={menuOpen}
-		aria-label="Toggle navigation"
-		aria-expanded={menuOpen}
-		onclick={() => (menuOpen = !menuOpen)}
-	>
-		<span></span><span></span>
-	</button>
+	<div class="header-actions">
+		<div class="language-toggle" role="group" aria-label={t.nav.language}>
+			<button class:active={language === 'en'} type="button" aria-pressed={language === 'en'} onclick={() => setLanguage('en')}>EN</button>
+			<span aria-hidden="true">/</span>
+			<button class:active={language === 'id'} type="button" aria-pressed={language === 'id'} onclick={() => setLanguage('id')}>ID</button>
+		</div>
+		<a class="desktop-cta" href="#connect">{t.nav.connect}</a>
+		<button
+			class="menu-button"
+			class:active={menuOpen}
+			aria-label={t.nav.toggle}
+			aria-expanded={menuOpen}
+			onclick={() => (menuOpen = !menuOpen)}
+		>
+			<span></span><span></span>
+		</button>
+	</div>
 </header>
 
 <main id="top">
@@ -234,12 +277,12 @@
 				<img class="hero-illustration illustration-hiking" src={`${base}/images/kawan-hero-seattle-sketches.png`} alt="" />
 			</div>
 			<div class="hero-content">
-				<p class="hero-kicker">Welcome to</p>
+				<p class="hero-kicker">{t.hero.kicker}</p>
 				<h1><span class="kawan-script">kawan</span></h1>
-				<p class="hero-statement">A friend for your journey.</p>
-				<p class="hero-tagline">Helping international students settle in, build meaningful friendships, and navigate life in Seattle.</p>
+				<p class="hero-statement">{t.hero.statement}</p>
+				<p class="hero-tagline">{t.hero.tagline}</p>
 				<div class="hero-actions">
-					<a class="button hero-button" href="#connect">Let’s Go</a>
+					<a class="button hero-button" href="#connect">{t.hero.action}</a>
 				</div>
 			</div>
 		</div>
@@ -247,34 +290,34 @@
 	<section class="about section-wrap" id="about">
 		<div class="illustration-band reveal" id="our-story">
 			<div class="illustration-copy">
-				<p class="about-eyebrow">about us</p>
-				<h2>It starts with a friend.</h2>
-				<p class="story-lead"><strong>KAWAN means “friend” in Bahasa Indonesia.</strong></p>
-				<p><strong>Founded by international students, we understand the challenges of moving to a new country, from navigating school and everyday life to building friendships and planning for the future.</strong></p>
-				<p><strong>We're here to help students settle into life in the U.S., build lasting friendships, and find a community that walks alongside them.</strong></p>
+				<p class="about-eyebrow">{t.about.eyebrow}</p>
+				<h2>{t.about.title}</h2>
+				<p class="story-lead"><strong>{t.about.lead}</strong></p>
+				<p><strong>{t.about.body1}</strong></p>
+				<p><strong>{t.about.body2}</strong></p>
 			</div>
 			<figure class="about-photo-frame">
-				<div class="about-photo-crop"><img src={`${base}/images/kawan-community-christmas-2025.jpeg`} alt="KAWAN community members gathering at Evergreen Christmas Lights in 2025" /></div>
+				<div class="about-photo-crop"><img src={`${base}/images/kawan-community-christmas-2025.jpeg`} alt={t.about.photoAlt} /></div>
 			</figure>
 		</div>
 		<div class="belief-section">
 			<div class="belief-heading reveal">
-				<p class="about-eyebrow">why we are here</p>
-				<h2>Our Purpose</h2>
+				<p class="about-eyebrow">{t.purpose.eyebrow}</p>
+				<h2>{t.purpose.title}</h2>
 			</div>
 			<div class="about-grid belief-grid">
 			<article class="about-card belief-block reveal" id="our-vision">
-				<div class="belief-label"><p class="about-label">our vision</p></div>
+				<div class="belief-label"><p class="about-label">{t.purpose.visionLabel}</p></div>
 				<div class="belief-copy">
-					<h3>Building a generation<br />that thrives.</h3>
-					<p class="about-description">Building a generation of international students who thrive in life relationally, academically, and professionally, and empower those who come after them.</p>
+					<h3>{t.purpose.visionTitle1}<br />{t.purpose.visionTitle2}</h3>
+					<p class="about-description">{t.purpose.visionBody}</p>
 				</div>
 			</article>
 			<article class="about-card belief-block reveal" id="our-mission" style="--delay: 120ms">
-				<div class="belief-label"><p class="about-label">our mission</p></div>
+				<div class="belief-label"><p class="about-label">{t.purpose.missionLabel}</p></div>
 				<div class="belief-copy">
-					<h3>Welcoming.<br />Connecting.<br />Supporting.</h3>
-					<p class="about-description">Welcoming and connecting international students to the broader community while providing friendship, support, resources, and career opportunities.</p>
+					<h3>{t.purpose.missionTitle[0]}<br />{t.purpose.missionTitle[1]}<br />{t.purpose.missionTitle[2]}</h3>
+					<p class="about-description">{t.purpose.missionBody}</p>
 				</div>
 			</article>
 			</div>
@@ -283,9 +326,9 @@
 
 	<section class="programs section-wrap" id="programs">
 		<div class="journey-section-heading reveal">
-			<p class="about-eyebrow">SUPPORT FOR YOUR JOURNEY</p>
-			<h2>How Kawan helps</h2>
-			<p>Practical support, genuine friendships, and a community to help you feel at home.</p>
+			<p class="about-eyebrow">{t.programsHeading.eyebrow}</p>
+			<h2>{t.programsHeading.title}</h2>
+			<p>{t.programsHeading.body}</p>
 		</div>
 		<div class="program-grid minimal support-journey">
 			{#each programs as program, index}
@@ -303,23 +346,23 @@
 		</div>
 	</section>
 
-	<section class="community-photo-break reveal" aria-label="KAWAN community">
-		<img src={`${base}/images/kawan-community-outing.jpeg`} alt="KAWAN students and families enjoying a community outing by the water" />
-		<p>Community begins by showing up for one another.</p>
+	<section class="community-photo-break reveal" aria-label={t.community.label}>
+		<img src={`${base}/images/kawan-community-outing.jpeg`} alt={t.community.photoAlt} />
+		<p>{t.community.quote}</p>
 	</section>
 
 	<section class="stories events section-wrap" id="events">
 		<div class="events-heading reveal">
-			<p class="about-eyebrow">Come as you are</p>
-			<h2>Events</h2>
-			<p>Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.</p>
+			<p class="about-eyebrow">{t.events.eyebrow}</p>
+			<h2>{t.events.title}</h2>
+			<p>{t.events.intro}</p>
 		</div>
 
 		<div class="events-feature reveal">
-			<div class="event-calendar" aria-label={`${monthLabel} event calendar`}>
-				<div class="calendar-heading"><p>Upcoming events</p><h3>{monthLabel}</h3></div>
+			<div class="event-calendar" aria-label={`${monthLabel} ${t.events.calendar}`}>
+				<div class="calendar-heading"><p>{t.events.upcoming}</p><h3>{monthLabel}</h3></div>
 				<div class="calendar-grid calendar-weekdays">
-					{#each weekdays as weekday}<span>{weekday}</span>{/each}
+					{#each t.weekdays as weekday}<span>{weekday}</span>{/each}
 				</div>
 				<div class="calendar-grid calendar-dates">
 					{#each calendarDays as day}
@@ -328,7 +371,7 @@
 								class:active={eventByDay.get(day) === selectedEventIndex}
 								onclick={() => (selectedEventIndex = eventByDay.get(day) ?? 0)}
 								onmouseenter={() => (selectedEventIndex = eventByDay.get(day) ?? 0)}
-								aria-label={`Show event on ${monthLabel.split(' ')[0]} ${day}`}
+								aria-label={`${t.events.showEvent} ${language === 'id' ? `${day} ${monthName}` : `${monthName} ${day}`}`}
 							>{day}</button>
 						{:else}<span class:empty={!day}>{day ?? ''}</span>{/if}
 					{/each}
@@ -336,48 +379,48 @@
 			</div>
 
 			<article class="featured-event">
-				<div class="featured-event-photo"><img src={events[selectedEventIndex].image} alt="KAWAN community gathering together" /></div>
+				<div class="featured-event-photo"><img src={events[selectedEventIndex].image} alt={t.events.photoAlt} /></div>
 				<div class="featured-event-copy">
-					<p class="event-date">{monthLabel.split(' ')[0]} {events[selectedEventIndex].day} <span>{events[selectedEventIndex].time}</span></p>
+					<p class="event-date">{eventDateLabel} <span>{events[selectedEventIndex].time}</span></p>
 					<h3>{events[selectedEventIndex].title}</h3>
 					<p>{events[selectedEventIndex].description}</p>
-					<a class="button" href="mailto:hello@kawan.org">RSVP / Learn More <span>↗</span></a>
+					<a class="button" href="mailto:hello@kawan.org">{t.events.action} <span>↗</span></a>
 				</div>
 			</article>
 		</div>
 
 		<div class="moments-heading reveal">
-			<p class="about-eyebrow">Life with KAWAN</p>
-			<h3>Moments Together</h3>
-			<p>A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.</p>
+			<p class="about-eyebrow">{t.moments.eyebrow}</p>
+			<h3>{t.moments.title}</h3>
+			<p>{t.moments.intro}</p>
 		</div>
 		<div class="moments-gallery">
 			<figure class="moment moment-wide reveal">
 				<div class="hiking-slide" aria-live="polite">
 					{#key hikingSlideIndex}
-						<img src={hikingPhotos[hikingSlideIndex].src} alt={hikingPhotos[hikingSlideIndex].alt} />
+						<img src={hikingPhotos[hikingSlideIndex]} alt={t.moments.hikingAlts[hikingSlideIndex]} />
 					{/key}
 				</div>
-				<button class="slide-arrow slide-previous" type="button" onclick={showPreviousHikingPhoto} aria-label="Previous hiking photo">‹</button>
-				<button class="slide-arrow slide-next" type="button" onclick={showNextHikingPhoto} aria-label="Next hiking photo">›</button>
-				<div class="slide-dots" aria-label="Choose a hiking photo">
+				<button class="slide-arrow slide-previous" type="button" onclick={showPreviousHikingPhoto} aria-label={t.moments.previous}>‹</button>
+				<button class="slide-arrow slide-next" type="button" onclick={showNextHikingPhoto} aria-label={t.moments.next}>›</button>
+				<div class="slide-dots" aria-label={t.moments.choose}>
 					{#each hikingPhotos as _, index}
-						<button class:active={index === hikingSlideIndex} type="button" onclick={() => (hikingSlideIndex = index)} aria-label={`Show hiking photo ${index + 1}`}></button>
+						<button class:active={index === hikingSlideIndex} type="button" onclick={() => (hikingSlideIndex = index)} aria-label={`${t.moments.show} ${index + 1}`}></button>
 					{/each}
 				</div>
-				<figcaption><strong>Hiking Trips</strong><span>Summer outings</span></figcaption>
+				<figcaption><strong>{t.moments.hiking}</strong><span>{t.moments.summerOutings}</span></figcaption>
 			</figure>
 			<figure class="moment moment-tall reveal" style="--delay: 80ms">
-				<img src={`${base}/images/kawan-thanksgiving-retreat-cabin.jpeg`} alt="KAWAN community members together on a holiday trip" />
-				<figcaption><strong>Holiday Getaways</strong><span>Community getaway</span></figcaption>
+				<img src={`${base}/images/kawan-thanksgiving-retreat-cabin.jpeg`} alt={t.moments.getawayAlt} />
+				<figcaption><strong>{t.moments.getaways}</strong><span>{t.moments.communityGetaway}</span></figcaption>
 			</figure>
 			<figure class="moment moment-small reveal" style="--delay: 140ms">
-				<img src={`${base}/images/kawan-seattle-adventures.jpeg`} alt="Seattle skyline viewed from the water during a KAWAN adventure" />
-				<figcaption><strong>Seattle Adventures</strong><span>Exploring together</span></figcaption>
+				<img src={`${base}/images/kawan-seattle-adventures.jpeg`} alt={t.moments.seattleAlt} />
+				<figcaption><strong>{t.moments.adventures}</strong><span>{t.moments.exploring}</span></figcaption>
 			</figure>
 			<figure class="moment moment-small reveal" style="--delay: 200ms">
-				<img src={`${base}/images/kawan-summer-camping-fire.jpg`} alt="A glowing campfire during a KAWAN summer camping trip" />
-				<figcaption><strong>Summer Camping</strong><span>Outdoor adventures</span></figcaption>
+				<img src={`${base}/images/kawan-summer-camping-fire.jpg`} alt={t.moments.campingAlt} />
+				<figcaption><strong>{t.moments.camping}</strong><span>{t.moments.outdoors}</span></figcaption>
 			</figure>
 		</div>
 	</section>
@@ -385,10 +428,10 @@
 	<section class="cta-minimal" id="connect">
 		<div class="section-wrap">
 			<div class="cta-content reveal">
-				<p class="about-eyebrow">Get connected</p>
-				<h2>There’s a place for you here.</h2>
-				<p>Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.</p>
-				<div class="cta-actions"><button class="button large" type="button" onclick={openConnectForm}>Get Connected <span>↗</span></button></div>
+				<p class="about-eyebrow">{t.cta.eyebrow}</p>
+				<h2>{t.cta.title}</h2>
+				<p>{t.cta.body}</p>
+				<div class="cta-actions"><button class="button large" type="button" onclick={openConnectForm}>{t.cta.action} <span>↗</span></button></div>
 			</div>
 		</div>
 	</section>
@@ -397,55 +440,55 @@
 <footer>
 	<div class="footer-main section-wrap">
 		<div class="footer-brand">
-			<a class="footer-identity" href="#top" aria-label="KAWAN Seattle home">
+			<a class="footer-identity" href="#top" aria-label={t.nav.home}>
 				<span class="footer-wordmark"><span>kawan</span><small>seattle</small></span>
 			</a>
-			<p>A friend for your journey.</p>
+			<p>{t.footer.tagline}</p>
 		</div>
 		<div class="footer-links">
-			<div><strong>LINKS</strong><a href="#programs">How we help</a><a href="#events">Events</a></div>
-			<div><strong>GET INVOLVED</strong><a href="mailto:hello@kawan.org">Contact us</a></div>
+			<div><strong>{t.footer.links}</strong><a href="#programs">{t.nav.help}</a><a href="#events">{t.nav.events}</a></div>
+			<div><strong>{t.footer.involved}</strong><a href="mailto:hello@kawan.org">{t.footer.contact}</a></div>
 		</div>
 	</div>
 	<div class="footer-bottom section-wrap">
-		<span>© 2026 KAWAN Seattle.</span>
+		<span>{t.footer.copyright}</span>
 	</div>
 </footer>
 
 {#if connectFormOpen}
 	<div class="connect-modal-backdrop" role="presentation">
 		<div class="connect-modal" role="dialog" aria-modal="true" aria-labelledby="connect-form-title">
-			<button class="connect-modal-close" type="button" onclick={closeConnectForm} aria-label="Close connection form">Close</button>
+			<button class="connect-modal-close" type="button" onclick={closeConnectForm} aria-label={t.form.closeLabel}>{t.form.close}</button>
 			{#if connectSubmitted}
 				<div class="connect-confirmation">
-					<p class="about-eyebrow">Thank you</p>
-					<h2 id="connect-form-title">We’re glad you’re here.</h2>
-					<p>Thanks, {connectName}. Your information has been entered.</p>
-					<button class="button" type="button" onclick={closeConnectForm}>Done</button>
+					<p class="about-eyebrow">{t.form.thanks}</p>
+					<h2 id="connect-form-title">{t.form.successTitle}</h2>
+					<p>{language === 'id' ? `Terima kasih, ${connectName}. ${t.form.successBody}` : `Thanks, ${connectName}. ${t.form.successBody}`}</p>
+					<button class="button" type="button" onclick={closeConnectForm}>{t.form.done}</button>
 				</div>
 			{:else}
 				<div class="connect-form-heading">
-					<p class="about-eyebrow">Get connected</p>
-					<h2 id="connect-form-title">Let’s get to know you.</h2>
-					<p>Share your information and take the first step toward the KAWAN community.</p>
+					<p class="about-eyebrow">{t.form.eyebrow}</p>
+					<h2 id="connect-form-title">{t.form.title}</h2>
+					<p>{t.form.intro}</p>
 				</div>
 				<form class="connect-form" onsubmit={(event) => { event.preventDefault(); submitConnectForm(); }}>
-					<label for="connect-name">Name</label>
-					<input id="connect-name" name="name" type="text" autocomplete="name" bind:value={connectName} required placeholder="Your name" />
-					<label for="connect-phone">Phone number</label>
+					<label for="connect-name">{t.form.name}</label>
+					<input id="connect-name" name="name" type="text" autocomplete="name" bind:value={connectName} required placeholder={t.form.namePlaceholder} />
+					<label for="connect-phone">{t.form.phone}</label>
 					<div class="phone-field">
 						<input id="connect-phone" name="phone" type="tel" autocomplete="tel" use:internationalPhoneInput required aria-describedby="connect-phone-hint" />
 					</div>
-					<p id="connect-phone-hint" class="phone-hint">Choose your country, then enter your phone number.</p>
-					<div class="direct-contacts" aria-label="Contact KAWAN directly">
-						<a class="direct-contact whatsapp-contact" href="https://wa.me/12069924418" target="_blank" rel="noreferrer" aria-label="Chat with KAWAN on WhatsApp at +1 206 992 4418">
+					<p id="connect-phone-hint" class="phone-hint">{t.form.phoneHint}</p>
+					<div class="direct-contacts" aria-label={t.form.direct}>
+						<a class="direct-contact whatsapp-contact" href="https://wa.me/12069924418" target="_blank" rel="noreferrer" aria-label={t.form.whatsapp}>
 							<svg viewBox="0 0 24 24" aria-hidden="true">
 								<path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.3-4.3a8.5 8.5 0 1 1 15.7-4.4Z" />
 								<path d="M8.2 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.6.8c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2 2.1.3.2.5.2.7 0l.9-1.1c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5 0 .2-.1 1.2-.7 1.8-.5.6-1.3.9-2.1.8-1-.1-2.5-.6-4.2-2.1-1.3-1.2-2.3-2.6-2.7-3.7-.4-1-.4-2.1.1-2.8l.1-.3Z" />
 							</svg>
 							<strong>+1 (206) 992-4418</strong>
 						</a>
-						<a class="direct-contact gmail-contact" href="mailto:kawanseattle@gmail.com" aria-label="Email KAWAN at kawanseattle@gmail.com">
+						<a class="direct-contact gmail-contact" href="mailto:kawanseattle@gmail.com" aria-label={t.form.email}>
 							<svg viewBox="0 0 24 24" aria-hidden="true">
 								<path class="gmail-blue" d="M3.5 6.5v11" />
 								<path class="gmail-red" d="M3.5 6.5 12 13l8.5-6.5" />
@@ -455,9 +498,9 @@
 							<strong>kawanseattle@gmail.com</strong>
 						</a>
 					</div>
-					<p class="connect-privacy">Your information will be securely forwarded to KAWAN by our form delivery provider.</p>
+					<p class="connect-privacy">{t.form.privacy}</p>
 					{#if connectError}<p class="connect-error" role="alert">{connectError}</p>{/if}
-					<button class="button" type="submit" disabled={connectSubmitting}>{connectSubmitting ? 'Sending…' : 'Submit'}</button>
+					<button class="button" type="submit" disabled={connectSubmitting}>{connectSubmitting ? t.form.sending : t.form.submit}</button>
 				</form>
 			{/if}
 		</div>
@@ -3101,6 +3144,31 @@
 		letter-spacing: .04em;
 	}
 	.button:hover, :global(.button.gold):hover { background: #35433a; box-shadow: none; transform: translateY(-2px); }
+	.header-actions {
+		display: flex;
+		align-items: center;
+		gap: 28px;
+	}
+	.language-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		color: rgba(64, 80, 71, .38);
+		font: 700 10px 'Manrope', sans-serif;
+		letter-spacing: .1em;
+	}
+	.language-toggle button {
+		padding: 5px 2px;
+		border: 0;
+		color: #817b73;
+		background: transparent;
+		font: inherit;
+		cursor: pointer;
+		transition: color .2s ease;
+	}
+	.language-toggle button:hover,
+	.language-toggle button.active { color: #405047; }
+	.language-toggle button.active { text-decoration: underline; text-decoration-color: #b7785d; text-underline-offset: 5px; }
 
 	.hero {
 		position: relative;
@@ -3711,6 +3779,8 @@
 		.moments-gallery { grid-template-rows: 280px 280px; }
 	}
 	@media (max-width: 620px) {
+		.header-actions { gap: 14px; }
+		.language-toggle { gap: 4px; }
 		.hero, .hero-minimal { min-height: 700px; }
 		.hero-minimal { padding-top: 124px; padding-bottom: 72px; }
 		.hero h1 { font-size: clamp(72px, 24vw, 102px); }
