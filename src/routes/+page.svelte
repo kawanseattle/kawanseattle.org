@@ -384,7 +384,7 @@
 					<p class="event-date">{eventDateLabel}</p>
 					<h3>{events[selectedEventIndex].title}</h3>
 					<p>{events[selectedEventIndex].description}</p>
-					<a class="button" href="mailto:hello@kawan.org">{t.events.action} <span>↗</span></a>
+					<button class="button" type="button" onclick={openConnectForm}>{t.events.action} <span>↗</span></button>
 				</div>
 			</article>
 		</div>
@@ -3583,7 +3583,7 @@
 	.event-date { display: flex; gap: 14px; margin: 0 0 14px; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
 	.featured-event-copy > p:not(.event-date) { max-width: 590px; margin: 0 0 26px; color: #696b66; font-size: 14px; line-height: 1.7; }
-	.featured-event-copy .button { width: fit-content; }
+	.featured-event-copy .button { width: fit-content; cursor: pointer; }
 	.moments-heading { max-width: 680px; margin: 150px 0 58px; }
 	.moments-heading h3 { margin: 10px 0 18px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(50px, 6vw, 76px); line-height: .98; letter-spacing: -.045em; }
 	.moments-heading > p:last-child { margin: 0; color: #696b66; font-size: 15px; line-height: 1.75; }
