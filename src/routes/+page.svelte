@@ -26,41 +26,41 @@
 			meta: { title: 'Kawan | Your journey. Our guidance.', description: 'KAWAN helps international students settle in, build meaningful friendships, and navigate life in Seattle.' },
 			nav: { label: 'Primary navigation', home: 'KAWAN home', about: 'About', help: 'How we help', events: 'Events', connect: 'Connect', toggle: 'Toggle navigation', language: 'Choose language' },
 			hero: { kicker: 'Welcome to', statement: 'A friend for your journey.', tagline: 'Helping international students settle in, build meaningful friendships, and navigate life in Seattle.', action: 'Let’s Go' },
-			about: { eyebrow: 'about us', title: 'It starts with a friend.', lead: 'KAWAN means “friend” in Bahasa Indonesia.', body1: 'Founded by international students, we understand the challenges of moving to a new country, from navigating school and everyday life to building friendships and planning for the future.', body2: "We're here to help students settle into life in the U.S., build lasting friendships, and find a community that walks alongside them.", photoAlt: 'KAWAN community members gathering at Evergreen Christmas Lights in 2025' },
+			about: { eyebrow: 'about us', title: 'It starts with a friend.', lead: 'KAWAN means “friend” in Bahasa Indonesia.', body1: 'Founded by international students, we understand the challenges of moving to a new country, from navigating school and everyday life to building friendships and planning for the future.', body2: "We're here to help students settle into life in the U.S., build lasting friendships, and find a community that walks alongside them.", body3: '', photoAlt: 'KAWAN community members gathering at Evergreen Christmas Lights in 2025' },
 			purpose: { eyebrow: 'why we are here', title: 'Our Purpose', visionLabel: 'our vision', visionTitle1: 'Building a generation', visionTitle2: 'that thrives.', visionBody: 'Building a generation of international students who thrive in life relationally, academically, and professionally, and empower those who come after them.', missionLabel: 'our mission', missionTitle: ['Welcoming.', 'Connecting.', 'Supporting.'], missionBody: 'Welcoming and connecting international students to the broader community while providing friendship, support, resources, and career opportunities.' },
 			programsHeading: { eyebrow: 'SUPPORT FOR YOUR JOURNEY', title: 'How Kawan helps', body: 'Practical support, genuine friendships, and a community to help you feel at home.' },
 			programs: [
-				{ title: 'Settle In', description: 'Help students settle into life in Seattle.', illustrationAlt: 'A hand-drawn airplane, suitcase, and key', activities: ['Airport pickup', 'Housing guidance', 'Bank account setup', 'State ID / driver’s license guidance', 'Everyday essentials'] },
-				{ title: 'Explore Seattle', description: 'Discover the city together.', illustrationAlt: 'A hand-drawn Space Needle, folded map, and location pin', activities: ['Seattle city trips', 'Local landmarks', 'Hiking', 'Seasonal activities', 'Neighborhood exploration'] },
-				{ title: 'Find Community', description: 'Build genuine friendships through simple, relaxed moments together.', illustrationAlt: 'Hand-drawn game pieces, popcorn, tickets, and coffee mugs', activities: ['Game nights', 'Movie nights', 'Holiday activities', 'Community dinners', 'Monthly gatherings'] },
-				{ title: 'Learn & Grow', description: 'Support throughout school and beyond.', illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap', activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation'] }
+				{ title: 'Settle In', description: 'Help students settle into life in Seattle.', details: '', illustrationAlt: 'A hand-drawn airplane, suitcase, and key', activities: ['Airport pickup', 'Housing guidance', 'Bank account setup', 'State ID / driver’s license guidance', 'Everyday essentials'] },
+				{ title: 'Explore Seattle', description: 'Discover the city together.', details: '', illustrationAlt: 'A hand-drawn Space Needle, folded map, and location pin', activities: ['Seattle city trips', 'Local landmarks', 'Hiking', 'Seasonal activities', 'Neighborhood exploration'] },
+				{ title: 'Find Community', description: 'Build genuine friendships through simple, relaxed moments together.', details: '', illustrationAlt: 'Hand-drawn game pieces, popcorn, tickets, and coffee mugs', activities: ['Game nights', 'Movie nights', 'Holiday activities', 'Community dinners', 'Monthly gatherings'] },
+				{ title: 'Learn & Grow', description: 'Support throughout school and beyond.', details: '', illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap', activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation'] }
 			],
 			community: { label: 'KAWAN community', photoAlt: 'KAWAN students and families enjoying a community outing by the water', quote: 'Community begins by showing up for one another.' },
-			events: { eyebrow: 'Come as you are', title: 'Events', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Salmon Hatchery Tour', description: 'Visit the Issaquah Salmon Hatchery with KAWAN, learn about the salmon life cycle, and enjoy a fun day exploring together.', photoAlt: 'KAWAN students visiting a salmon hatchery and watching salmon in the water', action: 'RSVP / Learn More' },
+			events: { eyebrow: 'Come as you are', title: 'Events', subheading: '', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Salmon Hatchery Tour', description: 'Visit the Issaquah Salmon Hatchery with KAWAN, learn about the salmon life cycle, and enjoy a fun day exploring together.', photoAlt: 'KAWAN students visiting a salmon hatchery and watching salmon in the water', action: 'RSVP / Learn More' },
 			weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 			moments: { eyebrow: 'Life with KAWAN', title: 'Moments Together', intro: 'A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.', previous: 'Previous hiking photo', next: 'Next hiking photo', choose: 'Choose a hiking photo', show: 'Show hiking photo', hiking: 'Hiking Trips', summerOutings: 'Summer outings', getaways: 'Holiday Getaways', communityGetaway: 'Community getaway', adventures: 'Seattle Adventures', exploring: 'Exploring together', camping: 'Summer Camping', outdoors: 'Outdoor adventures', hikingAlts: ['KAWAN friends gathered along a mountain hiking trail', 'KAWAN community gathered together at a forest waterfall', 'KAWAN friends and families visiting Multnomah Falls'], getawayAlt: 'KAWAN community members together on a holiday trip', seattleAlt: 'Seattle skyline viewed from the water during a KAWAN adventure', campingAlt: 'A glowing campfire during a KAWAN summer camping trip' },
-			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', action: 'Get Connected' },
+			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', body2: '', action: 'Get Connected' },
 			footer: { tagline: 'A friend for your journey.', links: 'LINKS', involved: 'GET INVOLVED', contact: 'Contact us', copyright: '© 2026 KAWAN Seattle.' },
 			form: { close: 'Close', closeLabel: 'Close connection form', thanks: 'Thank you', successTitle: 'We’re glad you’re here.', successBody: 'Your information has been entered.', done: 'Done', eyebrow: 'Get connected', title: 'Let’s get to know you.', intro: 'Share your information and take the first step toward the KAWAN community.', name: 'Name', namePlaceholder: 'Your name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', direct: 'Contact KAWAN directly', whatsapp: 'Chat with KAWAN on WhatsApp at +1 206 992 4418', email: 'Email KAWAN at kawanseattle@gmail.com', privacy: 'Your information will be securely forwarded to KAWAN by our form delivery provider.', invalidPhone: 'Please enter a valid phone number for the selected country.', error: 'We could not send your information. Please try again.', sending: 'Sending…', submit: 'Submit' }
 		},
 		id: {
 			meta: { title: 'Kawan | Teman dalam perjalananmu.', description: 'KAWAN membantu pelajar internasional beradaptasi, membangun persahabatan yang bermakna, dan menjalani kehidupan di Seattle.' },
 			nav: { label: 'Navigasi utama', home: 'Beranda KAWAN', about: 'Tentang kami', help: 'Dukungan kami', events: 'Acara', connect: 'Terhubung', toggle: 'Buka atau tutup navigasi', language: 'Pilih bahasa' },
-			hero: { kicker: 'Selamat datang di', statement: 'Teman dalam perjalananmu.', tagline: 'Mendampingi pelajar internasional beradaptasi, membangun persahabatan yang bermakna, dan menjalani kehidupan di Seattle.', action: 'Mulai Bersama' },
-			about: { eyebrow: 'tentang kami', title: 'Semua berawal dari seorang teman.', lead: 'KAWAN berarti “teman” dalam bahasa Indonesia.', body1: 'Didirikan oleh para pelajar internasional, kami memahami tantangan pindah ke negara baru—mulai dari menjalani perkuliahan dan kehidupan sehari-hari hingga membangun persahabatan dan merencanakan masa depan.', body2: 'Kami hadir untuk membantu para pelajar beradaptasi dengan kehidupan di Amerika, menjalin persahabatan yang langgeng, dan menemukan komunitas yang siap berjalan bersama mereka.', photoAlt: 'Komunitas KAWAN berkumpul di Evergreen Christmas Lights pada tahun 2025' },
-			purpose: { eyebrow: 'alasan kami hadir', title: 'Tujuan Kami', visionLabel: 'visi kami', visionTitle1: 'Membangun generasi', visionTitle2: 'yang bertumbuh.', visionBody: 'Membangun generasi pelajar internasional yang berkembang dalam relasi, pendidikan, dan karier, serta mampu memberdayakan generasi yang datang setelah mereka.', missionLabel: 'misi kami', missionTitle: ['Menyambut.', 'Menghubungkan.', 'Mendampingi.'], missionBody: 'Menyambut dan menghubungkan pelajar internasional dengan komunitas yang lebih luas, sekaligus menyediakan persahabatan, dukungan, sumber daya, dan peluang karier.' },
-			programsHeading: { eyebrow: 'DUKUNGAN UNTUK PERJALANANMU', title: 'Cara Kawan mendampingi', body: 'Dukungan praktis, persahabatan yang tulus, dan komunitas yang membuatmu merasa seperti di rumah.' },
+			hero: { kicker: 'Selamat datang di', statement: 'Teman dalam perjalananmu.', tagline: 'Kami hadir untuk membantu pelajar internasional beradaptasi dengan kehidupan di Seattle, menemukan teman, dan punya komunitas yang bisa jadi tempat pulang selama jauh dari rumah.', action: 'Mulai Bersama' },
+			about: { eyebrow: 'Tentang Kami', title: 'Semua berawal dari seorang teman.', lead: 'KAWAN berarti “teman” dalam bahasa Indonesia.', body1: 'Kami juga pernah menjadi pelajar internasional. Kami tahu rasanya pindah ke negara baru—bingung mengurus hal-hal sehari-hari, beradaptasi dengan kuliah dan budaya baru, mencari teman, sampai memikirkan langkah setelah lulus.', body2: 'Karena itu, KAWAN hadir supaya kamu nggak perlu menjalani semuanya sendirian.', body3: 'Kami ingin menjadi teman yang bisa kamu andalkan selama membangun kehidupan di Seattle—baik saat kamu baru tiba, sedang menjalani kuliah, maupun mulai mempersiapkan masa depan.', photoAlt: 'Komunitas KAWAN berkumpul di Evergreen Christmas Lights pada tahun 2025' },
+			purpose: { eyebrow: 'Kenapa KAWAN Ada', title: 'Tujuan Kami', visionLabel: 'Visi Kami', visionTitle1: 'Bertumbuh bersama,', visionTitle2: 'lalu membantu yang berikutnya.', visionBody: 'Kami ingin melihat pelajar internasional bukan hanya berhasil melewati masa kuliah, tapi juga bertumbuh dalam relasi, pendidikan, dan karier—lalu suatu hari bisa membantu mereka yang datang setelahnya.', missionLabel: 'Misi Kami', missionTitle: ['Menyambut.', 'Menghubungkan.', 'Mendampingi.'], missionBody: 'Kami menyambut pelajar internasional, membantu mereka menemukan komunitas, dan mendampingi mereka lewat persahabatan, dukungan praktis, berbagai sumber daya, serta kesempatan untuk belajar dan berkembang.' },
+			programsHeading: { eyebrow: '', title: 'Ada KAWAN di Setiap Langkah', body: 'Mulai dari hari pertama di Seattle sampai langkah setelah lulus, ada banyak hal yang lebih mudah kalau dijalani bersama.' },
 			programs: [
-				{ title: 'Beradaptasi', description: 'Membantu pelajar memulai kehidupan di Seattle.', illustrationAlt: 'Ilustrasi tangan pesawat, koper, dan kunci', activities: ['Penjemputan bandara', 'Panduan tempat tinggal', 'Membuka rekening bank', 'Panduan State ID / SIM', 'Kebutuhan sehari-hari'] },
-				{ title: 'Jelajahi Seattle', description: 'Mengenal kota ini bersama-sama.', illustrationAlt: 'Ilustrasi tangan Space Needle, peta lipat, dan penanda lokasi', activities: ['Jalan-jalan di Seattle', 'Destinasi lokal', 'Hiking', 'Kegiatan musiman', 'Menjelajahi kawasan kota'] },
-				{ title: 'Temukan Komunitas', description: 'Membangun persahabatan tulus lewat kebersamaan yang sederhana dan santai.', illustrationAlt: 'Ilustrasi tangan bidak permainan, popcorn, tiket, dan cangkir kopi', activities: ['Malam permainan', 'Nonton bareng', 'Kegiatan hari raya', 'Makan bersama', 'Pertemuan bulanan'] },
-				{ title: 'Belajar & Bertumbuh', description: 'Dukungan selama kuliah hingga langkah berikutnya.', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan kuliah', 'Persiapan karier'] }
+				{ title: 'Beradaptasi', description: 'Biar hari-hari pertama di Seattle terasa lebih mudah.', details: 'Kami bisa membantu dengan:', illustrationAlt: 'Ilustrasi tangan pesawat, koper, dan kunci', activities: ['Penjemputan dari bandara', 'Mencari tempat tinggal', 'Membuka rekening bank', 'Mengurus State ID / SIM', 'Kebutuhan sehari-hari lainnya'] },
+				{ title: 'Jelajahi Seattle', description: 'Kenalan sama kota barumu, bareng-bareng.', details: 'Mulai dari jalan santai sampai hiking dan kegiatan musiman, kami suka menjelajahi Seattle dan sekitarnya bersama.', illustrationAlt: 'Ilustrasi tangan Space Needle, peta lipat, dan penanda lokasi', activities: ['Jalan-jalan di Seattle', 'Mengunjungi tempat-tempat lokal', 'Hiking', 'Kegiatan musiman', 'Menjelajahi berbagai kawasan kota'] },
+				{ title: 'Temukan Komunitas', description: 'Karena rumah juga bisa ditemukan lewat orang-orang di sekitar kita.', details: 'Nggak harus selalu acara besar. Kadang persahabatan justru tumbuh dari makan bareng, ngobrol santai, atau sekadar menghabiskan waktu bersama.', illustrationAlt: 'Ilustrasi tangan bidak permainan, popcorn, tiket, dan cangkir kopi', activities: ['Malam permainan', 'Nonton bareng', 'Perayaan hari raya', 'Makan bersama', 'Pertemuan bulanan'] },
+				{ title: 'Belajar & Bertumbuh', description: 'Kami juga ada untuk perjalanan kuliah dan langkahmu setelahnya.', details: '', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan seputar kuliah', 'Persiapan karier'] }
 			],
 			community: { label: 'Komunitas KAWAN', photoAlt: 'Pelajar dan keluarga KAWAN menikmati kebersamaan di tepi air', quote: 'Komunitas tumbuh saat kita hadir untuk satu sama lain.' },
-			events: { eyebrow: 'Datang apa adanya', title: 'Acara', intro: 'Bergabunglah sepanjang tahun untuk belajar, menjelajah, dan membangun persahabatan yang bermakna bersama kami.', upcoming: 'Acara mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Tur Salmon Hatchery', description: 'Kunjungi Issaquah Salmon Hatchery bersama KAWAN, pelajari siklus hidup salmon, dan nikmati hari yang seru sambil menjelajah bersama.', photoAlt: 'Pelajar KAWAN mengunjungi tempat penetasan dan mengamati salmon di air', action: 'RSVP / Info Selengkapnya' },
+			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Tur Salmon Hatchery', description: 'Yuk, ikut KAWAN mengunjungi Issaquah Salmon Hatchery! Kita akan melihat salmon dari dekat, belajar sedikit tentang perjalanan hidup mereka, dan tentunya menikmati hari bareng teman-teman.', photoAlt: 'Pelajar KAWAN mengunjungi tempat penetasan dan mengamati salmon di air', action: 'RSVP / Info Selengkapnya' },
 			weekdays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
-			moments: { eyebrow: 'Keseharian bersama KAWAN', title: 'Momen Kebersamaan', intro: 'Sekilas petualangan, perayaan, dan momen sehari-hari yang mendekatkan komunitas kami.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
-			cta: { eyebrow: 'Mari terhubung', title: 'Ada tempat untukmu di sini.', body: 'Siap memulai perjalananmu? Temui orang-orang yang mengerti dan temukan komunitas yang siap berjalan bersamamu.', action: 'Mari Terhubung' },
+			moments: { eyebrow: '', title: 'Momen Bersama KAWAN', intro: 'Sedikit cerita dari berbagai perjalanan, perayaan, dan momen sederhana yang kami jalani bersama.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
+			cta: { eyebrow: 'Mari Terhubung', title: 'Ada tempat untukmu di sini.', body: 'Baru datang ke Seattle? Sudah lama di sini tapi ingin kenal lebih banyak orang? Atau cuma ingin punya teman untuk ngobrol dan jalan bareng?', body2: 'Apa pun ceritamu, kami senang bisa kenalan.', action: 'Mari Terhubung' },
 			footer: { tagline: 'Teman dalam perjalananmu.', links: 'TAUTAN', involved: 'AYO TERLIBAT', contact: 'Hubungi kami', copyright: '© 2026 KAWAN Seattle.' },
 			form: { close: 'Tutup', closeLabel: 'Tutup formulir', thanks: 'Terima kasih', successTitle: 'Senang kamu ada di sini.', successBody: 'Informasimu sudah kami terima.', done: 'Selesai', eyebrow: 'Mari terhubung', title: 'Yuk, kenalan lebih dekat.', intro: 'Bagikan informasimu dan ambil langkah pertama untuk bergabung dengan komunitas KAWAN.', name: 'Nama', namePlaceholder: 'Namamu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', direct: 'Hubungi KAWAN secara langsung', whatsapp: 'Chat dengan KAWAN melalui WhatsApp di +1 206 992 4418', email: 'Kirim email ke KAWAN di kawanseattle@gmail.com', privacy: 'Informasimu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', error: 'Informasimu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim' }
 		}
@@ -88,7 +88,7 @@
 	$: programs = t.programs.map((program, index) => ({ ...program, ...programMedia[index] }));
 	$: monthLabel = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long', year: 'numeric' }).format(calendarDate);
 	$: monthName = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long' }).format(calendarDate);
-	$: events = [{ day: 12, title: t.events.eventTitle, description: t.events.description, image: `${base}/images/salmon-hatchery-tour.png` }];
+	$: events = [{ day: 12, time: language === 'id' ? '14.00' : '2 PM', title: t.events.eventTitle, description: t.events.description, image: `${base}/images/salmon-hatchery-tour.png` }];
 	$: eventDateLabel = language === 'id' ? `${events[selectedEventIndex].day} ${monthName}` : `${monthName} ${events[selectedEventIndex].day}`;
 	let menuOpen = false;
 	let selectedEventIndex = 0;
@@ -295,6 +295,7 @@
 				<p class="story-lead"><strong>{t.about.lead}</strong></p>
 				<p><strong>{t.about.body1}</strong></p>
 				<p><strong>{t.about.body2}</strong></p>
+				{#if t.about.body3}<p><strong>{t.about.body3}</strong></p>{/if}
 			</div>
 			<figure class="about-photo-frame">
 				<div class="about-photo-crop"><img src={`${base}/images/kawan-community-christmas-2025.jpeg`} alt={t.about.photoAlt} /></div>
@@ -326,7 +327,7 @@
 
 	<section class="programs section-wrap" id="programs">
 		<div class="journey-section-heading reveal">
-			<p class="about-eyebrow">{t.programsHeading.eyebrow}</p>
+			{#if t.programsHeading.eyebrow}<p class="about-eyebrow">{t.programsHeading.eyebrow}</p>{/if}
 			<h2>{t.programsHeading.title}</h2>
 			<p>{t.programsHeading.body}</p>
 		</div>
@@ -339,6 +340,7 @@
 					<div class="support-copy">
 						<h3>{program.title}</h3>
 						<p>{program.description}</p>
+						{#if program.details}<p class="support-details">{program.details}</p>{/if}
 						<ul class="support-activities">{#each program.activities as activity}<li>{activity}</li>{/each}</ul>
 					</div>
 				</article>
@@ -355,6 +357,7 @@
 		<div class="events-heading reveal">
 			<p class="about-eyebrow">{t.events.eyebrow}</p>
 			<h2>{t.events.title}</h2>
+			{#if t.events.subheading}<h3>{t.events.subheading}</h3>{/if}
 			<p>{t.events.intro}</p>
 		</div>
 
@@ -381,7 +384,7 @@
 			<article class="featured-event">
 				<div class="featured-event-photo"><img src={events[selectedEventIndex].image} alt={t.events.photoAlt} /></div>
 				<div class="featured-event-copy">
-					<p class="event-date">{eventDateLabel}</p>
+					<p class="event-date">{eventDateLabel} <span aria-hidden="true">|</span> <span>{events[selectedEventIndex].time}</span></p>
 					<h3>{events[selectedEventIndex].title}</h3>
 					<p>{events[selectedEventIndex].description}</p>
 					<button class="button" type="button" onclick={openConnectForm}>{t.events.action} <span>↗</span></button>
@@ -390,7 +393,7 @@
 		</div>
 
 		<div class="moments-heading reveal">
-			<p class="about-eyebrow">{t.moments.eyebrow}</p>
+			{#if t.moments.eyebrow}<p class="about-eyebrow">{t.moments.eyebrow}</p>{/if}
 			<h3>{t.moments.title}</h3>
 			<p>{t.moments.intro}</p>
 		</div>
@@ -431,6 +434,7 @@
 				<p class="about-eyebrow">{t.cta.eyebrow}</p>
 				<h2>{t.cta.title}</h2>
 				<p>{t.cta.body}</p>
+				{#if t.cta.body2}<p>{t.cta.body2}</p>{/if}
 				<div class="cta-actions"><button class="button large" type="button" onclick={openConnectForm}>{t.cta.action} <span>↗</span></button></div>
 			</div>
 		</div>
@@ -2565,7 +2569,7 @@
 	.brand-wordmark small {
 		margin-top: 4px;
 		font-family: 'Manrope', sans-serif;
-		font-size: 8px;
+		font-size: 11px;
 		font-weight: 500;
 		line-height: 1;
 		letter-spacing: .2em;
@@ -2578,7 +2582,7 @@
 	}
 	@media (max-width: 768px) {
 		.brand-wordmark > span { font-size: 33px; }
-		.brand-wordmark small { margin-top: 4px; font-size: 7px; }
+		.brand-wordmark small { margin-top: 4px; font-size: 10px; }
 	}
 
 	/* Reverted community first homepage styles
@@ -3130,6 +3134,20 @@
 		letter-spacing: .2em;
 		text-transform: uppercase;
 	}
+	.about-eyebrow {
+		position: relative;
+		z-index: 2;
+		font-size: 15px;
+	}
+	.illustration-copy h2,
+	.belief-heading h2,
+	.journey-section-heading h2,
+	.events-heading h2,
+	.moments-heading h3,
+	.cta-content h2 {
+		position: relative;
+		z-index: 1;
+	}
 	.button, :global(.button.gold) {
 		min-height: 50px;
 		padding: 0 22px;
@@ -3149,12 +3167,16 @@
 		align-items: center;
 		gap: 28px;
 	}
+	.site-header nav a,
+	.site-header .desktop-cta {
+		font-size: 15px;
+	}
 	.language-toggle {
 		display: inline-flex;
 		align-items: center;
 		gap: 6px;
 		color: rgba(64, 80, 71, .38);
-		font: 700 10px 'Manrope', sans-serif;
+		font: 700 15px 'Manrope', sans-serif;
 		letter-spacing: .1em;
 	}
 	.language-toggle button {
@@ -3174,7 +3196,7 @@
 		position: relative;
 		overflow: hidden;
 		min-height: 790px;
-		background: var(--warm-cream);
+		background: #f9f5ec;
 	}
 	.hero::before, .hero::after { display: none; }
 	.hero-minimal {
@@ -3201,8 +3223,8 @@
 	.hero-content .hero-statement { animation-delay: .34s; }
 	.hero-content .hero-tagline { animation-delay: .48s; }
 	.hero-content .hero-actions { animation-delay: .62s; }
-	.hero-kicker { margin: 0 0 10px; color: #846351; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
-	.hero h1 { margin: 0; font-size: clamp(88px, 12vw, 152px); line-height: .85; letter-spacing: -.065em; text-transform: none; }
+	.hero-kicker { position: relative; z-index: 2; margin: 0 0 10px; color: #846351; font-size: 15px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+	.hero h1 { position: relative; z-index: 1; margin: 0; font-size: clamp(88px, 12vw, 152px); line-height: .85; letter-spacing: -.065em; text-transform: none; }
 	.hero .kawan-script { padding: 0; color: #405047; font-family: 'Fraunces', serif; font-size: 1em; font-style: normal; font-weight: 650; letter-spacing: -.065em; text-transform: none; }
 	.hero .kawan-script::before { display: none; }
 	.hero-statement { margin: 32px 0 13px; font-size: clamp(30px, 3.3vw, 43px); font-weight: 550; letter-spacing: -.035em; }
@@ -3317,7 +3339,7 @@
 		transform: none;
 	}
 	.belief-label { margin: 0 0 30px; }
-	.belief-label .about-label { color: #8a6250; }
+	.belief-label .about-label { color: #8a6250; font-size: 15px; }
 	.belief-copy h3 {
 		max-width: 540px;
 		margin-bottom: 26px;
@@ -3492,6 +3514,8 @@
 		transform: rotate(-1deg);
 	}
 	.support-copy > p { margin: 0; color: #74736e; font-size: 13px; line-height: 1.5; }
+	.support-copy > p:first-of-type { color: #515a53; font-weight: 650; }
+	.support-copy > .support-details { margin-top: 8px; color: #74736e; font-weight: 500; }
 	.support-activities {
 		display: flex;
 		flex-wrap: wrap;
@@ -3557,6 +3581,7 @@
 	.events { padding-top: 145px; padding-bottom: 150px; }
 	.events-heading { max-width: 760px; margin-bottom: 82px; }
 	.events-heading h2 { margin: 10px 0 22px; color: #3e4841; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(64px, 8vw, 104px); line-height: .9; letter-spacing: -.055em; }
+	.events-heading h3 { margin: -4px 0 18px; color: #4b554e; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(25px, 2.7vw, 34px); font-weight: 600; letter-spacing: -.025em; }
 	.events-heading > p:last-child { max-width: 650px; margin: 0; color: #696b66; font-size: 16px; line-height: 1.75; }
 	.events-feature { display: grid; grid-template-columns: minmax(320px, .78fr) minmax(520px, 1.22fr); gap: clamp(42px, 6vw, 82px); align-items: start; }
 	.event-calendar { padding-top: 6px; }
@@ -3581,6 +3606,7 @@
 	.featured-event:hover .featured-event-photo img { transform: scale(1.015); }
 	.featured-event-copy { padding: clamp(28px, 4vw, 46px); }
 	.event-date { display: flex; gap: 14px; margin: 0 0 14px; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+	.event-date span { color: #797a74; }
 	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
 	.featured-event-copy > p:not(.event-date) { max-width: 590px; margin: 0 0 26px; color: #696b66; font-size: 14px; line-height: 1.7; }
 	.featured-event-copy .button { width: fit-content; cursor: pointer; }
@@ -3632,7 +3658,8 @@
 	.cta-minimal { padding: 150px 0; background: var(--warm-beige); }
 	.cta-content { max-width: 820px; margin: 0 auto; }
 	.cta-content h2 { margin: 12px 0 24px; font-size: clamp(56px, 7vw, 88px); line-height: .98; }
-	.cta-content > p:not(.about-eyebrow) { max-width: 590px; margin: 0 auto 34px; color: #666b65; font-size: 16px; line-height: 1.75; }
+	.cta-content > p:not(.about-eyebrow) { max-width: 620px; margin: 0 auto 12px; color: #666b65; font-size: 16px; line-height: 1.75; }
+	.cta-content > p:not(.about-eyebrow):last-of-type { margin-bottom: 34px; }
 	.cta-actions { display: flex; align-items: center; justify-content: center; gap: 28px; }
 
 	.connect-modal-backdrop {
