@@ -275,6 +275,7 @@
 				<img class="hero-illustration illustration-board-game" src={`${base}/images/kawan-hero-seattle-sketches.png`} alt="" />
 				<img class="hero-illustration illustration-water-taxi" src={`${base}/images/kawan-hero-seattle-sketches.png`} alt="" />
 				<img class="hero-illustration illustration-hiking" src={`${base}/images/kawan-hero-seattle-sketches.png`} alt="" />
+				<img class="hero-illustration hero-illustration-mobile" src={`${base}/images/kawan-hero-seattle-sketches-mobile.png`} alt="" />
 			</div>
 			<div class="hero-content">
 				<p class="hero-kicker">{t.hero.kicker}</p>
@@ -3254,6 +3255,7 @@
 	.illustration-board-game { clip-path: inset(0 0 50% 50%); animation-delay: .9s; }
 	.illustration-water-taxi { clip-path: inset(50% 50% 0 0); animation-delay: 1.08s; }
 	.illustration-hiking { clip-path: inset(50% 0 0 50%); animation-delay: 1.26s; }
+	.hero-illustration-mobile { display: none; }
 	.hero-actions .hero-button {
 		min-width: 132px;
 		padding: 0 30px;
@@ -3966,10 +3968,11 @@
 			aspect-ratio: auto;
 		}
 		.hero-illustration { --hero-art-opacity: .56; width: 100%; height: 100%; object-fit: contain; }
-		.illustration-space-needle { clip-path: none; }
+		.illustration-space-needle,
 		.illustration-board-game,
 		.illustration-water-taxi,
 		.illustration-hiking { display: none; }
+		.hero-illustration-mobile { display: block; clip-path: none; animation-delay: .72s; }
 		.about { padding-top: 100px; }
 		.community-photo-break { width: calc(100% - 24px); height: 62vh; border-radius: 7px; }
 		.community-photo-break p { right: 8%; bottom: 7%; left: 8%; text-align: left; }
