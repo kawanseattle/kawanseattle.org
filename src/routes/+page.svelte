@@ -3951,21 +3951,21 @@
 	@media (max-width: 620px) {
 		.header-actions { gap: 14px; }
 		.language-toggle { gap: 4px; }
-		.hero, .hero-minimal { min-height: 820px; }
-		.hero-minimal { align-items: flex-start; padding: 124px 24px 300px; }
+		.hero, .hero-minimal { min-height: 700px; }
+		.hero-minimal { align-items: center; padding: 124px 24px 72px; }
 		.hero h1 { font-size: clamp(72px, 24vw, 102px); }
 		.hero-content { width: 100%; max-width: 420px; }
 		.hero-statement { font-size: 30px; }
 		.hero-tagline { max-width: 340px; }
 		.hero-illustrations {
-			top: auto;
-			right: 12px;
-			bottom: 34px;
-			left: 12px;
+			top: 98px;
+			right: 8px;
+			bottom: 20px;
+			left: 8px;
 			height: auto;
-			aspect-ratio: 16 / 9;
+			aspect-ratio: auto;
 		}
-		.hero-illustration { --hero-art-opacity: .78; width: 100%; height: 100%; object-fit: contain; }
+		.hero-illustration { --hero-art-opacity: .56; width: 100%; height: 100%; object-fit: contain; }
 		.illustration-space-needle { clip-path: none; }
 		.illustration-board-game,
 		.illustration-water-taxi,
