@@ -36,7 +36,7 @@
 				{ title: 'Learn & Grow', description: 'Support throughout school and beyond.', details: '', illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap', activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation'] }
 			],
 			community: { label: 'KAWAN community', photoAlt: 'KAWAN students and families enjoying a community outing by the water', quote: 'Community begins by showing up for one another.' },
-			events: { eyebrow: 'Come as you are', title: 'Events', subheading: '', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Salmon Hatchery Tour', description: 'Visit the Issaquah Salmon Hatchery with KAWAN, learn about the salmon life cycle, and enjoy a fun day exploring together.', photoAlt: 'KAWAN students visiting a salmon hatchery and watching salmon in the water', action: 'RSVP / Learn More' },
+			events: { eyebrow: 'Come as you are', title: 'Events', subheading: '', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Sunrise Hike', description: 'Start the morning with KAWAN as we hike together, watch the sunrise, and enjoy a beautiful view with new and familiar friends.', photoAlt: 'Three KAWAN friends watching the sunrise from a mountain trail', action: 'RSVP / Learn More' },
 			weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 			moments: { eyebrow: 'Life with KAWAN', title: 'Moments Together', intro: 'A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.', previous: 'Previous hiking photo', next: 'Next hiking photo', choose: 'Choose a hiking photo', show: 'Show hiking photo', hiking: 'Hiking Trips', summerOutings: 'Summer outings', getaways: 'Holiday Getaways', communityGetaway: 'Community getaway', adventures: 'Seattle Adventures', exploring: 'Exploring together', camping: 'Summer Camping', outdoors: 'Outdoor adventures', hikingAlts: ['KAWAN friends gathered along a mountain hiking trail', 'KAWAN community gathered together at a forest waterfall', 'KAWAN friends and families visiting Multnomah Falls'], getawayAlt: 'KAWAN community members together on a holiday trip', seattleAlt: 'Seattle skyline viewed from the water during a KAWAN adventure', campingAlt: 'A glowing campfire during a KAWAN summer camping trip' },
 			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', body2: '', action: 'Get Connected' },
@@ -57,7 +57,7 @@
 				{ title: 'Belajar & Bertumbuh', description: 'Kami juga ada untuk perjalanan kuliah dan langkahmu setelahnya.', details: '', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan seputar kuliah', 'Persiapan karier'] }
 			],
 			community: { label: 'Komunitas KAWAN', photoAlt: 'Pelajar dan keluarga KAWAN menikmati kebersamaan di tepi air', quote: 'Komunitas tumbuh saat kita hadir untuk satu sama lain.' },
-			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Tur Salmon Hatchery', description: 'Yuk, ikut KAWAN mengunjungi Issaquah Salmon Hatchery! Kita akan melihat salmon dari dekat, belajar sedikit tentang perjalanan hidup mereka, dan tentunya menikmati hari bareng teman-teman.', photoAlt: 'Pelajar KAWAN mengunjungi tempat penetasan dan mengamati salmon di air', action: 'RSVP / Info Selengkapnya' },
+			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Hiking Menyambut Matahari Terbit', description: 'Yuk, mulai pagi bersama KAWAN! Kita akan hiking bareng, menikmati matahari terbit dan pemandangan indah, sambil menghabiskan waktu bersama teman-teman lama dan baru.', photoAlt: 'Tiga teman KAWAN menikmati matahari terbit dari jalur pegunungan', action: 'RSVP / Info Selengkapnya' },
 			weekdays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
 			moments: { eyebrow: '', title: 'Momen Bersama KAWAN', intro: 'Sedikit cerita dari berbagai perjalanan, perayaan, dan momen sederhana yang kami jalani bersama.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
 			cta: { eyebrow: 'Mari Terhubung', title: 'Ada tempat untukmu di sini.', body: 'Baru datang ke Seattle? Sudah lama di sini tapi ingin kenal lebih banyak orang? Atau cuma ingin punya teman untuk ngobrol dan jalan bareng?', body2: 'Apa pun ceritamu, kami senang bisa kenalan.', action: 'Mari Terhubung' },
@@ -76,7 +76,7 @@
 		...Array.from({ length: firstWeekday }, () => null),
 		...Array.from({ length: daysInMonth }, (_, index) => index + 1)
 	];
-	const eventByDay = new Map([[12, 0]]);
+	const eventByDay = new Map([[26, 0]]);
 	const hikingPhotos = [
 		`${base}/images/kawan-hiking-group-2026.jpg`,
 		`${base}/images/kawan-hiking-waterfall-group.jpg`,
@@ -88,8 +88,8 @@
 	$: programs = t.programs.map((program, index) => ({ ...program, ...programMedia[index] }));
 	$: monthLabel = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long', year: 'numeric' }).format(calendarDate);
 	$: monthName = new Intl.DateTimeFormat(language === 'id' ? 'id-ID' : 'en-US', { month: 'long' }).format(calendarDate);
-	$: events = [{ day: 12, time: language === 'id' ? '14.00' : '2 PM', title: t.events.eventTitle, description: t.events.description, image: `${base}/images/salmon-hatchery-tour.png` }];
-	$: eventDateLabel = language === 'id' ? `${events[selectedEventIndex].day} ${monthName}` : `${monthName} ${events[selectedEventIndex].day}`;
+	$: events = [{ day: 26, title: t.events.eventTitle, description: t.events.description, image: `${base}/images/sunrise-hike.png` }];
+	$: eventDateLabel = language === 'id' ? `Sabtu, ${events[selectedEventIndex].day} ${monthName}` : `Saturday, ${monthName} ${events[selectedEventIndex].day}`;
 	let menuOpen = false;
 	let selectedEventIndex = 0;
 	let email = '';
@@ -384,7 +384,7 @@
 			<article class="featured-event">
 				<div class="featured-event-photo"><img src={events[selectedEventIndex].image} alt={t.events.photoAlt} /></div>
 				<div class="featured-event-copy">
-					<p class="event-date">{eventDateLabel} <span aria-hidden="true">|</span> <span>{events[selectedEventIndex].time}</span></p>
+					<p class="event-date">{eventDateLabel}</p>
 					<h3>{events[selectedEventIndex].title}</h3>
 					<p>{events[selectedEventIndex].description}</p>
 					<button class="button" type="button" onclick={openConnectForm}>{t.events.action} <span>↗</span></button>
@@ -2835,7 +2835,7 @@
 	.footer-wordmark small {
 		margin-top: 6px;
 		font-family: 'Manrope', sans-serif;
-		font-size: 9px;
+		font-size: 11px;
 		font-weight: 400;
 		line-height: 1;
 		letter-spacing: .24em;
@@ -3078,8 +3078,8 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center 46%;
-		transform: scale(1.18);
+		object-position: center;
+		transform: scale(1.3);
 	}
 	@media (max-width: 900px) {
 		.about { padding-top: 100px; }
@@ -3196,7 +3196,7 @@
 		position: relative;
 		overflow: hidden;
 		min-height: 790px;
-		background: #f9f5ec;
+		background: #eae5d9;
 	}
 	.hero::before, .hero::after { display: none; }
 	.hero-minimal {
@@ -3270,10 +3270,14 @@
 	.about { padding-top: 145px; padding-bottom: 0; background: var(--warm-cream); }
 	.illustration-band { gap: clamp(62px, 8vw, 110px); padding-bottom: 145px; }
 	.about-photo-frame, .about-photo-frame:hover {
+		padding: 0;
+		border: 0;
 		border-radius: 10px;
+		background: transparent;
 		box-shadow: 0 20px 52px rgba(55,52,46,.1);
 		transform: none;
 	}
+	.about-photo-crop { border-radius: 10px; }
 	.illustration-copy > p:not(.story-lead) { font-weight: 500; }
 	.illustration-copy > p strong { font-weight: 600; }
 
@@ -3282,7 +3286,7 @@
 		margin-top: 0;
 		padding: clamp(104px, 10vw, 148px) 0 clamp(112px, 11vw, 158px);
 	}
-	.belief-section::before { background: var(--warm-cream); }
+	.belief-section::before { background: var(--warm-beige); }
 	.belief-heading {
 		max-width: 760px;
 		margin: 0 auto clamp(72px, 8vw, 108px);
@@ -3372,12 +3376,11 @@
 	}
 
 	.programs.section-wrap {
-		display: flex;
-		min-height: 100svh;
+		display: block;
 		box-sizing: border-box;
-		flex-direction: column;
-		padding: 52px 5.5vw 58px;
-		background: var(--warm-beige);
+		padding-top: clamp(86px, 9vw, 124px);
+		padding-bottom: clamp(90px, 9vw, 126px);
+		background: var(--warm-cream);
 	}
 	.journey-section-heading {
 		max-width: 760px;
@@ -3401,95 +3404,82 @@
 		font-style: italic;
 		line-height: 1.55;
 	}
-	.program-grid.minimal { gap: clamp(24px, 2.5vw, 40px); }
-	.program-card {
-		min-height: 380px;
-		padding: 34px;
-		border: 1px solid rgba(64,77,66,.12);
-		border-radius: 7px;
-		background: var(--warm-surface);
-		box-shadow: none;
-		backdrop-filter: none;
-	}
-	.program-card:hover { border-color: rgba(64,77,66,.25); box-shadow: 0 14px 34px rgba(58,65,58,.06); }
-	.program-card li { border-radius: 4px; }
-
 	.program-grid.minimal.support-journey {
 		display: grid;
-		flex: 1;
 		width: 100%;
-		max-width: none;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		grid-template-rows: repeat(2, minmax(232px, 1fr));
-		gap: 18px;
-		margin: 35px 0 0;
+		max-width: 1280px;
+		grid-template-columns: 1fr;
+		gap: 16px;
+		margin: clamp(48px, 5vw, 68px) auto 0;
+	}
+	.program-grid.minimal.support-journey > .support-stop {
+		grid-column: 1 / -1;
 	}
 	.support-stop {
-		--support-accent: #7d817a;
 		position: relative;
-		display: flex;
-		width: 100%;
-		min-width: 0;
-		min-height: 0;
-		align-items: center;
-		margin: 0;
-		padding: clamp(18px, 1.5vw, 24px);
-		overflow: hidden;
-		border: 1px solid rgba(105, 97, 87, .16);
-		border-radius: 14px;
-		background: rgba(251, 248, 242, .78);
-		box-shadow: none;
-		transition: border-color .28s ease, background-color .28s ease, transform .28s ease;
-	}
-	.support-stop:nth-of-type(1),
-	.support-stop:nth-of-type(2),
-	.support-stop:nth-of-type(3),
-	.support-stop:nth-of-type(4) { grid-column: auto; }
-	.support-stop + .support-stop { border: 1px solid rgba(105, 97, 87, .12); }
-	.support-stop:hover { border-color: rgba(93, 91, 83, .22); background: rgba(251, 248, 242, .94); box-shadow: none; }
-	:global(.support-stop.visible:hover) { transform: translateY(-3px); }
-	.support-visual {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
 		display: grid;
 		width: 100%;
-		height: 100%;
-		min-height: 0;
+		min-width: 0;
+		min-height: 210px;
+		grid-template-columns: minmax(245px, .82fr) minmax(330px, 1.2fr) minmax(265px, .9fr);
+		gap: 0;
+		align-items: center;
 		margin: 0;
-		place-items: center;
+		padding: 0;
+		overflow: hidden;
+		border: 1px solid rgba(105, 97, 87, .08);
+		border-radius: 20px;
+		background: #f8f4ec;
+		box-shadow: none;
+		isolation: isolate;
+		transition: border-color .28s ease, transform .28s ease;
+	}
+	.support-stop:nth-child(2) { background: #e9efef; }
+	.support-stop:nth-child(3) { background: #f7e5dc; }
+	.support-stop:nth-child(4) { background: #f5efdf; }
+	.support-stop:hover { border-color: rgba(93, 91, 83, .18); box-shadow: none; }
+	:global(.support-stop.visible:hover) { transform: translateY(-2px); }
+	.support-visual {
+		position: relative;
+		z-index: 1;
+		grid-column: 1;
+		grid-row: 1;
+		width: 100%;
+		height: 100%;
+		min-height: 210px;
+		margin: 0;
+		overflow: hidden;
+		border-radius: 0;
 		pointer-events: none;
 	}
 	.support-visual img {
-		position: relative;
-		z-index: 1;
 		display: block;
 		width: 100%;
 		height: 100%;
-		max-height: none;
 		object-fit: cover;
-		opacity: .72;
+		object-position: left center;
+		opacity: .92;
 		filter: saturate(.72) contrast(.98);
 		mix-blend-mode: multiply;
-		transform: scale(1.01);
+		transform: scale(1.08);
 		transition: opacity .35s ease, transform .55s cubic-bezier(.2,.7,.2,1);
 	}
-	.support-stop:nth-of-type(2) .support-visual img { width: 100%; height: 100%; }
-	.support-stop:hover .support-visual img { opacity: .82; transform: scale(1.015); }
+	.support-stop:nth-child(even) .support-visual {
+		grid-column: 3;
+	}
+	.support-stop:nth-child(even) .support-visual img { object-position: right center; }
+	.support-stop:hover .support-visual img { opacity: 1; transform: scale(1.1); }
 	.support-copy {
 		position: relative;
 		z-index: 2;
-		width: 59%;
-		max-width: none;
-		margin-left: auto;
-		padding: clamp(20px, 1.7vw, 28px);
-		border-radius: 12px;
-		background: rgba(251, 248, 242, .92);
-		backdrop-filter: blur(3px);
+		grid-column: 2;
+		grid-row: 1;
+		width: 100%;
+		margin: 0;
+		padding: clamp(28px, 3vw, 46px);
+		background: transparent;
 	}
-	.support-stop:nth-of-type(even) .support-copy { margin-right: auto; margin-left: 0; }
+	.support-stop:nth-child(even) .support-copy { grid-column: 1; }
 	.support-copy h3 {
 		position: relative;
 		width: fit-content;
@@ -3497,7 +3487,7 @@
 		padding-bottom: 7px;
 		color: #39443d;
 		font-family: 'Source Serif 4', Georgia, serif;
-		font-size: clamp(27px, 2.15vw, 35px);
+		font-size: clamp(32px, 3vw, 44px);
 		font-weight: 650;
 		line-height: 1.1;
 		letter-spacing: -.035em;
@@ -3513,9 +3503,168 @@
 		content: '';
 		transform: rotate(-1deg);
 	}
-	.support-copy > p { margin: 0; color: #74736e; font-size: 13px; line-height: 1.5; }
+	.support-copy > p { margin: 0; color: #74736e; font-size: 14px; line-height: 1.58; }
 	.support-copy > p:first-of-type { color: #515a53; font-weight: 650; }
 	.support-copy > .support-details { margin-top: 8px; color: #74736e; font-weight: 500; }
+	.support-activities {
+		display: grid;
+		grid-column: 3;
+		grid-row: 1;
+		gap: 10px;
+		margin: 0;
+		padding: clamp(28px, 3vw, 46px);
+		list-style: none;
+	}
+	.support-stop:nth-child(even) .support-activities { grid-column: 2; }
+	.support-activities li {
+		display: flex;
+		align-items: center;
+		gap: 13px;
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		color: #46534a;
+		background: transparent;
+		font-size: 14px;
+		font-weight: 650;
+		line-height: 1.45;
+	}
+	.support-activities li::before {
+		display: block;
+		width: 18px;
+		height: 18px;
+		flex: 0 0 auto;
+		color: #73807a;
+		content: '✦';
+		font: 700 16px/18px 'Source Serif 4', Georgia, serif;
+		text-align: center;
+	}
+	.support-activities li:nth-child(1)::before { content: '✈'; }
+	.support-activities li:nth-child(2)::before { content: '⌂'; }
+	.support-activities li:nth-child(3)::before { content: '◇'; }
+	.support-activities li:nth-child(4)::before { content: '✦'; }
+	.support-activities li:nth-child(5)::before { content: '○'; }
+	.support-activities li:nth-child(6)::before { content: '▣'; }
+	.support-stop:nth-child(2) .support-activities li::before { color: #657e8b; }
+	.support-stop:nth-child(3) .support-activities li::before { color: #b76f54; }
+	.support-stop:nth-child(4) .support-activities li::before { color: #728077; }
+	@media (max-width: 960px) {
+		.support-stop { grid-template-columns: minmax(200px, .75fr) minmax(300px, 1fr); gap: 0; }
+		.support-stop .support-visual,
+		.support-stop:nth-child(even) .support-visual { grid-column: 1; grid-row: 1 / 3; }
+		.support-stop .support-copy,
+		.support-stop:nth-child(even) .support-copy { grid-column: 2; grid-row: 1; align-self: end; padding-bottom: 14px; }
+		.support-stop .support-activities,
+		.support-stop:nth-child(even) .support-activities { grid-column: 2; grid-row: 2; align-self: start; padding-top: 8px; }
+	}
+	@media (max-width: 700px) {
+		.programs.section-wrap { padding: 84px 24px 92px; }
+		.support-stop { grid-template-columns: 1fr; gap: 0; padding: 0; }
+		.support-stop .support-visual,
+		.support-stop:nth-child(even) .support-visual { grid-column: 1; grid-row: 1; height: 210px; min-height: 210px; }
+		.support-stop .support-copy,
+		.support-stop:nth-child(even) .support-copy { grid-column: 1; grid-row: 2; padding: 28px 26px 12px; }
+		.support-stop .support-activities,
+		.support-stop:nth-child(even) .support-activities { grid-column: 1; grid-row: 3; padding: 12px 26px 30px; }
+	}
+
+	/* Restored illustrated 2x2 support cards */
+	.programs.section-wrap {
+		display: flex;
+		min-height: 100svh;
+		box-sizing: border-box;
+		flex-direction: column;
+		padding: 52px 5.5vw 58px;
+		background: var(--warm-cream);
+	}
+	.program-grid.minimal.support-journey {
+		display: grid;
+		flex: 1;
+		width: 100%;
+		max-width: none;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(232px, 1fr));
+		gap: 18px;
+		margin: 35px 0 0;
+	}
+	.program-grid.minimal.support-journey > .support-stop,
+	.support-stop,
+	.support-stop:nth-child(2),
+	.support-stop:nth-child(3),
+	.support-stop:nth-child(4) {
+		position: relative;
+		display: flex;
+		width: 100%;
+		min-width: 0;
+		min-height: 0;
+		grid-column: auto;
+		align-items: center;
+		margin: 0;
+		padding: clamp(18px, 1.5vw, 24px);
+		overflow: hidden;
+		border: 1px solid rgba(105, 97, 87, .16);
+		border-radius: 14px;
+		background: rgba(251, 248, 242, .78);
+		box-shadow: none;
+		transition: border-color .28s ease, background-color .28s ease, transform .28s ease;
+	}
+	.support-stop + .support-stop { border: 1px solid rgba(105, 97, 87, .12); }
+	.support-stop:hover,
+	.support-stop:nth-child(2):hover,
+	.support-stop:nth-child(3):hover,
+	.support-stop:nth-child(4):hover {
+		border-color: rgba(93, 91, 83, .22);
+		background: rgba(251, 248, 242, .94);
+		box-shadow: none;
+	}
+	:global(.support-stop.visible:hover) { transform: translateY(-3px); }
+	.support-stop .support-visual,
+	.support-stop:nth-child(even) .support-visual {
+		position: absolute;
+		z-index: 1;
+		inset: 0;
+		display: grid;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
+		margin: 0;
+		overflow: visible;
+		border-radius: 0;
+		place-items: center;
+		pointer-events: none;
+	}
+	.support-stop .support-visual img,
+	.support-stop:nth-child(even) .support-visual img {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		max-height: none;
+		object-fit: cover;
+		object-position: center;
+		opacity: .72;
+		filter: saturate(.72) contrast(.98);
+		mix-blend-mode: multiply;
+		transform: scale(1.01);
+		transition: opacity .35s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+	}
+	.support-stop:hover .support-visual img { opacity: .82; transform: scale(1.015); }
+	.support-stop .support-copy,
+	.support-stop:nth-child(even) .support-copy {
+		position: relative;
+		z-index: 2;
+		width: 59%;
+		max-width: none;
+		margin-right: 0;
+		margin-left: auto;
+		padding: clamp(20px, 1.7vw, 28px);
+		border-radius: 12px;
+		background: rgba(251, 248, 242, .92);
+		backdrop-filter: blur(3px);
+	}
+	.support-stop:nth-child(even) .support-copy { margin-right: auto; margin-left: 0; }
+	.support-copy h3 { font-size: clamp(27px, 2.15vw, 35px); }
+	.support-copy > p { font-size: 13px; line-height: 1.5; }
 	.support-activities {
 		display: flex;
 		flex-wrap: wrap;
@@ -3535,30 +3684,26 @@
 		font-size: 11px;
 		font-weight: 600;
 		line-height: 1.45;
-		transition: border-color .22s ease, background-color .22s ease;
 	}
-	.support-activities li:hover { border-color: rgba(102, 99, 92, .13); background: rgba(117, 108, 96, .075); }
+	.support-activities li::before { display: none; content: none; }
 	@media (max-width: 960px) {
 		.programs.section-wrap { display: block; min-height: 0; padding: 86px 5vw 94px; }
 		.program-grid.minimal.support-journey { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: auto; gap: 18px; margin-top: 44px; }
+		.program-grid.minimal.support-journey > .support-stop,
 		.support-stop,
-		.support-stop:nth-of-type(1), .support-stop:nth-of-type(2),
-		.support-stop:nth-of-type(3), .support-stop:nth-of-type(4) {
-			grid-column: auto;
-			display: grid;
-			grid-template-columns: 1fr;
-			padding: 24px;
-		}
-		.support-visual { position: relative; inset: auto; width: 100%; height: 180px; }
-		.support-visual img,
-		.support-stop:nth-of-type(2) .support-visual img { width: 100%; height: 100%; transform: none; }
-		.support-copy,
-		.support-stop:nth-of-type(even) .support-copy { width: 100%; max-width: 540px; margin: 0; }
+		.support-stop:nth-child(2),
+		.support-stop:nth-child(3),
+		.support-stop:nth-child(4) { grid-column: auto; display: grid; grid-template-columns: 1fr; padding: 24px; }
+		.support-stop .support-visual,
+		.support-stop:nth-child(even) .support-visual { position: relative; inset: auto; grid-column: 1; grid-row: 1; width: 100%; height: 180px; min-height: 0; }
+		.support-stop .support-copy,
+		.support-stop:nth-child(even) .support-copy { grid-column: 1; grid-row: 2; width: 100%; max-width: 540px; margin: 0; padding: clamp(20px, 1.7vw, 28px); }
 	}
 	@media (max-width: 700px) {
 		.programs.section-wrap { padding: 84px 24px 92px; }
 		.program-grid.minimal.support-journey { grid-template-columns: 1fr; }
-		.support-visual { height: 220px; }
+		.support-stop .support-visual,
+		.support-stop:nth-child(even) .support-visual { height: 220px; }
 	}
 
 	.community-photo-break {
@@ -3573,7 +3718,7 @@
 	.community-photo-break::after { position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(29,36,31,.64)); content: ''; }
 	.community-photo-break p { position: absolute; z-index: 2; right: 7%; bottom: 7%; max-width: 620px; margin: 0; color: white; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(32px, 4.6vw, 64px); font-weight: 650; line-height: 1.05; letter-spacing: -.035em; text-align: right; }
 
-	.stories { padding-top: 145px; padding-bottom: 145px; background: var(--warm-cream); }
+	.stories { padding-top: 145px; padding-bottom: 145px; background: var(--warm-beige); }
 	:global(.story-card) { border: 1px solid rgba(64,77,66,.11); border-radius: 8px; box-shadow: none; }
 	:global(.student) img { filter: saturate(.82); }
 
@@ -3606,7 +3751,6 @@
 	.featured-event:hover .featured-event-photo img { transform: scale(1.015); }
 	.featured-event-copy { padding: clamp(28px, 4vw, 46px); }
 	.event-date { display: flex; gap: 14px; margin: 0 0 14px; color: #93654f; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-	.event-date span { color: #797a74; }
 	.featured-event-copy h3 { margin: 0 0 15px; color: #414a43; font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(38px, 4vw, 56px); line-height: 1; letter-spacing: -.04em; }
 	.featured-event-copy > p:not(.event-date) { max-width: 590px; margin: 0 0 26px; color: #696b66; font-size: 14px; line-height: 1.7; }
 	.featured-event-copy .button { width: fit-content; cursor: pointer; }
@@ -3655,7 +3799,7 @@
 	.slide-dots button.active { background: #fff; transform: scale(1.15); }
 	@keyframes hiking-photo-in { from { opacity: .25; } to { opacity: 1; } }
 
-	.cta-minimal { padding: 150px 0; background: var(--warm-beige); }
+	.cta-minimal { padding: 150px 0; background: var(--warm-cream); }
 	.cta-content { max-width: 820px; margin: 0 auto; }
 	.cta-content h2 { margin: 12px 0 24px; font-size: clamp(56px, 7vw, 88px); line-height: .98; }
 	.cta-content > p:not(.about-eyebrow) { max-width: 620px; margin: 0 auto 12px; color: #666b65; font-size: 16px; line-height: 1.75; }
