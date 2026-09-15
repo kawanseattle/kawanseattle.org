@@ -3979,10 +3979,21 @@
 		.calendar-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
 		.calendar-dates > span, .calendar-dates > button { width: 38px; height: 38px; }
 		.moments-heading { margin-top: 100px; }
-		.moments-gallery { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: 24px; }
-		.moment, .moment-wide, .moment-tall, .moment-small {
+		.moments-gallery {
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+			gap: 24px;
+		}
+		.moments-gallery > .moment,
+		.moments-gallery > .moment-wide,
+		.moments-gallery > .moment-tall,
+		.moments-gallery > .moment-small,
+		.moments-gallery > .moment-small:last-child {
 			display: block;
+			width: 100%;
 			height: auto;
+			flex: 0 0 auto;
 			grid-column: auto;
 			grid-row: auto;
 			overflow: hidden;
