@@ -57,7 +57,7 @@
 				{ title: 'Belajar & Bertumbuh', description: 'Kami juga ada untuk perjalanan kuliah dan langkahmu setelahnya.', details: '', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan seputar kuliah', 'Persiapan karier'] }
 			],
 			community: { label: 'Komunitas KAWAN', photoAlt: 'Pelajar dan keluarga KAWAN menikmati kebersamaan di tepi air', quote: 'Komunitas tumbuh saat kita hadir untuk satu sama lain.' },
-			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Hiking Menyambut Matahari Terbit', description: 'Yuk, mulai pagi bersama KAWAN! Kita akan hiking bareng, menikmati matahari terbit dan pemandangan indah, sambil menghabiskan waktu bersama teman-teman lama dan baru.', photoAlt: 'Tiga teman KAWAN menikmati matahari terbit dari jalur pegunungan', action: 'RSVP / Info Selengkapnya' },
+			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Pendakian Sunrise', description: 'Yuk, mulai pagi bersama KAWAN! Kita akan hiking bareng, menikmati matahari terbit dan pemandangan indah, sambil menghabiskan waktu bersama teman-teman lama dan baru.', photoAlt: 'Tiga teman KAWAN menikmati matahari terbit dari jalur pegunungan', action: 'RSVP / Info Selengkapnya' },
 			weekdays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
 			moments: { eyebrow: '', title: 'Momen Bersama KAWAN', intro: 'Sedikit cerita dari berbagai perjalanan, perayaan, dan momen sederhana yang kami jalani bersama.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
 			cta: { eyebrow: 'Mari Terhubung', title: 'Ada tempat untukmu di sini.', body: 'Baru datang ke Seattle? Sudah lama di sini tapi ingin kenal lebih banyak orang? Atau cuma ingin punya teman untuk ngobrol dan jalan bareng?', body2: 'Apa pun ceritamu, kami senang bisa kenalan.', action: 'Mari Terhubung' },
@@ -3951,14 +3951,25 @@
 	@media (max-width: 620px) {
 		.header-actions { gap: 14px; }
 		.language-toggle { gap: 4px; }
-		.hero, .hero-minimal { min-height: 700px; }
-		.hero-minimal { padding-top: 124px; padding-bottom: 72px; }
+		.hero, .hero-minimal { min-height: 820px; }
+		.hero-minimal { align-items: flex-start; padding: 124px 24px 300px; }
 		.hero h1 { font-size: clamp(72px, 24vw, 102px); }
-		.hero-content { max-width: 94%; }
+		.hero-content { width: 100%; max-width: 420px; }
 		.hero-statement { font-size: 30px; }
 		.hero-tagline { max-width: 340px; }
-		.hero-illustrations { inset: 106px -36% 10px; }
-		.hero-illustration { --hero-art-opacity: .7; width: 100%; }
+		.hero-illustrations {
+			top: auto;
+			right: 12px;
+			bottom: 34px;
+			left: 12px;
+			height: auto;
+			aspect-ratio: 16 / 9;
+		}
+		.hero-illustration { --hero-art-opacity: .78; width: 100%; height: 100%; object-fit: contain; }
+		.illustration-space-needle { clip-path: none; }
+		.illustration-board-game,
+		.illustration-water-taxi,
+		.illustration-hiking { display: none; }
 		.about { padding-top: 100px; }
 		.community-photo-break { width: calc(100% - 24px); height: 62vh; border-radius: 7px; }
 		.community-photo-break p { right: 8%; bottom: 7%; left: 8%; text-align: left; }
@@ -3968,14 +3979,79 @@
 		.calendar-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
 		.calendar-dates > span, .calendar-dates > button { width: 38px; height: 38px; }
 		.moments-heading { margin-top: 100px; }
-		.moments-gallery { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
-		.moment, .moment-wide, .moment-tall, .moment-small { display: block; grid-column: auto; grid-row: auto; height: 300px; }
-		.moment-wide { height: 390px; }
-		.moment figcaption { align-items: flex-start; flex-direction: column; gap: 4px; }
+		.moments-gallery { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: 24px; }
+		.moment, .moment-wide, .moment-tall, .moment-small {
+			display: block;
+			height: auto;
+			grid-column: auto;
+			grid-row: auto;
+			overflow: hidden;
+			background: var(--warm-surface);
+		}
+		.moment > img { display: block; width: 100%; height: auto; object-fit: contain; transform: none; }
+		.moment-tall img { object-position: center; }
+		.hiking-slide { aspect-ratio: 4 / 3; background: #dfded6; }
+		.hiking-slide img { width: 100%; height: 100%; object-fit: contain; transform: none; }
+		.moment:hover img { transform: none; }
+		.moment figcaption {
+			position: static;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 4px;
+			padding: 18px 20px 20px;
+			color: #414a43;
+			background: var(--warm-surface);
+		}
+		.moment figcaption strong { font-size: 21px; }
+		.moment figcaption span { color: #81766d; }
+		.moment-wide .slide-arrow { top: calc((100vw - 48px) * .375); }
+		.slide-previous { left: 12px; }
+		.slide-next { right: 12px; }
+		.slide-dots { top: calc((100vw - 48px) * .75 - 28px); right: 18px; bottom: auto; }
 		.cta-actions { align-items: stretch; flex-direction: column; }
 		.connect-modal-backdrop { padding: 14px; }
 		.connect-modal { padding: 48px 24px 30px; }
 		.connect-form .button, .connect-confirmation .button { width: 100%; }
+	}
+	@media (max-width: 700px) {
+		.programs.section-wrap { padding: 82px 20px 92px; }
+		.journey-section-heading h2 { font-size: clamp(42px, 13vw, 56px); }
+		.program-grid.minimal.support-journey { gap: 22px; margin-top: 38px; }
+		.program-grid.minimal.support-journey > .support-stop,
+		.support-stop,
+		.support-stop:nth-child(2),
+		.support-stop:nth-child(3),
+		.support-stop:nth-child(4) { padding: 0; overflow: hidden; }
+		.support-stop .support-visual,
+		.support-stop:nth-child(even) .support-visual {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16 / 9;
+			background: rgba(245, 240, 231, .78);
+		}
+		.support-stop .support-visual img,
+		.support-stop:nth-child(even) .support-visual img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center;
+			opacity: .9;
+			transform: none;
+		}
+		.support-stop:hover .support-visual img { transform: none; }
+		.support-stop .support-copy,
+		.support-stop:nth-child(even) .support-copy {
+			width: 100%;
+			max-width: none;
+			padding: 24px 22px 26px;
+			border-radius: 0;
+			background: var(--warm-surface);
+			backdrop-filter: none;
+		}
+		.support-copy h3 { font-size: clamp(29px, 9vw, 36px); }
+		.support-copy > p { font-size: 14px; }
+		.support-activities { gap: 8px; }
+		.support-activities li { padding: 8px 12px; font-size: 12px; }
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.hero-content > *, .hero-illustration { opacity: 1; animation: none; mask-size: 100% 100%; }
