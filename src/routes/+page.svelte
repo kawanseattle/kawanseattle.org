@@ -36,12 +36,13 @@
 				{ title: 'Learn & Grow', description: 'Support throughout school and beyond.', details: '', illustrationAlt: 'A hand-drawn open book, laptop, and graduation cap', activities: ['Study nights', 'Study buddies', 'Tutoring', 'Mentorship', 'College guidance', 'Career preparation'] }
 			],
 			community: { label: 'KAWAN community', photoAlt: 'KAWAN students and families enjoying a community outing by the water', quote: 'Community begins by showing up for one another.' },
-			events: { eyebrow: 'Come as you are', title: 'Events', subheading: '', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Pumpkin Patch Visit', description: 'Celebrate fall with KAWAN at the pumpkin patch! Come explore the farm, pick out a pumpkin, take photos, and enjoy a relaxed autumn day with friends.', photoAlt: 'KAWAN friends walking together through a pumpkin patch on an autumn day', action: 'RSVP / Learn More' },
+			events: { eyebrow: 'Come as you are', title: 'Events', subheading: '', intro: 'Join us throughout the year for opportunities to learn, explore, and build meaningful friendships.', upcoming: 'Upcoming events', calendar: 'event calendar', showEvent: 'Show event on', eventTitle: 'Pumpkin Patch Visit', description: 'Celebrate fall with KAWAN at the pumpkin patch! Come explore the farm, pick out a pumpkin, take photos, and enjoy a relaxed autumn day with friends.', photoAlt: 'KAWAN friends walking together through a pumpkin patch on an autumn day', action: 'RSVP' },
 			weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 			moments: { eyebrow: 'Life with KAWAN', title: 'Moments Together', intro: 'A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.', previous: 'Previous hiking photo', next: 'Next hiking photo', choose: 'Choose a hiking photo', show: 'Show hiking photo', hiking: 'Hiking Trips', summerOutings: 'Summer outings', getaways: 'Holiday Getaways', communityGetaway: 'Community getaway', adventures: 'Seattle Adventures', exploring: 'Exploring together', camping: 'Summer Camping', outdoors: 'Outdoor adventures', hikingAlts: ['KAWAN friends gathered along a mountain hiking trail', 'KAWAN community gathered together at a forest waterfall', 'KAWAN friends and families visiting Multnomah Falls'], getawayAlt: 'KAWAN community members together on a holiday trip', seattleAlt: 'Seattle skyline viewed from the water during a KAWAN adventure', campingAlt: 'A glowing campfire during a KAWAN summer camping trip' },
 			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', body2: '', action: 'Get Connected' },
 			footer: { tagline: 'A friend for your journey.', links: 'LINKS', involved: 'GET INVOLVED', contact: 'Contact us', copyright: '© 2026 KAWAN Seattle.' },
-			form: { close: 'Close', closeLabel: 'Close connection form', thanks: 'Thank you', successTitle: 'We’re glad you’re here.', successBody: 'Your information has been entered.', done: 'Done', eyebrow: 'Get connected', title: 'Let’s get to know you.', intro: 'Share your information and take the first step toward the KAWAN community.', name: 'Name', namePlaceholder: 'Your name', school: 'School', schoolPlaceholder: 'Select your school', other: 'Other', otherSchool: 'School name', otherSchoolPlaceholder: 'Enter your school name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', direct: 'Contact KAWAN directly', whatsapp: 'Chat with KAWAN on WhatsApp at +1 206 992 4418', email: 'Email KAWAN at kawanseattle@gmail.com', privacy: 'Your information will be securely forwarded to KAWAN by our form delivery provider.', invalidPhone: 'Please enter a valid phone number for the selected country.', error: 'We could not send your information. Please try again.', sending: 'Sending…', submit: 'Submit' }
+			form: { close: 'Close', closeLabel: 'Close connection form', thanks: 'Thank you', successTitle: 'We’re glad you’re here.', successBody: 'Your information has been entered.', done: 'Done', eyebrow: 'Get connected', title: 'Let’s get to know you.', intro: 'Share your information and take the first step toward the KAWAN community.', name: 'Name', namePlaceholder: 'Your name', school: 'School', schoolPlaceholder: 'Select your school', other: 'Other', otherSchool: 'School name', otherSchoolPlaceholder: 'Enter your school name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', direct: 'Contact KAWAN directly', whatsapp: 'Chat with KAWAN on WhatsApp at +1 206 992 4418', email: 'Email KAWAN at kawanseattle@gmail.com', privacy: 'Your information will be securely forwarded to KAWAN by our form delivery provider.', invalidPhone: 'Please enter a valid phone number for the selected country.', error: 'We could not send your information. Please try again.', sending: 'Sending…', submit: 'Submit' },
+			rsvp: { close: 'Close', closeLabel: 'Close RSVP form', thanks: 'You’re on the list', successTitle: 'RSVP received.', successBody: 'We’ll contact you if there are any event updates.', done: 'Done', title: 'Save your spot.', intro: 'Saturday, October 17. Let us know who’s coming so we can plan the day.', name: 'Name', namePlaceholder: 'Your name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', invalidPhone: 'Please enter a valid phone number for the selected country.', school: 'School', schoolPlaceholder: 'Select your school', other: 'Other', otherSchool: 'School name', otherSchoolPlaceholder: 'Enter your school name', partySize: 'Number attending', notes: 'Anything we should know?', notesPlaceholder: 'Accessibility needs, questions, or other notes (optional)', privacy: 'Your RSVP will be securely forwarded to KAWAN by our form delivery provider.', error: 'We could not send your RSVP. Please try again.', sending: 'Sending…', submit: 'RSVP' }
 		},
 		id: {
 			meta: { title: 'Kawan | Teman dalam perjalananmu.', description: 'KAWAN membantu pelajar internasional beradaptasi, membangun persahabatan yang bermakna, dan menjalani kehidupan di Seattle.' },
@@ -57,12 +58,13 @@
 				{ title: 'Belajar & Bertumbuh', description: 'Kami juga ada untuk perjalanan kuliah dan langkahmu setelahnya.', details: '', illustrationAlt: 'Ilustrasi tangan buku terbuka, laptop, dan topi wisuda', activities: ['Belajar bersama', 'Teman belajar', 'Bimbingan belajar', 'Mentoring', 'Panduan seputar kuliah', 'Persiapan karier'] }
 			],
 			community: { label: 'Komunitas KAWAN', photoAlt: 'Pelajar dan keluarga KAWAN menikmati kebersamaan di tepi air', quote: 'Komunitas tumbuh saat kita hadir untuk satu sama lain.' },
-			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Kunjungan ke Kebun Labu', description: 'Yuk, rayakan musim gugur bersama KAWAN di kebun labu! Kita akan jalan-jalan di kebun, memilih labu, foto-foto, dan menikmati hari yang santai bersama teman-teman.', photoAlt: 'Teman-teman KAWAN berjalan bersama di kebun labu pada musim gugur', action: 'RSVP / Info Selengkapnya' },
+			events: { eyebrow: 'Datang apa adanya. Ada tempat untukmu di sini.', title: 'Acara', subheading: 'Yuk, ketemu!', intro: 'Sepanjang tahun, kami mengadakan berbagai kegiatan untuk belajar, jalan-jalan, mencoba hal baru, dan tentunya menghabiskan waktu bersama.', upcoming: 'Acara Mendatang', calendar: 'kalender acara', showEvent: 'Tampilkan acara pada', eventTitle: 'Kunjungan ke Kebun Labu', description: 'Yuk, rayakan musim gugur bersama KAWAN di kebun labu! Kita akan jalan-jalan di kebun, memilih labu, foto-foto, dan menikmati hari yang santai bersama teman-teman.', photoAlt: 'Teman-teman KAWAN berjalan bersama di kebun labu pada musim gugur', action: 'RSVP' },
 			weekdays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
 			moments: { eyebrow: '', title: 'Momen Bersama KAWAN', intro: 'Sedikit cerita dari berbagai perjalanan, perayaan, dan momen sederhana yang kami jalani bersama.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
 			cta: { eyebrow: 'Mari Terhubung', title: 'Ada tempat untukmu di sini.', body: 'Baru datang ke Seattle? Sudah lama di sini tapi ingin kenal lebih banyak orang? Atau cuma ingin punya teman untuk ngobrol dan jalan bareng?', body2: 'Apa pun ceritamu, kami senang bisa kenalan.', action: 'Mari Terhubung' },
 			footer: { tagline: 'Teman dalam perjalananmu.', links: 'TAUTAN', involved: 'AYO TERLIBAT', contact: 'Hubungi kami', copyright: '© 2026 KAWAN Seattle.' },
-			form: { close: 'Tutup', closeLabel: 'Tutup formulir', thanks: 'Terima kasih', successTitle: 'Senang kamu ada di sini.', successBody: 'Informasimu sudah kami terima.', done: 'Selesai', eyebrow: 'Mari terhubung', title: 'Yuk, kenalan lebih dekat.', intro: 'Bagikan informasimu dan ambil langkah pertama untuk bergabung dengan komunitas KAWAN.', name: 'Nama', namePlaceholder: 'Namamu', school: 'Sekolah / kampus', schoolPlaceholder: 'Pilih sekolah atau kampusmu', other: 'Lainnya', otherSchool: 'Nama sekolah / kampus', otherSchoolPlaceholder: 'Masukkan nama sekolah atau kampusmu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', direct: 'Hubungi KAWAN secara langsung', whatsapp: 'Chat dengan KAWAN melalui WhatsApp di +1 206 992 4418', email: 'Kirim email ke KAWAN di kawanseattle@gmail.com', privacy: 'Informasimu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', error: 'Informasimu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim' }
+			form: { close: 'Tutup', closeLabel: 'Tutup formulir', thanks: 'Terima kasih', successTitle: 'Senang kamu ada di sini.', successBody: 'Informasimu sudah kami terima.', done: 'Selesai', eyebrow: 'Mari terhubung', title: 'Yuk, kenalan lebih dekat.', intro: 'Bagikan informasimu dan ambil langkah pertama untuk bergabung dengan komunitas KAWAN.', name: 'Nama', namePlaceholder: 'Namamu', school: 'Sekolah / kampus', schoolPlaceholder: 'Pilih sekolah atau kampusmu', other: 'Lainnya', otherSchool: 'Nama sekolah / kampus', otherSchoolPlaceholder: 'Masukkan nama sekolah atau kampusmu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', direct: 'Hubungi KAWAN secara langsung', whatsapp: 'Chat dengan KAWAN melalui WhatsApp di +1 206 992 4418', email: 'Kirim email ke KAWAN di kawanseattle@gmail.com', privacy: 'Informasimu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', error: 'Informasimu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim' },
+			rsvp: { close: 'Tutup', closeLabel: 'Tutup formulir RSVP', thanks: 'Namamu sudah terdaftar', successTitle: 'RSVP sudah kami terima.', successBody: 'Kami akan menghubungimu jika ada informasi terbaru tentang acara ini.', done: 'Selesai', title: 'Daftarkan dirimu.', intro: 'Sabtu, 17 Oktober. Beri tahu kami siapa saja yang akan ikut supaya kami bisa mempersiapkan acaranya.', name: 'Nama', namePlaceholder: 'Namamu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', school: 'Sekolah / kampus', schoolPlaceholder: 'Pilih sekolah atau kampusmu', other: 'Lainnya', otherSchool: 'Nama sekolah / kampus', otherSchoolPlaceholder: 'Masukkan nama sekolah atau kampusmu', partySize: 'Jumlah peserta', notes: 'Ada yang perlu kami ketahui?', notesPlaceholder: 'Kebutuhan aksesibilitas, pertanyaan, atau catatan lain (opsional)', privacy: 'RSVP-mu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', error: 'RSVP-mu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim RSVP' }
 		}
 	} as const;
 
@@ -104,6 +106,17 @@
 	let connectSubmitted = false;
 	let connectSubmitting = false;
 	let connectError = '';
+	let rsvpFormOpen = false;
+	let rsvpName = '';
+	let rsvpPhone = '';
+	let rsvpPhoneInputInstance: Iti | null = null;
+	let rsvpSchool = '';
+	let rsvpOtherSchool = '';
+	let rsvpPartySize = '1';
+	let rsvpNotes = '';
+	let rsvpSubmitted = false;
+	let rsvpSubmitting = false;
+	let rsvpError = '';
 	let hikingSlideIndex = 2;
 
 	function setLanguage(nextLanguage: Language) {
@@ -127,6 +140,16 @@
 
 	function closeConnectForm() {
 		connectFormOpen = false;
+	}
+
+	function openRsvpForm() {
+		rsvpSubmitted = false;
+		rsvpError = '';
+		rsvpFormOpen = true;
+	}
+
+	function closeRsvpForm() {
+		rsvpFormOpen = false;
 	}
 
 	function internationalPhoneInput(input: HTMLInputElement) {
@@ -156,10 +179,37 @@
 		};
 	}
 
+	function internationalRsvpPhoneInput(input: HTMLInputElement) {
+		const instance = intlTelInput(input, {
+			initialCountry: 'us',
+			countrySearch: true,
+			separateDialCode: true,
+			formatAsYouType: true,
+			strictMode: true
+		});
+		rsvpPhoneInputInstance = instance;
+
+		const syncPhone = () => {
+			rsvpPhone = input.value;
+			rsvpError = '';
+		};
+		input.addEventListener('input', syncPhone);
+		input.addEventListener('countrychange', syncPhone);
+
+		return {
+			destroy() {
+				input.removeEventListener('input', syncPhone);
+				input.removeEventListener('countrychange', syncPhone);
+				instance.destroy();
+				if (rsvpPhoneInputInstance === instance) rsvpPhoneInputInstance = null;
+			}
+		};
+	}
+
 	async function submitConnectForm() {
 		if (!connectName.trim() || !connectPhone.trim() || connectSubmitting) return;
 		await phoneInputInstance?.promise;
-		if (!phoneInputInstance?.isValidNumber()) {
+		if (!phoneInputInstance?.isValidNumberPrecise()) {
 			connectError = t.form.invalidPhone;
 			return;
 		}
@@ -189,8 +239,47 @@
 		}
 	}
 
+	async function submitRsvpForm() {
+		if (!rsvpName.trim() || !rsvpPhone.trim() || rsvpSubmitting) return;
+		await rsvpPhoneInputInstance?.promise;
+		if (!rsvpPhoneInputInstance?.isValidNumberPrecise()) {
+			rsvpError = t.rsvp.invalidPhone;
+			return;
+		}
+		const formattedPhone = rsvpPhoneInputInstance.getNumber();
+		rsvpSubmitting = true;
+		rsvpError = '';
+		try {
+			const response = await fetch('https://formsubmit.co/ajax/kawanseattle@gmail.com', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+				body: JSON.stringify({
+					event: 'Pumpkin Patch Visit',
+					event_date: `Saturday, October 17, ${calendarYear}`,
+					name: rsvpName.trim(),
+					phone: formattedPhone,
+					school: rsvpSchool === 'Other' ? rsvpOtherSchool.trim() : rsvpSchool || 'Not provided',
+					party_size: rsvpPartySize,
+					notes: rsvpNotes.trim() || 'None',
+					_subject: 'New RSVP — Pumpkin Patch Visit',
+					_template: 'table',
+					_honey: ''
+				})
+			});
+			if (!response.ok) throw new Error('Submission failed');
+			rsvpSubmitted = true;
+		} catch {
+			rsvpError = t.rsvp.error;
+		} finally {
+			rsvpSubmitting = false;
+		}
+	}
+
 	function handleWindowKeydown(event: KeyboardEvent) {
-		if (event.key === 'Escape' && connectFormOpen) closeConnectForm();
+		if (event.key === 'Escape') {
+			if (rsvpFormOpen) closeRsvpForm();
+			else if (connectFormOpen) closeConnectForm();
+		}
 	}
 
 	function showPreviousHikingPhoto() {
@@ -391,7 +480,7 @@
 					<p class="event-date">{eventDateLabel}</p>
 					<h3>{events[selectedEventIndex].title}</h3>
 					<p>{events[selectedEventIndex].description}</p>
-					<button class="button" type="button" onclick={openConnectForm}>{t.events.action} <span>↗</span></button>
+					<button class="button" type="button" onclick={openRsvpForm}>{t.events.action} <span>↗</span></button>
 				</div>
 			</article>
 		</div>
@@ -526,6 +615,63 @@
 					<p class="connect-privacy">{t.form.privacy}</p>
 					{#if connectError}<p class="connect-error" role="alert">{connectError}</p>{/if}
 					<button class="button" type="submit" disabled={connectSubmitting}>{connectSubmitting ? t.form.sending : t.form.submit}</button>
+				</form>
+			{/if}
+		</div>
+	</div>
+{/if}
+
+{#if rsvpFormOpen}
+	<div class="connect-modal-backdrop" role="presentation">
+		<div class="connect-modal rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="rsvp-form-title">
+			<button class="connect-modal-close" type="button" onclick={closeRsvpForm} aria-label={t.rsvp.closeLabel}>{t.rsvp.close}</button>
+			{#if rsvpSubmitted}
+				<div class="connect-confirmation">
+					<p class="about-eyebrow">{t.rsvp.thanks}</p>
+					<h2 id="rsvp-form-title">{t.rsvp.successTitle}</h2>
+					<p>{language === 'id' ? `Terima kasih, ${rsvpName}. ${t.rsvp.successBody}` : `Thanks, ${rsvpName}. ${t.rsvp.successBody}`}</p>
+					<button class="button" type="button" onclick={closeRsvpForm}>{t.rsvp.done}</button>
+				</div>
+			{:else}
+				<div class="connect-form-heading">
+					<p class="about-eyebrow">{t.events.eventTitle}</p>
+					<h2 id="rsvp-form-title">{t.rsvp.title}</h2>
+					<p>{t.rsvp.intro}</p>
+				</div>
+				<form class="connect-form rsvp-form" onsubmit={(event) => { event.preventDefault(); submitRsvpForm(); }}>
+					<label for="rsvp-name">{t.rsvp.name}</label>
+					<input id="rsvp-name" name="name" type="text" autocomplete="name" bind:value={rsvpName} required placeholder={t.rsvp.namePlaceholder} />
+					<label for="rsvp-phone">{t.rsvp.phone}</label>
+					<div class="phone-field">
+						<input id="rsvp-phone" name="phone" type="tel" autocomplete="tel" use:internationalRsvpPhoneInput required aria-describedby="rsvp-phone-hint" />
+					</div>
+					<p id="rsvp-phone-hint" class="phone-hint">{t.rsvp.phoneHint}</p>
+					<label for="rsvp-school">{t.rsvp.school}</label>
+					<select id="rsvp-school" name="school" bind:value={rsvpSchool}>
+						<option value="">{t.rsvp.schoolPlaceholder}</option>
+						<option value="Shoreline Community College">Shoreline Community College</option>
+						<option value="North Seattle College">North Seattle College</option>
+						<option value="Edmonds College">Edmonds College</option>
+						<option value="Bellevue College">Bellevue College</option>
+						<option value="Seattle Central College">Seattle Central College</option>
+						<option value="University of Washington - Seattle">University of Washington - Seattle</option>
+						<option value="University of Washington - Tacoma">University of Washington - Tacoma</option>
+						<option value="Seattle University">Seattle University</option>
+						<option value="Other">{t.rsvp.other}</option>
+					</select>
+					{#if rsvpSchool === 'Other'}
+						<label for="rsvp-other-school">{t.rsvp.otherSchool}</label>
+						<input id="rsvp-other-school" name="other-school" type="text" bind:value={rsvpOtherSchool} required placeholder={t.rsvp.otherSchoolPlaceholder} />
+					{/if}
+					<label for="rsvp-party-size">{t.rsvp.partySize}</label>
+					<select id="rsvp-party-size" name="party-size" bind:value={rsvpPartySize}>
+						{#each [1, 2, 3, 4, 5, 6] as size}<option value={String(size)}>{size}</option>{/each}
+					</select>
+					<label for="rsvp-notes">{t.rsvp.notes}</label>
+					<textarea id="rsvp-notes" name="notes" bind:value={rsvpNotes} placeholder={t.rsvp.notesPlaceholder}></textarea>
+					<p class="connect-privacy">{t.rsvp.privacy}</p>
+					{#if rsvpError}<p class="connect-error" role="alert">{rsvpError}</p>{/if}
+					<button class="button" type="submit" disabled={rsvpSubmitting}>{rsvpSubmitting ? t.rsvp.sending : t.rsvp.submit}</button>
 				</form>
 			{/if}
 		</div>
@@ -3842,6 +3988,8 @@
 	.connect-modal {
 		position: relative;
 		width: min(540px, 100%);
+		max-height: calc(100dvh - 48px);
+		overflow-y: auto;
 		padding: clamp(38px, 6vw, 58px);
 		border: 1px solid rgba(65, 77, 67, .11);
 		border-radius: 10px;
@@ -3878,7 +4026,8 @@
 	.connect-form { display: grid; gap: 10px; }
 	.connect-form label { margin-top: 8px; color: #4f5851; font-size: 11px; font-weight: 700; letter-spacing: .06em; }
 	.connect-form input,
-	.connect-form select {
+	.connect-form select,
+	.connect-form textarea {
 		width: 100%;
 		height: 52px;
 		padding: 0 15px;
@@ -3891,9 +4040,12 @@
 		transition: border-color .22s ease, box-shadow .22s ease;
 	}
 	.connect-form select { padding-right: 42px; cursor: pointer; }
+	.connect-form textarea { min-height: 96px; padding: 14px 15px; resize: vertical; }
 	.connect-form input:focus,
-	.connect-form select:focus { border-color: #65766a; box-shadow: 0 0 0 3px rgba(101, 118, 106, .1); }
-	.connect-form input::placeholder { color: #9a9b95; }
+	.connect-form select:focus,
+	.connect-form textarea:focus { border-color: #65766a; box-shadow: 0 0 0 3px rgba(101, 118, 106, .1); }
+	.connect-form input::placeholder,
+	.connect-form textarea::placeholder { color: #9a9b95; }
 	.phone-field { width: 100%; }
 	:global(.phone-field .iti) {
 		width: 100%;
