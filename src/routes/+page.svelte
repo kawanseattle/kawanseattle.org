@@ -41,7 +41,7 @@
 			moments: { eyebrow: 'Life with KAWAN', title: 'Moments Together', intro: 'A glimpse of the adventures, celebrations, and everyday moments that bring our community closer.', previous: 'Previous hiking photo', next: 'Next hiking photo', choose: 'Choose a hiking photo', show: 'Show hiking photo', hiking: 'Hiking Trips', summerOutings: 'Summer outings', getaways: 'Holiday Getaways', communityGetaway: 'Community getaway', adventures: 'Seattle Adventures', exploring: 'Exploring together', camping: 'Summer Camping', outdoors: 'Outdoor adventures', hikingAlts: ['KAWAN friends gathered along a mountain hiking trail', 'KAWAN community gathered together at a forest waterfall', 'KAWAN friends and families visiting Multnomah Falls'], getawayAlt: 'KAWAN community members together on a holiday trip', seattleAlt: 'Seattle skyline viewed from the water during a KAWAN adventure', campingAlt: 'A glowing campfire during a KAWAN summer camping trip' },
 			cta: { eyebrow: 'Get connected', title: 'There’s a place for you here.', body: 'Ready to begin your journey? Meet people who understand and find a community that will walk alongside you.', body2: '', action: 'Get Connected' },
 			footer: { tagline: 'A friend for your journey.', links: 'LINKS', involved: 'GET INVOLVED', contact: 'Contact us', copyright: '© 2026 KAWAN Seattle.' },
-			form: { close: 'Close', closeLabel: 'Close connection form', thanks: 'Thank you', successTitle: 'We’re glad you’re here.', successBody: 'Your information has been entered.', done: 'Done', eyebrow: 'Get connected', title: 'Let’s get to know you.', intro: 'Share your information and take the first step toward the KAWAN community.', name: 'Name', namePlaceholder: 'Your name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', direct: 'Contact KAWAN directly', whatsapp: 'Chat with KAWAN on WhatsApp at +1 206 992 4418', email: 'Email KAWAN at kawanseattle@gmail.com', privacy: 'Your information will be securely forwarded to KAWAN by our form delivery provider.', invalidPhone: 'Please enter a valid phone number for the selected country.', error: 'We could not send your information. Please try again.', sending: 'Sending…', submit: 'Submit' }
+			form: { close: 'Close', closeLabel: 'Close connection form', thanks: 'Thank you', successTitle: 'We’re glad you’re here.', successBody: 'Your information has been entered.', done: 'Done', eyebrow: 'Get connected', title: 'Let’s get to know you.', intro: 'Share your information and take the first step toward the KAWAN community.', name: 'Name', namePlaceholder: 'Your name', school: 'School', schoolPlaceholder: 'Select your school', other: 'Other', otherSchool: 'School name', otherSchoolPlaceholder: 'Enter your school name', phone: 'Phone number', phoneHint: 'Choose your country, then enter your phone number.', direct: 'Contact KAWAN directly', whatsapp: 'Chat with KAWAN on WhatsApp at +1 206 992 4418', email: 'Email KAWAN at kawanseattle@gmail.com', privacy: 'Your information will be securely forwarded to KAWAN by our form delivery provider.', invalidPhone: 'Please enter a valid phone number for the selected country.', error: 'We could not send your information. Please try again.', sending: 'Sending…', submit: 'Submit' }
 		},
 		id: {
 			meta: { title: 'Kawan | Teman dalam perjalananmu.', description: 'KAWAN membantu pelajar internasional beradaptasi, membangun persahabatan yang bermakna, dan menjalani kehidupan di Seattle.' },
@@ -62,7 +62,7 @@
 			moments: { eyebrow: '', title: 'Momen Bersama KAWAN', intro: 'Sedikit cerita dari berbagai perjalanan, perayaan, dan momen sederhana yang kami jalani bersama.', previous: 'Foto hiking sebelumnya', next: 'Foto hiking berikutnya', choose: 'Pilih foto hiking', show: 'Tampilkan foto hiking', hiking: 'Perjalanan Hiking', summerOutings: 'Kegiatan musim panas', getaways: 'Liburan Bersama', communityGetaway: 'Liburan komunitas', adventures: 'Petualangan di Seattle', exploring: 'Menjelajah bersama', camping: 'Camping Musim Panas', outdoors: 'Petualangan di alam', hikingAlts: ['Teman-teman KAWAN berkumpul di jalur pendakian pegunungan', 'Komunitas KAWAN berkumpul di air terjun dalam hutan', 'Teman dan keluarga KAWAN mengunjungi Multnomah Falls'], getawayAlt: 'Komunitas KAWAN menikmati perjalanan liburan bersama', seattleAlt: 'Pemandangan Seattle dari atas air dalam petualangan bersama KAWAN', campingAlt: 'Api unggun dalam perjalanan camping musim panas KAWAN' },
 			cta: { eyebrow: 'Mari Terhubung', title: 'Ada tempat untukmu di sini.', body: 'Baru datang ke Seattle? Sudah lama di sini tapi ingin kenal lebih banyak orang? Atau cuma ingin punya teman untuk ngobrol dan jalan bareng?', body2: 'Apa pun ceritamu, kami senang bisa kenalan.', action: 'Mari Terhubung' },
 			footer: { tagline: 'Teman dalam perjalananmu.', links: 'TAUTAN', involved: 'AYO TERLIBAT', contact: 'Hubungi kami', copyright: '© 2026 KAWAN Seattle.' },
-			form: { close: 'Tutup', closeLabel: 'Tutup formulir', thanks: 'Terima kasih', successTitle: 'Senang kamu ada di sini.', successBody: 'Informasimu sudah kami terima.', done: 'Selesai', eyebrow: 'Mari terhubung', title: 'Yuk, kenalan lebih dekat.', intro: 'Bagikan informasimu dan ambil langkah pertama untuk bergabung dengan komunitas KAWAN.', name: 'Nama', namePlaceholder: 'Namamu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', direct: 'Hubungi KAWAN secara langsung', whatsapp: 'Chat dengan KAWAN melalui WhatsApp di +1 206 992 4418', email: 'Kirim email ke KAWAN di kawanseattle@gmail.com', privacy: 'Informasimu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', error: 'Informasimu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim' }
+			form: { close: 'Tutup', closeLabel: 'Tutup formulir', thanks: 'Terima kasih', successTitle: 'Senang kamu ada di sini.', successBody: 'Informasimu sudah kami terima.', done: 'Selesai', eyebrow: 'Mari terhubung', title: 'Yuk, kenalan lebih dekat.', intro: 'Bagikan informasimu dan ambil langkah pertama untuk bergabung dengan komunitas KAWAN.', name: 'Nama', namePlaceholder: 'Namamu', school: 'Sekolah / kampus', schoolPlaceholder: 'Pilih sekolah atau kampusmu', other: 'Lainnya', otherSchool: 'Nama sekolah / kampus', otherSchoolPlaceholder: 'Masukkan nama sekolah atau kampusmu', phone: 'Nomor telepon', phoneHint: 'Pilih negaramu, lalu masukkan nomor telepon.', direct: 'Hubungi KAWAN secara langsung', whatsapp: 'Chat dengan KAWAN melalui WhatsApp di +1 206 992 4418', email: 'Kirim email ke KAWAN di kawanseattle@gmail.com', privacy: 'Informasimu akan diteruskan dengan aman kepada KAWAN melalui penyedia layanan formulir kami.', invalidPhone: 'Masukkan nomor telepon yang valid untuk negara yang dipilih.', error: 'Informasimu belum berhasil dikirim. Silakan coba lagi.', sending: 'Mengirim…', submit: 'Kirim' }
 		}
 	} as const;
 
@@ -97,6 +97,8 @@
 	let heroElement: HTMLElement;
 	let connectFormOpen = false;
 	let connectName = '';
+	let connectSchool = '';
+	let connectOtherSchool = '';
 	let connectPhone = '';
 	let phoneInputInstance: Iti | null = null;
 	let connectSubmitted = false;
@@ -171,6 +173,7 @@
 				headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 				body: JSON.stringify({
 					name: connectName.trim(),
+					school: connectSchool === 'Other' ? connectOtherSchool.trim() : connectSchool || 'Not provided',
 					phone: formattedPhone,
 					_subject: 'New KAWAN Get Connected submission',
 					_template: 'table',
@@ -480,6 +483,23 @@
 				<form class="connect-form" onsubmit={(event) => { event.preventDefault(); submitConnectForm(); }}>
 					<label for="connect-name">{t.form.name}</label>
 					<input id="connect-name" name="name" type="text" autocomplete="name" bind:value={connectName} required placeholder={t.form.namePlaceholder} />
+					<label for="connect-school">{t.form.school}</label>
+					<select id="connect-school" name="school" bind:value={connectSchool}>
+						<option value="">{t.form.schoolPlaceholder}</option>
+						<option value="Shoreline Community College">Shoreline Community College</option>
+						<option value="North Seattle College">North Seattle College</option>
+						<option value="Edmonds College">Edmonds College</option>
+						<option value="Bellevue College">Bellevue College</option>
+						<option value="Seattle Central College">Seattle Central College</option>
+						<option value="University of Washington - Seattle">University of Washington - Seattle</option>
+						<option value="University of Washington - Tacoma">University of Washington - Tacoma</option>
+						<option value="Seattle University">Seattle University</option>
+						<option value="Other">{t.form.other}</option>
+					</select>
+					{#if connectSchool === 'Other'}
+						<label for="connect-other-school">{t.form.otherSchool}</label>
+						<input id="connect-other-school" name="other-school" type="text" bind:value={connectOtherSchool} required placeholder={t.form.otherSchoolPlaceholder} />
+					{/if}
 					<label for="connect-phone">{t.form.phone}</label>
 					<div class="phone-field">
 						<input id="connect-phone" name="phone" type="tel" autocomplete="tel" use:internationalPhoneInput required aria-describedby="connect-phone-hint" />
@@ -491,7 +511,7 @@
 								<path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.3-4.3a8.5 8.5 0 1 1 15.7-4.4Z" />
 								<path d="M8.2 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.6.8c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2 2.1.3.2.5.2.7 0l.9-1.1c.2-.2.4-.3.7-.2l1.9.9c.3.2.5.3.5.5 0 .2-.1 1.2-.7 1.8-.5.6-1.3.9-2.1.8-1-.1-2.5-.6-4.2-2.1-1.3-1.2-2.3-2.6-2.7-3.7-.4-1-.4-2.1.1-2.8l.1-.3Z" />
 							</svg>
-							<strong>+1 (206) 992-4418</strong>
+							<strong>WhatsApp</strong>
 						</a>
 						<a class="direct-contact gmail-contact" href="mailto:kawanseattle@gmail.com" aria-label={t.form.email}>
 							<svg viewBox="0 0 24 24" aria-hidden="true">
@@ -3857,7 +3877,8 @@
 	.connect-confirmation > p:not(.about-eyebrow) { margin: 0 0 28px; color: #696b66; font-size: 14px; line-height: 1.7; }
 	.connect-form { display: grid; gap: 10px; }
 	.connect-form label { margin-top: 8px; color: #4f5851; font-size: 11px; font-weight: 700; letter-spacing: .06em; }
-	.connect-form input {
+	.connect-form input,
+	.connect-form select {
 		width: 100%;
 		height: 52px;
 		padding: 0 15px;
@@ -3869,7 +3890,9 @@
 		font: 500 14px 'Manrope', sans-serif;
 		transition: border-color .22s ease, box-shadow .22s ease;
 	}
-	.connect-form input:focus { border-color: #65766a; box-shadow: 0 0 0 3px rgba(101, 118, 106, .1); }
+	.connect-form select { padding-right: 42px; cursor: pointer; }
+	.connect-form input:focus,
+	.connect-form select:focus { border-color: #65766a; box-shadow: 0 0 0 3px rgba(101, 118, 106, .1); }
 	.connect-form input::placeholder { color: #9a9b95; }
 	.phone-field { width: 100%; }
 	:global(.phone-field .iti) {
